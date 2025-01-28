@@ -13,8 +13,10 @@ class OnBoardingGetStartedBody extends StatelessWidget {
         Padding(
           padding: Constants.onBoardingPadding,
           child: Text(
-            'Connect with your next loyal\n patient in just a few clicks.',
-            style: CustomTextStyles.font24BlackSemiBold,
+            'Connect with your next loyal patient in just a few clicks.',
+            style: CustomTextStyles.font24BlackSemiBold.copyWith(
+              fontFamily: 'Cairo'
+            ),
             textAlign: TextAlign.center,
           ),
         ),

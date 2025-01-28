@@ -47,8 +47,8 @@ class GetStartedButtonsContainer extends StatelessWidget {
                 height: 18.h,
               ),
               HaveAccountText(
-                title: 'Don’t have an account? ',
-                navTitle: 'Sign Up',
+                title: 'Already have an account? ',
+                navTitle: 'Login',
                 onTap: () {},
               )
             ],

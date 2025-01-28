@@ -18,7 +18,9 @@ class OnBoardingPage extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: CustomTextStyles.font24BlackSemiBold,
+                style: CustomTextStyles.font24BlackSemiBold.copyWith(
+                  fontFamily: 'Cairo'
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 6,),

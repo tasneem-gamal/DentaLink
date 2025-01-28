@@ -12,7 +12,7 @@ class OnBoardingNextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        OnBoardingController.instance.nextPage();
+        OnBoardingController.instance.nextPage(context);
       },
       child: Align(
         alignment: Alignment.bottomRight,

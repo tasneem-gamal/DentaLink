@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +18,9 @@ class OnBoardingController extends GetxController{
     pageController.jumpTo(index);
   }
 
-  void nextPage(){
+  void nextPage(BuildContext context){
     if(currentPageIndex.value == 1){
-      //push to home
+      context.pushNamed(Routes.onBoardingGetStartedView);
     } else{
       int page = currentPageIndex.value + 1 ;
       pageController.jumpToPage(page);

@@ -17,7 +17,7 @@ class OnBoardingController extends GetxController{
   }
 
   void nextPage(){
-    if(currentPageIndex.value == 2){
+    if(currentPageIndex.value == 1){
       //push to home
     } else{
       int page = currentPageIndex.value + 1 ;

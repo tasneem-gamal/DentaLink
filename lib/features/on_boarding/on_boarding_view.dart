@@ -1,3 +1,5 @@
+import 'package:dentalink/core/theming/colors.dart';
+import 'package:dentalink/features/on_boarding/widgets/on_boarding_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -5,8 +7,9 @@ class OnBoardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(child: Scaffold(
-      body: Center(child: Text('data'),),
-    ));
+    return const Scaffold(
+      backgroundColor: ColorsManager.lightBlue,
+      body: SafeArea(child: OnBoardingViewBody()),
+    );
   }
 }

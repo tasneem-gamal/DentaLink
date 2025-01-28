@@ -1,0 +1,69 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/core/widgets/custom_app_button.dart';
+import 'package:dentalink/features/on_boarding/widgets/get_started_options.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class OnBoardingGetStartedBody extends StatelessWidget {
+  const OnBoardingGetStartedBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Padding(
+          padding: Constants.onBoardingPadding,
+          child: Text(
+            'Connect with your next loyal\n patient in just a few clicks.',
+            style: CustomTextStyles.font24BlackSemiBold,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.sizeOf(context).height * 0.38,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1), 
+                offset: const Offset(4, 4), 
+                blurRadius: 6, 
+                spreadRadius: 2, 
+              ),
+            ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 79, left: 24, right: 24),
+              child: Column(
+                children: [
+                  CustomAppButton(
+                    btnText: 'Get Started', 
+                    textStyle: CustomTextStyles.font20WhiteSemiBold,
+                    buttonHeight: 57,
+                  ),
+                  SizedBox(height: 16.h,),
+                  const GetStartedOptions()
+                ],
+              ),
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.center,
+          child: Image.asset('assets/images/get_started.png'),
+        ),
+      ],
+    );
+  }
+}
+
+
+

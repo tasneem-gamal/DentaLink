@@ -25,7 +25,7 @@ class OnBoardingViewBody extends StatelessWidget {
               image: 'assets/images/onboarding_1.png',
             ),
             OnBoardingPage(
-              title: 'Buy, sell, or exchange dental\n tools, all in one convenient\n platform.',
+              title: 'Buy, sell, or exchange dental tools, all in one convenient platform.',
               subTitle: 'Turn your dental training into real-life success\n stories. with ',
               wordSubTitle: 'DENTALINK',
               alignment: Alignment.center,

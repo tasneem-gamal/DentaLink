@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/on_boarding/logic/on_boarding_controller.dart';
+import 'package:dentalink/features/on_boarding/widgets/on_boarding_next_button.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_smooth_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -55,8 +56,10 @@ class OnBoardingViewBody extends StatelessWidget {
             )
           ],
         ),
-        const OnBoardingSmoothIndicator()
+        const OnBoardingSmoothIndicator(),
+        const OnBoardingNextButton()
       ],
     );
   }
 }
+

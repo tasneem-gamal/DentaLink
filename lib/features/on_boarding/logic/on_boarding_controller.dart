@@ -24,9 +24,4 @@ class OnBoardingController extends GetxController{
       pageController.jumpToPage(page);
     }
   }
-
-  void skipPage(){
-    currentPageIndex.value = 2;
-    pageController.jumpTo(2);
-  }
 }

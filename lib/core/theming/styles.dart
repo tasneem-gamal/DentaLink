@@ -76,6 +76,12 @@ class CustomTextStyles{
     color: ColorsManager.mainBlue,
   );
 
+  static TextStyle font12MainBlueSemiBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue,
+  );
+
 
   //size 16
   static TextStyle font16BlackMedium = TextStyle(

@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
@@ -49,7 +51,9 @@ class GetStartedButtonsContainer extends StatelessWidget {
               HaveAccountText(
                 title: 'Already have an account? ',
                 navTitle: 'Login',
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.loginView);
+                },
               )
             ],
           ),

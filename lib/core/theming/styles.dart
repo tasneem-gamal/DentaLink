@@ -3,7 +3,7 @@ import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextStyles{
+class CustomTextStyles{
   //size 24
   static TextStyle font24BlackSemiBold = TextStyle(
     fontSize: 24.sp,
@@ -73,6 +73,12 @@ class TextStyles{
   static TextStyle font12MainBlueRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.mainBlue,
+  );
+
+  static TextStyle font12MainBlueSemiBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
 

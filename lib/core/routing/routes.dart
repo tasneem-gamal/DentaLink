@@ -1,6 +1,6 @@
 class Routes {
   static const onBoardingView = '/onBoardingView';
-  static const signInView = '/signInView';
+  static const loginView = '/loginView';
   static const signUpView = '/signUpView';
 
   // home and related to it

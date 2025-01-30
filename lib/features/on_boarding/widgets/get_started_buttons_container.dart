@@ -38,6 +38,9 @@ class GetStartedButtonsContainer extends StatelessWidget {
             children: [
               CustomAppButton(
                 btnText: 'Get Started',
+                onPressed: (){
+                  context.pushNamed(Routes.signUpView);
+                },
                 textStyle: CustomTextStyles.font20WhiteSemiBold,
                 buttonHeight: 57,
               ),

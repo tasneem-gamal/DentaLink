@@ -1,4 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/other_login_row_options.dart';
@@ -40,7 +42,9 @@ class LoginViewBody extends StatelessWidget {
             HaveAccountText(
               title: "Don’t have an account? ", 
               navTitle: "Sign up.", 
-              onTap: (){}
+              onTap: (){
+                context.pushNamed(Routes.signUpView);
+              }
             )
           ],
         ),

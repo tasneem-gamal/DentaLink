@@ -1,8 +1,16 @@
+import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class RememberAndForgotPass extends StatelessWidget {
+class RememberAndForgotPass extends StatefulWidget {
   const RememberAndForgotPass({super.key});
+
+  @override
+  State<RememberAndForgotPass> createState() => _RememberAndForgotPassState();
+}
+
+class _RememberAndForgotPassState extends State<RememberAndForgotPass> {
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +19,15 @@ class RememberAndForgotPass extends StatelessWidget {
       children: [
         Row(
           children: [
-            Checkbox(value: false, onChanged: (value) {}),
+            Checkbox(
+              activeColor: ColorsManager.mainBlue,
+              value: isChecked, 
+              onChanged: (value) {
+                setState(() {
+                  isChecked = value ?? false ;
+                });
+              }
+            ),
             Text(
               'Remember me',
               style: CustomTextStyles.font12BlackRegular,

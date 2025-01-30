@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
@@ -19,7 +20,13 @@ class _LoginFormState extends State<LoginForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey();
   bool isObsecureText = true;
-
+  
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -35,7 +42,7 @@ class _LoginFormState extends State<LoginForm> {
         ),
         CustomTextFormField(
           hintText: 'Salem12@gmail.com',
-          validator: (value) {},
+          validator: emailValidate,
           controller: emailController,
         ),
         SizedBox(
@@ -50,7 +57,7 @@ class _LoginFormState extends State<LoginForm> {
         CustomTextFormField(
           hintText: '1234566',
           validator: (value) {},
-          controller: emailController,
+          controller: passwordController,
           suffixIcon: const Icon(Icons.remove_red_eye),
         ),
         SizedBox(
@@ -65,4 +72,13 @@ class _LoginFormState extends State<LoginForm> {
       ],
     ));
   }
+
+  emailValidate(value) {
+          if(value == null || value.isEmpty){
+            return 'Email cannot be empty';
+          }
+          if(!AppRegex.isEmailValid(value)){
+            return 'Enter a valid email address';
+          }
+        }
 }

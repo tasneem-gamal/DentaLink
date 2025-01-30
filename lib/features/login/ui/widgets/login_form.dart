@@ -55,10 +55,18 @@ class _LoginFormState extends State<LoginForm> {
           height: 14.h,
         ),
         CustomTextFormField(
-          hintText: '1234566',
+          hintText: '************',
           validator: passwordValidate,
           controller: passwordController,
-          suffixIcon: const Icon(Icons.remove_red_eye),
+          isObsecureText: isObsecureText,
+          suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                isObsecureText = !isObsecureText;
+              });
+            },
+            child: Icon(isObsecureText ? Icons.visibility_off : Icons.visibility,)
+          ),
         ),
         SizedBox(
           height: 16.h,
@@ -68,7 +76,9 @@ class _LoginFormState extends State<LoginForm> {
           height: 30.h,
         ),
         CustomAppButton(
-            btnText: 'Login', textStyle: CustomTextStyles.font20WhiteSemiBold)
+            btnText: 'Login', 
+            textStyle: CustomTextStyles.font20WhiteSemiBold
+          )
       ],
     ));
   }

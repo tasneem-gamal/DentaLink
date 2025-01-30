@@ -2,8 +2,8 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class OtherLoginOptions extends StatelessWidget {
-  const OtherLoginOptions({
+class OtherLoginOption extends StatelessWidget {
+  const OtherLoginOption({
     super.key, required this.width, required this.height, required this.image, required this.title,
   });
   final double width, height;

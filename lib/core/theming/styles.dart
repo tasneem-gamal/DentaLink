@@ -87,6 +87,7 @@ class CustomTextStyles{
   static TextStyle font16BlackMedium = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.medium,
+    fontFamily: 'Raleway',
     color: Colors.black,
   );
 

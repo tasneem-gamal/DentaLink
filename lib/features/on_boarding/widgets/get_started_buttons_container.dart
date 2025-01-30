@@ -3,7 +3,7 @@ import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
-import 'package:dentalink/features/on_boarding/widgets/get_started_options.dart';
+import 'package:dentalink/core/widgets/other_login_row_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -44,7 +44,7 @@ class GetStartedButtonsContainer extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              const GetStartedOptions(),
+              const OtherLoginRowOptions(),
               SizedBox(
                 height: 18.h,
               ),

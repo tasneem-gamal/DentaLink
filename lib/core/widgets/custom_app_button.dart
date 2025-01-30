@@ -18,7 +18,7 @@ class CustomAppButton extends StatelessWidget {
       width: buttonWidth ?? double.infinity,
       height: buttonHeight,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
           shape: RoundedRectangleBorder(

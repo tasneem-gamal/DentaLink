@@ -34,7 +34,7 @@ class LoginViewBody extends StatelessWidget {
             const OtherLoginOptionsDivider(),
             SizedBox(height: 24.h,),
             const OtherLoginRowOptions(
-              width: 168,
+              width: 169,
             ),
             SizedBox(height: 14.h,),
             HaveAccountText(

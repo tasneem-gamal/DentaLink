@@ -1,20 +1,13 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/core/widgets/custom_text_form_field.dart';
-import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/login/ui/widgets/login_form.dart';
+import 'package:dentalink/features/login/ui/widgets/other_login_options_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginViewBody extends StatefulWidget {
+class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
 
-  @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
-}
-
-class _LoginViewBodyState extends State<LoginViewBody> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,20 +27,17 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 48.h,),
-            const TitleOfTextField(
-              title: 'Email Address',
-            ),
-            SizedBox(height: 14.h,),
-            CustomTextFormField(
-              validator: (value){},
-              controller: emailController,
-            )
+            const LoginForm(),
+            SizedBox(height: 30.h,),
+            const OtherLoginOptionsDivider()
           ],
         ),
       ),
     );
   }
 }
+
+
 
 
 

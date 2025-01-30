@@ -77,21 +77,32 @@ class _LoginFormState extends State<LoginForm> {
         ),
         CustomAppButton(
             btnText: 'Login', 
+            onPressed: loginValidate,
             textStyle: CustomTextStyles.font20WhiteSemiBold
           )
       ],
     ));
   }
 
+  void loginValidate(){
+            if(formKey.currentState!.validate()){
+              formKey.currentState!.save();
+            } else{
+              setState(() {
+                autovalidateMode = AutovalidateMode.always;
+              });
+            }
+          }
+
   passwordValidate(value) {
           if (value == null || value.isEmpty) {
             return 'Password cannot be empty';
           } 
-          if(!AppRegex.hasLowerCase(value) ||
-            !AppRegex.hasMinLength(value) ||
-            !AppRegex.isPasswordValid(value) ||
+          if(!AppRegex.hasLowerCase(value) &&
+            !AppRegex.hasMinLength(value) &&
+            !AppRegex.isPasswordValid(value) &&
             !AppRegex.hasSpecialCharacter(value)){
-              return "Enter a valid password: at least 6 characters,\n including one uppercase letter and one special char.";
+              return "Enter a valid password: at least 8 characters,\nincluding one lowercase letter and one special char.";
           }
         }
 

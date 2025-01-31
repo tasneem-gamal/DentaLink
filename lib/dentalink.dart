@@ -14,7 +14,7 @@ class Dentalink extends StatelessWidget {
       child: MaterialApp(
         title: 'DentaLink',
         theme: ThemeData(
-          fontFamily: 'Raleway',
+          fontFamily: 'Cairo',
           scaffoldBackgroundColor: Colors.white
         ),
         debugShowCheckedModeBanner: false,

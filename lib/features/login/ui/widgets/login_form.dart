@@ -1,5 +1,4 @@
 import 'package:dentalink/core/helpers/app_regex.dart';
-import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
@@ -41,6 +40,7 @@ class _LoginFormState extends State<LoginForm> {
           height: 14.h,
         ),
         CustomTextFormField(
+          keyboardType: TextInputType.emailAddress,
           hintText: 'Salem12@gmail.com',
           validator: emailValidate,
           controller: emailController,
@@ -55,6 +55,7 @@ class _LoginFormState extends State<LoginForm> {
           height: 14.h,
         ),
         CustomTextFormField(
+          keyboardType: TextInputType.visiblePassword,
           hintText: '************',
           validator: passwordValidate,
           controller: passwordController,
@@ -78,7 +79,6 @@ class _LoginFormState extends State<LoginForm> {
         CustomAppButton(
             btnText: 'Login', 
             onPressed: loginValidate,
-            textStyle: CustomTextStyles.font20WhiteSemiBold
           )
       ],
     ));

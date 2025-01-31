@@ -35,6 +35,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   get: ^4.6.6
   iconsax: ^0.0.8
+  intl_phone_number_input: ^0.7.4
   smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
@@ -75,6 +76,5 @@ flutter:
         - asset: assets/fonts/Cairo-Medium.ttf
         - asset: assets/fonts/Cairo-SemiBold.ttf
         - asset: assets/fonts/Cairo-Bold.ttf
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

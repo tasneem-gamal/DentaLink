@@ -5,6 +5,7 @@ import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/sign_up/ui/widgets/academic_and_student_id_sign.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/phone_number_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,6 +57,10 @@ class _SignUpFormState extends State<SignUpForm> {
               validator: nameValidate, 
               hintText: 'Salem'
             ),
+          SizedBox(
+            height: 14.h,
+          ),
+          AcademicAndStudentIdSign(),
           SizedBox(
             height: 14.h,
           ),
@@ -199,4 +204,6 @@ class _SignUpFormState extends State<SignUpForm> {
           }
         }
 }
+
+
 

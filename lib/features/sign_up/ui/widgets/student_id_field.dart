@@ -16,7 +16,7 @@ class StudentIdField extends StatelessWidget {
           const TitleOfTextField(title: 'Student Id'),
           SizedBox(height: 14.h,),
           CustomTextFormField(
-            validator: (value){}, 
+            validator: studentIdValidate, 
             hintText: 'Your student id',
             keyboardType: TextInputType.number,
           )
@@ -24,4 +24,13 @@ class StudentIdField extends StatelessWidget {
       )
     );
   }
+
+  studentIdValidate(value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your student ID';
+            } else if (value.length < 10) {
+              return 'Student ID must be at least 10 digits';
+            }
+            return null;
+          }
 }

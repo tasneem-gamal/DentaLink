@@ -1,11 +1,12 @@
-import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/core/widgets/email_field.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/academic_and_student_id_sign.dart';
+import 'package:dentalink/features/sign_up/ui/widgets/password_and_confirm_password_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/phone_number_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,21 +21,15 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordConfirmController = TextEditingController();
+  
   final TextEditingController nameController = TextEditingController();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey();
-  bool isObsecureText = true;
-  bool isPasswordConfirmationObscureText = true;
+  
   
   @override
   void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
     nameController.dispose();
-    passwordConfirmController.dispose();
     super.dispose();
   }
 
@@ -64,66 +59,11 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(
             height: 14.h,
           ),
-          const TitleOfTextField(
-            title: 'Email Address',
-          ),
+          const EmailField(),
           SizedBox(
             height: 14.h,
           ),
-          CustomTextFormField(
-              keyboardType: TextInputType.emailAddress,
-              controller: emailController,
-              validator: emailValidate, 
-              hintText: 'Salem12@gmail.com'
-            ),
-          SizedBox(
-            height: 14.h,
-          ),
-          const TitleOfTextField(
-            title: 'Password',
-          ),
-          SizedBox(
-            height: 14.h,
-          ),
-          CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            hintText: '************',
-            validator: passwordValidate,
-            controller: passwordController,
-            isObsecureText: isObsecureText,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  isObsecureText = !isObsecureText;
-                });
-              },
-              child: Icon(isObsecureText ? Icons.visibility_off : Icons.visibility,)
-            ),
-          ),
-          SizedBox(
-            height: 14.h,
-          ),
-          const TitleOfTextField(
-            title: 'Confirm Password',
-          ),
-          SizedBox(
-            height: 14.h,
-          ),
-          CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            hintText: '************',
-            validator: confirmPasswordValidate,
-            controller: passwordConfirmController,
-            isObsecureText: isPasswordConfirmationObscureText,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  isPasswordConfirmationObscureText = !isPasswordConfirmationObscureText;
-                });
-              },
-              child: Icon(isPasswordConfirmationObscureText ? Icons.visibility_off : Icons.visibility,)
-            ),
-          ),
+          const PasswordAndConfirmPasswordField(),
           SizedBox(
             height: 14.h,
           ),
@@ -172,37 +112,8 @@ class _SignUpFormState extends State<SignUpForm> {
             }
           }
     
-      passwordValidate(value) {
-          if (value == null || value.isEmpty) {
-            return 'Password cannot be empty';
-          } 
-          if(!AppRegex.hasLowerCase(value) &&
-            !AppRegex.hasMinLength(value) &&
-            !AppRegex.isPasswordValid(value) &&
-            !AppRegex.hasSpecialCharacter(value)){
-              return "Enter a valid password: at least 8 characters,\nincluding one lowercase letter and one special char.";
-          }
-        }
 
-          confirmPasswordValidate(value){
-            if(value == null || value.isEmpty){
-              return 'Password cannot be empty';
-            }
-            if(value == passwordController.text){
-              return 'Passwords match';
-            } else{
-              return 'Passwords do not match';
-            }
-          }
 
-  emailValidate(value) {
-          if(value == null || value.isEmpty){
-            return 'Email cannot be empty';
-          }
-          if(!AppRegex.isEmailValid(value)){
-            return 'Enter a valid email address';
-          }
-        }
 }
 
 

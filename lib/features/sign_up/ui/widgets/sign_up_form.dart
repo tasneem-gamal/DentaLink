@@ -1,8 +1,5 @@
-import 'package:dentalink/core/helpers/extension.dart';
-import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/email_field.dart';
-import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/academic_and_student_id_sign.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/name_field.dart';
@@ -64,16 +61,6 @@ class _SignUpFormState extends State<SignUpForm> {
             btnText: 'Sign Up',
             onPressed: signUpVaidate,
           ),
-          SizedBox(
-            height: 10.h,
-          ),
-          HaveAccountText(
-            title: 'Already have an account? ', 
-            navTitle: 'Login', 
-            onTap: (){
-              context.pushNamed(Routes.loginView);
-            }
-          )
         ],
       ),
     );

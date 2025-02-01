@@ -60,7 +60,7 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(
             height: 14.h,
           ),
-          AcademicAndStudentIdSign(),
+          const AcademicAndStudentIdSign(),
           SizedBox(
             height: 14.h,
           ),

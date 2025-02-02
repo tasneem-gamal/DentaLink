@@ -5,6 +5,7 @@ import 'package:dentalink/features/sign_up/ui/widgets/academic_and_student_id_si
 import 'package:dentalink/features/sign_up/ui/widgets/name_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/password_and_confirm_password_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/phone_number_input_field.dart';
+import 'package:dentalink/features/sign_up/ui/widgets/upload_title_and_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -57,6 +58,10 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(
             height: 14.h,
           ),
+          const UploadTitleAndContainer(),
+          SizedBox(
+            height: 14.h,
+          ),
           CustomAppButton(
             btnText: 'Sign Up',
             onPressed: signUpVaidate,
@@ -77,6 +82,8 @@ class _SignUpFormState extends State<SignUpForm> {
           }
 
 }
+
+
 
 
 

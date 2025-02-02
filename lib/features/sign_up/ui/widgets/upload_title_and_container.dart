@@ -1,6 +1,7 @@
 
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
+import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:file_picker/file_picker.dart';
@@ -17,18 +18,7 @@ class UploadTitleAndContainer extends StatefulWidget {
 
 class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
   String? selectedFileName; 
-  Future<void> pickFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['jpg', 'png'],
-    );
 
-    if (result != null) {
-      setState(() {
-        selectedFileName = result.files.single.name; 
-      });
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,6 +58,9 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
                 ) 
                 : Text(
                   selectedFileName!,
+                  style: CustomTextStyles.font14BlackRegular.copyWith(
+                    fontWeight: FontWeightHelper.bold
+                  ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -88,5 +81,18 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
         )
       ],
     );
+  }
+
+  Future<void> pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['jpg', 'png'],
+    );
+
+    if (result != null) {
+      setState(() {
+        selectedFileName = result.files.single.name; 
+      });
+    }
   }
 }

@@ -1,8 +1,8 @@
 import 'package:dentalink/core/helpers/app_regex.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordAndConfirmPasswordField extends StatefulWidget {
   const PasswordAndConfirmPasswordField({super.key});
@@ -30,9 +30,7 @@ class _PasswordAndConfirmPasswordFieldState extends State<PasswordAndConfirmPass
         const TitleOfTextField(
             title: 'Password',
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             hintText: '************',
@@ -48,15 +46,11 @@ class _PasswordAndConfirmPasswordFieldState extends State<PasswordAndConfirmPass
               child: Icon(isObsecureText ? Icons.visibility_off : Icons.visibility,)
             ),
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const TitleOfTextField(
             title: 'Confirm Password',
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             hintText: '************',

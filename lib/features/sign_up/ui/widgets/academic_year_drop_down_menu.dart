@@ -1,7 +1,7 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AcademicYearDropDownMenu extends StatefulWidget {
   const AcademicYearDropDownMenu({super.key});
@@ -14,6 +14,7 @@ class AcademicYearDropDownMenu extends StatefulWidget {
 class _AcademicYearDropDownMenuState extends State<AcademicYearDropDownMenu> {
   List<String> years = ['level four', 'final level'];
   String? selectedYear;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -21,9 +22,7 @@ class _AcademicYearDropDownMenuState extends State<AcademicYearDropDownMenu> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const TitleOfTextField(title: 'Academic year'),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           SizedBox(
             height: 52,
             width: 155,

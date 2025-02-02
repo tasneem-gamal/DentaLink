@@ -1,7 +1,7 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StudentIdField extends StatelessWidget {
   const StudentIdField({
@@ -14,7 +14,7 @@ class StudentIdField extends StatelessWidget {
       child: Column(
         children: [
           const TitleOfTextField(title: 'Student Id'),
-          SizedBox(height: 14.h,),
+          verticalSpace(14),
           CustomTextFormField(
             validator: studentIdValidate, 
             hintText: 'Your student id',

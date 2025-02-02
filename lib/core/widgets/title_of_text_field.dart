@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class TitleOfTextField extends StatelessWidget {
           title,
           style: CustomTextStyles.font14BlackRegular,
         ),
-        const SizedBox(width: 3,),
+        horizontalSpace(3),
         const Padding(
           padding: EdgeInsets.only(bottom: 5),
           child: Icon(

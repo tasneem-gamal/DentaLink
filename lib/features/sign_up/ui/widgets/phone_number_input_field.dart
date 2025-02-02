@@ -10,7 +10,8 @@ class PhoneNumberContainer extends StatefulWidget {
 }
 
 class _PhoneNumberContainerState extends State<PhoneNumberContainer> {
-
+  final TextEditingController phoneController = TextEditingController();
+  final AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   PhoneNumber number = PhoneNumber(isoCode: 'EG');
   @override
   Widget build(BuildContext context)  {
@@ -29,10 +30,10 @@ class _PhoneNumberContainerState extends State<PhoneNumberContainer> {
           useEmoji: true, 
         ),
         ignoreBlank: false,
-        autoValidateMode: AutovalidateMode.disabled,
+        autoValidateMode: autovalidateMode,
         selectorTextStyle: const TextStyle(color: Colors.black),
         initialValue: number,
-        textFieldController: TextEditingController(),
+        textFieldController: phoneController,
         formatInput: true,
         keyboardType: TextInputType.phone,
         inputDecoration: const InputDecoration(

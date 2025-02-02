@@ -1,7 +1,7 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NameField extends StatefulWidget {
   const NameField({super.key});
@@ -26,9 +26,7 @@ class _NameFieldState extends State<NameField> {
         const TitleOfTextField(
           title: 'Name',
         ),
-        SizedBox(
-          height: 14.h,
-        ),
+        verticalSpace(14),
         CustomTextFormField(
             keyboardType: TextInputType.name,
             controller: nameController,

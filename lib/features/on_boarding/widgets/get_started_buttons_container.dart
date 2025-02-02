@@ -1,11 +1,11 @@
 import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/other_login_row_options.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GetStartedButtonsContainer extends StatelessWidget {
   const GetStartedButtonsContainer({super.key});
@@ -17,21 +17,7 @@ class GetStartedButtonsContainer extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: MediaQuery.sizeOf(context).height * 0.38,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              offset: const Offset(4, 4),
-              blurRadius: 6,
-              spreadRadius: 2,
-            ),
-          ],
-        ),
+        decoration: containerDecoration(),
         child: Padding(
           padding: const EdgeInsets.only(top: 79, left: 24, right: 24),
           child: Column(
@@ -44,13 +30,9 @@ class GetStartedButtonsContainer extends StatelessWidget {
                 textStyle: CustomTextStyles.font20WhiteSemiBold,
                 buttonHeight: 57,
               ),
-              SizedBox(
-                height: 16.h,
-              ),
+              verticalSpace(16),
               const OtherLoginRowOptions(),
-              SizedBox(
-                height: 18.h,
-              ),
+              verticalSpace(18),
               HaveAccountText(
                 title: 'Already have an account? ',
                 navTitle: 'Login',
@@ -63,5 +45,23 @@ class GetStartedButtonsContainer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  BoxDecoration containerDecoration() {
+    return BoxDecoration(
+        color: Colors.white,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            offset: const Offset(4, 4),
+            blurRadius: 6,
+            spreadRadius: 2,
+          ),
+        ],
+      );
   }
 }

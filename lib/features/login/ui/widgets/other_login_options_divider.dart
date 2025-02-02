@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +19,12 @@ class OtherLoginOptionsDivider extends StatelessWidget {
             height: 10,
           ),
         ),
-        const SizedBox(width: 8,),
+        horizontalSpace(8),
         Text(
           'Or Login with',
           style: CustomTextStyles.font12LightGrayRegular,
         ),
-        const SizedBox(width: 8,),
+        horizontalSpace(8),
         const Expanded(
           child: Divider(
             thickness: 1,

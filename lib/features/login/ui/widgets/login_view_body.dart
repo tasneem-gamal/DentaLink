@@ -1,12 +1,12 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
 import 'package:dentalink/core/widgets/other_login_row_options.dart';
 import 'package:dentalink/features/login/ui/widgets/login_form.dart';
 import 'package:dentalink/features/login/ui/widgets/other_login_options_divider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -23,15 +23,15 @@ class LoginViewBody extends StatelessWidget {
               title: 'Welcome Back!',
               subTitle: 'Enter your details to get login into your\n account.',
             ),
-            SizedBox(height: 48.h,),
+            verticalSpace(48),
             const LoginForm(),
-            SizedBox(height: 30.h,),
+            verticalSpace(30),
             const OtherLoginOptionsDivider(),
-            SizedBox(height: 24.h,),
+            verticalSpace(24),
             const OtherLoginRowOptions(
               width: 169,
             ),
-            SizedBox(height: 14.h,),
+            verticalSpace(14),
             HaveAccountText(
               title: "Don’t have an account? ", 
               navTitle: "Sign up.", 

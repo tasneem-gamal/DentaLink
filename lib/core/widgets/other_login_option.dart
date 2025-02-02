@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class OtherLoginOption extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(image),
-          const SizedBox(width: 6,),
+          horizontalSpace(6),
           Text(title, style: CustomTextStyles.font16BlackSemiBold,)
         ],
       ),

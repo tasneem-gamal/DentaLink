@@ -1,6 +1,6 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HeadWelcomeTextAuth extends StatelessWidget {
   const HeadWelcomeTextAuth({
@@ -15,13 +15,13 @@ class HeadWelcomeTextAuth extends StatelessWidget {
           title,
           style: CustomTextStyles.font20BlackMedium,
         ),
-        SizedBox(height: 6.h,),
+        verticalSpace(6),
         Text(
           subTitle,
           style: CustomTextStyles.font14LightGrayRegular,
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 24.h,),
+        verticalSpace(24),
       ],
     );
   }

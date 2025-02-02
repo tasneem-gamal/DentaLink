@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/email_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
@@ -7,7 +8,6 @@ import 'package:dentalink/features/sign_up/ui/widgets/password_and_confirm_passw
 import 'package:dentalink/features/sign_up/ui/widgets/phone_number_input_field.dart';
 import 'package:dentalink/features/sign_up/ui/widgets/upload_title_and_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
@@ -33,35 +33,21 @@ class _SignUpFormState extends State<SignUpForm> {
       child: Column(
         children: [
           const NameField(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const AcademicAndStudentIdSign(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const EmailField(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const PasswordAndConfirmPasswordField(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const TitleOfTextField(
             title: 'Phone number',
           ),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const PhoneNumberContainer(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           const UploadTitleAndContainer(),
-          SizedBox(
-            height: 14.h,
-          ),
+          verticalSpace(14),
           CustomAppButton(
             btnText: 'Sign Up',
             onPressed: signUpVaidate,

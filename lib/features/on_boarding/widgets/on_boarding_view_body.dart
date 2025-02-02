@@ -18,7 +18,7 @@ class OnBoardingViewBody extends StatelessWidget {
           onPageChanged: controller.updatePageIndicator,
           children: const[
             OnBoardingPage(
-              title: 'Struggling to find patients?\n We’ve got you covered!',
+              title: "Struggling to find patients?\n We’ve got you covered!",
               subTitle: 'Turn your dental training into real-life success\n stories. with ',
               wordSubTitle: 'DENTALINK',
               alignment: Alignment.bottomLeft,

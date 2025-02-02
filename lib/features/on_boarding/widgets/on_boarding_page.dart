@@ -1,10 +1,16 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
-    super.key, required this.title, required this.subTitle, required this.image, required this.alignment, required this.wordSubTitle,
+    super.key, 
+    required this.title, 
+    required this.subTitle, 
+    required this.image, 
+    required this.alignment, 
+    required this.wordSubTitle,
   });
   final String title, subTitle, wordSubTitle, image;
   final AlignmentGeometry alignment;
@@ -18,12 +24,10 @@ class OnBoardingPage extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: CustomTextStyles.font24BlackSemiBold.copyWith(
-                  fontFamily: 'Cairo'
-                ),
+                style: CustomTextStyles.font24BlackSemiBold,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 6,),
+              verticalSpace(6),
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(

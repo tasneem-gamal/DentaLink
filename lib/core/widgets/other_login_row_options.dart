@@ -1,6 +1,6 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/other_login_option.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OtherLoginRowOptions extends StatelessWidget {
   const OtherLoginRowOptions({
@@ -17,7 +17,7 @@ class OtherLoginRowOptions extends StatelessWidget {
           image: 'assets/images/google.png',
           title: 'Google',
         ), 
-        SizedBox(width: 16.w,),
+        horizontalSpace(16),
         OtherLoginOption(
           width: width ?? 172,
           height: height ?? 70,

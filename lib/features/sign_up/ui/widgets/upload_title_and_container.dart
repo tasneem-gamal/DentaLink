@@ -9,8 +9,9 @@ import 'package:flutter/material.dart';
 
 class UploadTitleAndContainer extends StatefulWidget {
   const UploadTitleAndContainer({
-    super.key,
+    super.key, required this.onFileUploaded,
   });
+  final Function(bool) onFileUploaded;
 
   @override
   State<UploadTitleAndContainer> createState() => _UploadTitleAndContainerState();
@@ -19,6 +20,7 @@ class UploadTitleAndContainer extends StatefulWidget {
 class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
   String? selectedFileName; 
   bool isFileUploaded = false;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
                 const IfImageNotUploaded() 
                 : IfImageUploaded(
                   selectedFileName: selectedFileName, 
-                  isFileUploaded: isFileUploaded
+                  isFileUploaded: isFileUploaded,
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -88,6 +90,7 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
         selectedFileName = result.files.single.name; 
         isFileUploaded = true;
       });
+      widget.onFileUploaded(isFileUploaded);
     }
   }
 }

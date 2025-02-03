@@ -70,26 +70,25 @@ class _PasswordAndConfirmPasswordFieldState extends State<PasswordAndConfirmPass
     );
   }
 
-        passwordValidate(value) {
-          if (value == null || value.isEmpty) {
-            return 'Password cannot be empty';
-          } 
-          if(!AppRegex.hasLowerCase(value) &&
-            !AppRegex.hasMinLength(value) &&
-            !AppRegex.isPasswordValid(value) &&
-            !AppRegex.hasSpecialCharacter(value)){
-              return "Enter a valid password: at least 8 characters,\nincluding one lowercase letter and one special char.";
-          }
-        }
+  passwordValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Password cannot be empty';
+    }
+    if (!AppRegex.hasLowerCase(value) &&
+        !AppRegex.hasMinLength(value) &&
+        !AppRegex.isPasswordValid(value) &&
+        !AppRegex.hasSpecialCharacter(value)) {
+      return "Enter a valid password: at least 8 characters,\nincluding one lowercase letter and one special char.";
+    }
+  }
 
-          confirmPasswordValidate(value){
-            if(value == null || value.isEmpty){
-              return 'Password cannot be empty';
-            }
-            if(value == passwordController.text){
-              return 'Passwords match';
-            } else{
-              return 'Passwords do not match';
-            }
-          }
+  confirmPasswordValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Password cannot be empty';
+    }
+    if (value != passwordController.text) {
+      return 'Passwords do not match';
+    }
+    return null;
+  }
 }

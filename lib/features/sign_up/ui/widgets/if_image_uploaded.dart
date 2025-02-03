@@ -24,7 +24,7 @@ class IfImageUploaded extends StatelessWidget {
             fontWeight: FontWeightHelper.bold
           ),
         ),
-        if(isFileUploaded)
+        if(selectedFileName != null && isFileUploaded)
         Row(
           children: [
             const Icon(Icons.done, color: Colors.green,),

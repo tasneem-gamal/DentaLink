@@ -23,6 +23,7 @@ class _SignUpFormState extends State<SignUpForm> {
   
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey();
+  bool isFileUploaded = false;
 
 
   @override
@@ -46,26 +47,49 @@ class _SignUpFormState extends State<SignUpForm> {
           verticalSpace(14),
           const PhoneNumberContainer(),
           verticalSpace(14),
-          const UploadTitleAndContainer(),
+          UploadTitleAndContainer(
+            onFileUploaded: setFileUploaded,
+          ),
           verticalSpace(14),
           CustomAppButton(
             btnText: 'Sign Up',
-            onPressed: signUpVaidate,
+            onPressed: signUpValidate,
           ),
         ],
       ),
     );
   }
 
-    signUpVaidate(){
-            if(formKey.currentState!.validate()){
-              formKey.currentState!.save();
-            } else{
-              setState(() {
-              autovalidateMode = AutovalidateMode.always;
-            });
-            }
-          }
+signUpValidate() {
+  if (formKey.currentState!.validate()) {
+    formKey.currentState!.save();
+    
+    if (!isFileUploaded) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            'Please upload a file before proceeding',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      );
+    } else {
+      
+    }
+  } else {
+    setState(() {
+      autovalidateMode = AutovalidateMode.always;
+    });
+  }
+}
+
+
+  void setFileUploaded(bool value) {
+    setState(() {
+      isFileUploaded = value;
+    });
+  }
 
 }
 

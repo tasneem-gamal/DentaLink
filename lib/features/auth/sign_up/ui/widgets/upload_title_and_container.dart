@@ -2,8 +2,8 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
-import 'package:dentalink/features/sign_up/ui/widgets/if_image_not_uploaded.dart';
-import 'package:dentalink/features/sign_up/ui/widgets/if_image_uploaded.dart';
+import 'package:dentalink/features/auth/sign_up/ui/widgets/if_image_not_uploaded.dart';
+import 'package:dentalink/features/auth/sign_up/ui/widgets/if_image_uploaded.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 

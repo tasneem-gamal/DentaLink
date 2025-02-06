@@ -3,7 +3,7 @@ import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
-import 'package:dentalink/features/login/ui/widgets/login_form.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {

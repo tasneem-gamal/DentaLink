@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +37,9 @@ class _RememberAndForgotPassState extends State<RememberAndForgotPass> {
           ],
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.forgotPasswordView);
+            },
             child: Text(
               'Forgot Password?',
               style: CustomTextStyles.font12MainBlueSemiBold,

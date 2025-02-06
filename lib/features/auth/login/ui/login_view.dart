@@ -1,4 +1,4 @@
-import 'package:dentalink/features/login/ui/widgets/login_view_body.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {

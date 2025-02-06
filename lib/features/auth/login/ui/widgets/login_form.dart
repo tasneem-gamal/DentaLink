@@ -1,8 +1,8 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/email_field.dart';
-import 'package:dentalink/features/login/ui/widgets/password_field.dart';
-import 'package:dentalink/features/login/ui/widgets/remember_and_forgot_pass.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/password_field.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/remember_and_forgot_pass.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {

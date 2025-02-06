@@ -4,7 +4,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
-import 'package:dentalink/features/sign_up/ui/widgets/sign_up_form.dart';
+import 'package:dentalink/features/auth/sign_up/ui/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 
 class SignUpViewBody extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:dentalink/features/sign_up/ui/widgets/sign_up_view_body.dart';
+import 'package:dentalink/features/auth/sign_up/ui/widgets/sign_up_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpView extends StatelessWidget {

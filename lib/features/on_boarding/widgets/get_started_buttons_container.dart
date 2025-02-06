@@ -3,8 +3,6 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/core/widgets/have_account_text.dart';
-import 'package:dentalink/core/widgets/other_login_row_options.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedButtonsContainer extends StatelessWidget {
@@ -22,24 +20,28 @@ class GetStartedButtonsContainer extends StatelessWidget {
           padding: const EdgeInsets.only(top: 79, left: 24, right: 24),
           child: Column(
             children: [
+              Text(
+                'Start your journey with Us.',
+                style: CustomTextStyles.font16BlackMedium,
+              ),
+              verticalSpace(16),
               CustomAppButton(
                 btnText: 'Get Started',
                 onPressed: (){
                   context.pushNamed(Routes.signUpView);
                 },
                 textStyle: CustomTextStyles.font20WhiteSemiBold,
-                buttonHeight: 57,
+                buttonHeight: 65,
               ),
-              verticalSpace(16),
-              const OtherLoginRowOptions(),
-              verticalSpace(18),
-              HaveAccountText(
-                title: 'Already have an account? ',
-                navTitle: 'Login',
-                onTap: () {
+              verticalSpace(8),
+              CustomAppButton(
+                btnText: 'Login',
+                onPressed: (){
                   context.pushNamed(Routes.loginView);
                 },
-              )
+                textStyle: CustomTextStyles.font20WhiteSemiBold,
+                buttonHeight: 65,
+              ),
             ],
           ),
         ),

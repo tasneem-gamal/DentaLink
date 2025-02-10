@@ -1,7 +1,9 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AcademicYearDropDownMenu extends StatefulWidget {
   const AcademicYearDropDownMenu({super.key});
@@ -13,7 +15,6 @@ class AcademicYearDropDownMenu extends StatefulWidget {
 
 class _AcademicYearDropDownMenuState extends State<AcademicYearDropDownMenu> {
   List<String> years = ['level four', 'final level'];
-  String? selectedYear;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _AcademicYearDropDownMenuState extends State<AcademicYearDropDownMenu> {
             width: 155,
             child: DropdownButtonFormField<String>(
               decoration: dropDowmDecoration(),
-              value: selectedYear,
+              value: context.read<SignCubit>().selectedYear.text.isEmpty ? null : context.read<SignCubit>().selectedYear.text,
               items: years.map((year) {
                 return DropdownMenuItem(
                   value: year,
@@ -37,7 +38,7 @@ class _AcademicYearDropDownMenuState extends State<AcademicYearDropDownMenu> {
               }).toList(),
               onChanged: (newValue) {
                 setState(() {
-                  selectedYear = newValue;
+                  context.read<SignCubit>().selectedYear.text = newValue!;
                 });
               },
               validator: (value) {

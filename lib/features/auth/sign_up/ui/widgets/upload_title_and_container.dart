@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 
 class UploadTitleAndContainer extends StatefulWidget {
   const UploadTitleAndContainer({
-    super.key, required this.onFileUploaded,
+    super.key, required this.onFileUploaded, required this.idPictureController,
   });
   final Function(bool) onFileUploaded;
-
+  final TextEditingController idPictureController;
   @override
   State<UploadTitleAndContainer> createState() => _UploadTitleAndContainerState();
 }
@@ -20,6 +20,7 @@ class UploadTitleAndContainer extends StatefulWidget {
 class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
   String? selectedFileName; 
   bool isFileUploaded = false;
+  
   
 
   @override
@@ -94,7 +95,4 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
     }
   }
 }
-
-
-
 

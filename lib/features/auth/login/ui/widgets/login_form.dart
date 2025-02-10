@@ -1,6 +1,6 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/core/widgets/email_field.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/email_field_login.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/password_field.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/remember_and_forgot_pass.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +24,7 @@ class _LoginFormState extends State<LoginForm> {
       autovalidateMode: autovalidateMode,
         child: Column(
       children: [
-        const EmailField(),
+        const EmailFieldLogin(),
         verticalSpace(16),
         const PasswordField(),
         verticalSpace(16),

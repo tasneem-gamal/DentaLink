@@ -4,21 +4,15 @@ import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
 
-class EmailField extends StatefulWidget {
-  const EmailField({super.key});
+class EmailFieldSign extends StatefulWidget {
+  const EmailFieldSign({super.key});
 
   @override
-  State<EmailField> createState() => _EmailFieldState();
+  State<EmailFieldSign> createState() => _EmailFieldState();
 }
 
-class _EmailFieldState extends State<EmailField> {
-  final TextEditingController emailController = TextEditingController();
+class _EmailFieldState extends State<EmailFieldSign> {
 
-  @override
-  void dispose() {
-    emailController.dispose();
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +25,7 @@ class _EmailFieldState extends State<EmailField> {
               keyboardType: TextInputType.emailAddress,
               hintText: 'Salem12@gmail.com',
               validator: emailValidate,
-              controller: emailController,
+              //controller: context.read<SignupCubit>().emailController,
             ),
           ],
         );

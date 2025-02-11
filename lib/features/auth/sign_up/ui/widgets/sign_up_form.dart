@@ -1,8 +1,8 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/core/widgets/email_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/auth/sign_up/ui/widgets/academic_and_student_id_sign.dart';
+import 'package:dentalink/features/auth/sign_up/ui/widgets/email_field_sign.dart';
 import 'package:dentalink/features/auth/sign_up/ui/widgets/name_field.dart';
 import 'package:dentalink/features/auth/sign_up/ui/widgets/password_and_confirm_password_field.dart';
 import 'package:dentalink/features/auth/sign_up/ui/widgets/phone_number_input_field.dart';
@@ -37,7 +37,7 @@ class _SignUpFormState extends State<SignUpForm> {
           verticalSpace(14),
           const AcademicAndStudentIdSign(),
           verticalSpace(14),
-          const EmailField(),
+          const EmailFieldSign(),
           verticalSpace(14),
           const PasswordAndConfirmPasswordField(),
           verticalSpace(14),

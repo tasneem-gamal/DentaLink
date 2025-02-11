@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 part 'sign_state.dart';
 
-class SignupCubit extends Cubit<SignState> {
-  SignupCubit(this.signupRepo) : super(SignInitial());
+class SignCubit extends Cubit<SignState> {
+  SignCubit(this.signupRepo) : super(SignInitial());
 
   final SignRepo signupRepo;
   final TextEditingController nameController = TextEditingController();

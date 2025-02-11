@@ -2,7 +2,9 @@ import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EmailFieldSign extends StatefulWidget {
   const EmailFieldSign({super.key});
@@ -25,7 +27,7 @@ class _EmailFieldState extends State<EmailFieldSign> {
               keyboardType: TextInputType.emailAddress,
               hintText: 'Salem12@gmail.com',
               validator: emailValidate,
-              //controller: context.read<SignupCubit>().emailController,
+              controller: context.read<SignCubit>().emailController,
             ),
           ],
         );

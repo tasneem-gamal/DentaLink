@@ -2,7 +2,9 @@ import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({super.key});
@@ -12,14 +14,8 @@ class PasswordField extends StatefulWidget {
 }
 
 class _PasswordFieldState extends State<PasswordField> {
-  final TextEditingController passwordController = TextEditingController();
   bool isObsecureText = true;
 
-  @override
-  void dispose() {
-    passwordController.dispose();
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
           keyboardType: TextInputType.visiblePassword,
           hintText: '************',
           validator: passwordValidate,
-          controller: passwordController,
+          controller: context.read<LoginCubit>().passwordController,
           isObsecureText: isObsecureText,
           suffixIcon: GestureDetector(
             onTap: () {

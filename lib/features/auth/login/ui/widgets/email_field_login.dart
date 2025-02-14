@@ -2,7 +2,9 @@ import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EmailFieldLogin extends StatefulWidget {
   const EmailFieldLogin({super.key});
@@ -12,13 +14,7 @@ class EmailFieldLogin extends StatefulWidget {
 }
 
 class _EmailFieldState extends State<EmailFieldLogin> {
-  final TextEditingController emailController = TextEditingController();
 
-  @override
-  void dispose() {
-    emailController.dispose();
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +27,7 @@ class _EmailFieldState extends State<EmailFieldLogin> {
               keyboardType: TextInputType.emailAddress,
               hintText: 'Salem12@gmail.com',
               validator: emailValidate,
-              controller: emailController,
+              controller: context.read<LoginCubit>().emailController,
             ),
           ],
         );

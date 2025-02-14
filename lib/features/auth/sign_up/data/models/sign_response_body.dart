@@ -1,3 +1,4 @@
+
 class SignResponseBody {
   final String? message;
   final String? token;
@@ -30,7 +31,7 @@ class NewStudent {
   final String? academicYear;
   final int? universityID;
   final String? idPicture;
-  final String? role;
+  final String role;
   final String? createdAt;
   final String? updatedAt;
   final List<String>? cases;
@@ -43,7 +44,7 @@ class NewStudent {
     required this.academicYear,
     required this.universityID,
     required this.idPicture,
-    required this.role,
+    this.role = "Student",
     required this.createdAt,
     required this.updatedAt,
     required this.cases,
@@ -58,7 +59,7 @@ class NewStudent {
       academicYear: json['academicYear'] as String?,
       universityID: json['universityID'] as int?,
       idPicture: json['IDPicture'] as String?, 
-      role: json['role'] as String?,
+      role: "Student",
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
       cases: json['cases'] != null ? List<String>.from(json['cases']) : [],

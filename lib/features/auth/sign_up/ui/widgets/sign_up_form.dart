@@ -49,7 +49,7 @@ class _SignUpFormState extends State<SignUpForm> {
           verticalSpace(14),
           UploadTitleAndContainer(
             onFileUploaded: setFileUploaded,
-            idPictureController: context.read<SignCubit>().idPictureController,
+            onFileSelected: (file) => context.read<SignCubit>().imageFile = file,
           ),
           verticalSpace(14),
         ],
@@ -67,8 +67,6 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
 }
-
-
 
 
 

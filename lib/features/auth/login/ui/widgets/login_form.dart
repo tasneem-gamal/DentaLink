@@ -1,9 +1,11 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
+import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/email_field_login.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/password_field.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/remember_and_forgot_pass.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -14,13 +16,12 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  final GlobalKey<FormState> formKey = GlobalKey();
   
   
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: context.read<LoginCubit>().formKey,
       autovalidateMode: autovalidateMode,
         child: Column(
       children: [
@@ -39,6 +40,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void loginValidate(){
+    final formKey = context.read<LoginCubit>().formKey;
             if(formKey.currentState!.validate()){
               formKey.currentState!.save();
             } else{

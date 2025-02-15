@@ -33,21 +33,17 @@ class _LoginFormState extends State<LoginForm> {
         verticalSpace(30),
         CustomAppButton(
             btnText: 'Login', 
-            onPressed: loginValidate,
+            onPressed: (){
+              validateThenDologin(context);
+            },
           )
       ],
     ));
   }
 
-  void loginValidate(){
-    final formKey = context.read<LoginCubit>().formKey;
-            if(formKey.currentState!.validate()){
-              formKey.currentState!.save();
-            } else{
-              setState(() {
-                autovalidateMode = AutovalidateMode.always;
-              });
-            }
-          }
-
+  void validateThenDologin(BuildContext context){
+    if(context.read<LoginCubit>().formKey.currentState!.validate()){
+      context.read<LoginCubit>().emitLoginStates();
+    }
+  }
 }

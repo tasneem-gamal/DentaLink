@@ -3,12 +3,18 @@ import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/have_account_text.dart';
 import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
+import 'package:dentalink/features/auth/login/ui/widgets/login_bloc_listner.dart';
 import 'package:dentalink/features/auth/login/ui/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
 
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,7 +36,8 @@ class LoginViewBody extends StatelessWidget {
               onTap: (){
                 context.pop();
               }
-            )
+            ),
+            const LoginBlocListener()
           ],
         ),
       ),

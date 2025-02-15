@@ -1,9 +1,15 @@
 class Routes {
+  //on boarding
   static const onBoardingView = '/onBoardingView';
-  static const loginView = '/loginView';
   static const onBoardingGetStartedView = '/onBoardingGetStartedView';
-  static const signUpView = '/signUpView';
+
+  //login and related
+  static const loginView = '/loginView';
   static const forgotPasswordView = '/forgotPasswordView';
+  static const forgotPasswordOtpView = '/forgotPasswordOtpView';
+
+  //signup
+  static const signUpView = '/signUpView';
 
   // home and related to it
   static const homeView = '/homeView';

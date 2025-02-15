@@ -1,10 +1,12 @@
 import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
+import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_otp_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_view.dart';
 import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:dentalink/features/auth/login/ui/login_view.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
+import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +33,8 @@ class AppRouter {
       case Routes.forgotPasswordView:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
         
+      case Routes.forgotPasswordOtpView:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordOtpView());
       //sign
       case Routes.signUpView:
         return MaterialPageRoute(
@@ -38,6 +42,10 @@ class AppRouter {
                   create: (context) => getIt<SignCubit>(),
                   child: const SignUpView(),
                 ));
+
+      // home
+      case Routes.homeView:
+        return MaterialPageRoute(builder: (_) => const HomeView());
       default:
         return null;
     }

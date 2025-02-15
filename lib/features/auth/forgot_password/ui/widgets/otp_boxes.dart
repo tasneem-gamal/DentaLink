@@ -17,7 +17,7 @@ class _OtpBoxesState extends State<OtpBoxes> {
   @override
   Widget build(BuildContext context) {
     return Pinput(
-      length: 5,
+      length: 4,
       controller: otpController,
       pinAnimationType: PinAnimationType.fade,
       onCompleted: (value){},

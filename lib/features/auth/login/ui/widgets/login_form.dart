@@ -29,7 +29,7 @@ class _LoginFormState extends State<LoginForm> {
         verticalSpace(16),
         const PasswordField(),
         verticalSpace(16),
-        const RememberAndForgotPass(),
+        const ForgotPasswordButton(),
         verticalSpace(30),
         CustomAppButton(
             btnText: 'Login', 

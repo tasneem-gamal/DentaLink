@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:dentalink/features/auth/sign_up/data/models/sign_request_body.dart';
 import 'package:dentalink/features/auth/sign_up/data/models/sign_response_body.dart';
@@ -16,9 +18,7 @@ class SignCubit extends Cubit<SignState> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController selectedYear = TextEditingController();
   final TextEditingController studentIdController = TextEditingController();
-  final TextEditingController idPictureController = TextEditingController();
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-
+  File? imageFile;
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -29,41 +29,41 @@ class SignCubit extends Cubit<SignState> {
     phoneController.dispose();
     selectedYear.dispose();
     studentIdController.dispose();
-    idPictureController.dispose();
     return super.close();
   }
 
   Future<void> emitSignState() async {
+    if (formKey.currentState?.validate() != true) {
+      return;
+    }
+
+    if (imageFile == null) {
+      emit(SignFailure("Please upload your Student ID."));
+      return;
+    }
+
     emit(SignLoading());
 
     try {
-      final int universityId = int.parse(studentIdController.text);
-      final int phone = int.parse(phoneController.text); 
-
       final response = await signupRepo.userSign(
         SignRequestBody(
           name: nameController.text,
           email: emailController.text,
           password: passwordController.text,
-          phone: phone.toString(), 
+          phone: phoneController.text,
           academicYear: selectedYear.text,
-          universityID: universityId,
-          idPicture: idPictureController.text,
+          universityID: studentIdController.text,
+          idPicture: imageFile!,
           role: 'Student',
         ),
       );
 
       response.fold(
-        (failure) {
-          emit(SignFailure(failure.errMessage));
-        },
-        (success) {
-          emit(SignSuccess(success));
-        },
+        (failure) => emit(SignFailure(failure.errMessage)),
+        (success) => emit(SignSuccess(success)),
       );
     } catch (e) {
       emit(SignFailure("Invalid input data"));
     }
   }
 }
-

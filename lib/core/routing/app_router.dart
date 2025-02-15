@@ -19,7 +19,8 @@ class AppRouter {
 
       case Routes.onBoardingGetStartedView:
         return MaterialPageRoute(builder: (_) => const OnBoardingGetStarted());
-
+      
+      //login
       case Routes.loginView:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
@@ -29,7 +30,8 @@ class AppRouter {
 
       case Routes.forgotPasswordView:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
-
+        
+      //sign
       case Routes.signUpView:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(

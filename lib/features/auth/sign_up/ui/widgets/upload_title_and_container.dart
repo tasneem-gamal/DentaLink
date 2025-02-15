@@ -20,8 +20,7 @@ class UploadTitleAndContainer extends StatefulWidget {
   });
 
   final Function(bool) onFileUploaded;
-  //final File? idPictureController;
-   final Function(File?) onFileSelected;
+  final Function(File?) onFileSelected;
 
   @override
   State<UploadTitleAndContainer> createState() =>
@@ -96,32 +95,30 @@ Future<File> _saveFileToPermanentDirectory(PlatformFile platformFile) async {
   } else if (platformFile.bytes != null) {
     return newFile.writeAsBytes(platformFile.bytes!);
   } else {
-    throw Exception("⚠️ Unable to save file: both bytes and path are null");
+    throw Exception("Unable to save file: both bytes and path are null");
   }
 }
 
 
 Future<void> _pickFile() async {
-  final result = await FilePicker.platform.pickFiles(type: FileType.any);
+    final result = await FilePicker.platform.pickFiles(type: FileType.any);
 
-  if (result != null && result.files.isNotEmpty) {
-    final platformFile = result.files.first;
-    final savedFile = await _saveFileToPermanentDirectory(platformFile);
+    if (result != null && result.files.isNotEmpty) {
+      final platformFile = result.files.first;
+      final savedFile = await _saveFileToPermanentDirectory(platformFile);
 
-    debugPrint("📂 Original File Path: ${platformFile.path}");
-    debugPrint("📂 Saved File Path: ${savedFile.path}");
+      _setNewFile(savedFile);
+      await _simulateUpload();
 
-    _setNewFile(savedFile);
-    await _simulateUpload();
-
-    if (mounted) {
-      _completeUpload();
+      if (mounted) {
+        _completeUpload();
+      }
     }
   }
-}
 
 
 void _setNewFile(File file) {
+  _removeFile();
   setState(() {
     selectedFiles = [
       UploadedFile(
@@ -135,7 +132,6 @@ void _setNewFile(File file) {
 
   widget.onFileSelected(file);  
   context.read<SignCubit>().imageFile = file;
-  debugPrint("✅ Image path set in cubit: ${file.path}");
 }
 
 

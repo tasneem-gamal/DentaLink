@@ -2,6 +2,7 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/widgets/otp_boxes.dart';
+import 'package:dentalink/features/auth/forgot_password/ui/widgets/resend_code_row.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordOtpViewBody extends StatelessWidget {
@@ -20,11 +21,15 @@ class ForgotPasswordOtpViewBody extends StatelessWidget {
               subTitle: "Code has sent to Mahmoud@gt.com",
             ),
             verticalSpace(18),
-            const OtpBoxes()
+            const OtpBoxes(),
+            verticalSpace(14),
+            const ResendCodeRow()
           ],
         )
       ),
     );
   }
 }
+
+
 

@@ -1,5 +1,6 @@
 import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
+import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_otp_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_view.dart';
 import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:dentalink/features/auth/login/ui/login_view.dart';
@@ -32,6 +33,8 @@ class AppRouter {
       case Routes.forgotPasswordView:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
         
+      case Routes.forgotPasswordOtpView:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordOtpView());
       //sign
       case Routes.signUpView:
         return MaterialPageRoute(

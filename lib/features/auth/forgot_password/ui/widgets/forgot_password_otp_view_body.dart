@@ -4,15 +4,8 @@ import 'package:dentalink/core/widgets/head_welcome_text_auth.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/widgets/otp_boxes.dart';
 import 'package:flutter/material.dart';
 
-class ForgotPasswordOtpViewBody extends StatefulWidget {
+class ForgotPasswordOtpViewBody extends StatelessWidget {
   const ForgotPasswordOtpViewBody({super.key});
-
-  @override
-  State<ForgotPasswordOtpViewBody> createState() => _ForgotPasswordOtpViewBodyState();
-}
-
-class _ForgotPasswordOtpViewBodyState extends State<ForgotPasswordOtpViewBody> {
-  
 
   @override
   Widget build(BuildContext context) {

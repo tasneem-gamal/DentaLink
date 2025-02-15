@@ -17,7 +17,7 @@ class ForgotPasswordOtpView extends StatelessWidget {
         child: CustomAppButton(
           btnText: 'Verfiy',
           onPressed: (){
-            context.pushNamed(Routes.forgotPasswordOtpView);
+            context.pushNamed(Routes.changePasswordView);
           },
         ),
       ),

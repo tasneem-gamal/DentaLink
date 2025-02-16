@@ -1,5 +1,6 @@
 import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/change_password_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_otp_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_view.dart';
@@ -22,7 +23,7 @@ class AppRouter {
 
       case Routes.onBoardingGetStartedView:
         return MaterialPageRoute(builder: (_) => const OnBoardingGetStarted());
-      
+
       //login
       case Routes.loginView:
         return MaterialPageRoute(
@@ -32,8 +33,12 @@ class AppRouter {
                 ));
 
       case Routes.forgotPasswordView:
-        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
-        
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<FogotPasswordCubit>(),
+                  child: const ForgotPasswordView(),
+                ));
+
       case Routes.forgotPasswordOtpView:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordOtpView());
 

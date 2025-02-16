@@ -1,3 +1,6 @@
+import 'package:dentalink/features/auth/forgot_password/data/apis/forgot_password_service/forgot_password_api_service.dart';
+import 'package:dentalink/features/auth/forgot_password/data/repo/forgot_password_repo/forgot_password_repo.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
 import 'package:dentalink/features/auth/login/data/apis/login_api_service.dart';
 import 'package:dentalink/features/auth/login/data/repo/login_repo.dart';
 import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart';
@@ -17,4 +20,9 @@ void setUpGetIt() {
   getIt.registerSingleton<LoginApiService>(LoginApiService());
   getIt.registerSingleton<LoginRepo>(LoginRepo(getIt.get<LoginApiService>()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+
+  //forgot password
+  getIt.registerSingleton<ForgotPasswordApiService>(ForgotPasswordApiService());
+  getIt.registerSingleton<ForgotPasswordRepo>(ForgotPasswordRepo(getIt.get<ForgotPasswordApiService>()));
+  getIt.registerFactory<FogotPasswordCubit>(() => FogotPasswordCubit(getIt()));
 }

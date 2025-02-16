@@ -3,11 +3,23 @@ import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class ChangePasswordTextFields extends StatelessWidget {
+class ChangePasswordTextFields extends StatefulWidget {
   const ChangePasswordTextFields({
     super.key,
   });
 
+  @override
+  State<ChangePasswordTextFields> createState() => _ChangePasswordTextFieldsState();
+}
+
+class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
+  final TextEditingController passwordConfirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    passwordConfirmController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,10 +42,21 @@ class ChangePasswordTextFields extends StatelessWidget {
         ),
         verticalSpace(8),
         CustomTextFormField(
-          validator: (validator){}, 
+          controller: passwordConfirmController,
+          validator: confirmPasswordValidate, 
           hintText: '*****************'
         ),
       ],
     );
+  }
+
+    confirmPasswordValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Password cannot be empty';
+    }
+    // if (value != context.read<SignCubit>().passwordController.text) {
+    //   return 'Passwords do not match';
+    // }
+    return null;
   }
 }

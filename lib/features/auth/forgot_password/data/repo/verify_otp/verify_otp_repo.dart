@@ -10,7 +10,7 @@ class VerifyOtpRepo {
 
   VerifyOtpRepo(this.verifyOtpApiService);
 
-  Future<Either<Failure, VerifyOtpResponseBody>> forgotPass(
+  Future<Either<Failure, VerifyOtpResponseBody>> verifyOtp(
     VerifyOtpRequestBody verifyOtpRequestBody
   ) async{
     try{

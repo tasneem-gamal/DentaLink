@@ -10,6 +10,7 @@ class FogotPasswordCubit extends Cubit<FogotPasswordState> {
   FogotPasswordCubit(this.forgotPasswordRepo) : super(FogotPasswordInitial());
 
   final ForgotPasswordRepo forgotPasswordRepo;
+  String? userEmail;
 
   final TextEditingController emailController = TextEditingController();
 
@@ -26,7 +27,9 @@ class FogotPasswordCubit extends Cubit<FogotPasswordState> {
     );
     respose.fold((failure) {
       emit(FogotPasswordFailure(failure.errMessage));
+      
     }, (loginSuccess) async {
+      userEmail = emailController.text;
       emit(FogotPasswordSuccess(loginSuccess));
     });
   }

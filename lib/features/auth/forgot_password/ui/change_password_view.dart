@@ -1,7 +1,9 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/change_password_cubit/change_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/widgets/change_password_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChangePasswordView extends StatelessWidget {
   const ChangePasswordView({super.key});
@@ -15,6 +17,7 @@ class ChangePasswordView extends StatelessWidget {
         child: CustomAppButton(
           btnText: 'Change',
           onPressed: (){
+            context.read<ChangePasswordCubit>().emitChangepasswordState();
           },
         ),
       ),

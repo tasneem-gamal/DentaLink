@@ -13,6 +13,8 @@ class VerifyOtpCubit extends Cubit<VerifyOtpState> {
   final VerifyOtpRepo verifyOtpRepo;
   final TextEditingController otpController = TextEditingController();
   final FogotPasswordCubit fogotPasswordCubit;
+  String? userOtp;
+
 
   @override
   Future<void> close() {
@@ -31,6 +33,7 @@ class VerifyOtpCubit extends Cubit<VerifyOtpState> {
     respose.fold((failure) {
       emit(VerifyOtpFailure(failure.errMessage));
     }, (loginSuccess) async {
+      userOtp = otpController.text;
       emit(VerifyOtpSuccess(loginSuccess));
     });
   }

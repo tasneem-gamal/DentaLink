@@ -1,5 +1,7 @@
 import 'package:dentalink/core/theming/colors.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/verify_otp_cubit/verify_otp_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpBoxes extends StatefulWidget {
@@ -12,13 +14,12 @@ class OtpBoxes extends StatefulWidget {
 }
 
 class _OtpBoxesState extends State<OtpBoxes> {
-  final TextEditingController otpController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Pinput(
       length: 4,
-      controller: otpController,
+      controller: context.read<VerifyOtpCubit>().otpController,
       pinAnimationType: PinAnimationType.fade,
       onCompleted: (value){},
       defaultPinTheme: PinTheme(

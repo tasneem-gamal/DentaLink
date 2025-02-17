@@ -21,7 +21,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     return super.close();
   }
 
-  void emitVerifyOtpState()async {
+  void emitChangepasswordState()async {
     emit(ChangePasswordLoading());
     final respose = await changePasswordRepo.changePassword(
       ChangePasswordRequestBody(

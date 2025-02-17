@@ -1,7 +1,10 @@
+import 'package:dentalink/features/auth/forgot_password/data/apis/change_password_service/change_password_api_service.dart';
 import 'package:dentalink/features/auth/forgot_password/data/apis/forgot_password_service/forgot_password_api_service.dart';
 import 'package:dentalink/features/auth/forgot_password/data/apis/verify_otp/verify_otp_api_service.dart';
+import 'package:dentalink/features/auth/forgot_password/data/repo/change_password/change_password_repo.dart';
 import 'package:dentalink/features/auth/forgot_password/data/repo/forgot_password_repo/forgot_password_repo.dart';
 import 'package:dentalink/features/auth/forgot_password/data/repo/verify_otp/verify_otp_repo.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/change_password_cubit/change_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/verify_otp_cubit/verify_otp_cubit.dart';
 import 'package:dentalink/features/auth/login/data/apis/login_api_service.dart';
@@ -35,5 +38,14 @@ void setUpGetIt() {
   getIt.registerFactory<VerifyOtpCubit>(() => VerifyOtpCubit(
       getIt<VerifyOtpRepo>(), 
       getIt<FogotPasswordCubit>(),
+));
+
+  //change-password
+  getIt.registerSingleton<ChangePasswordApiService>(ChangePasswordApiService());
+  getIt.registerSingleton<ChangePasswordRepo>(ChangePasswordRepo(getIt.get<ChangePasswordApiService>()));
+  getIt.registerFactory<ChangePasswordCubit>(() => ChangePasswordCubit(
+    getIt<ChangePasswordRepo>(), 
+    getIt<FogotPasswordCubit>(), 
+    getIt<VerifyOtpCubit>()
 ));
 }

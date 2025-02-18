@@ -38,14 +38,13 @@ class ServerFailure extends Failure {
   }
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
-    if (statusCode == 400 || statusCode == 401 || statusCode == 403 || statusCode == 422) {
-      return ServerFailure('Invalid credentials. Please check your email and password.');
-    } else if (statusCode == 404) {
-      return ServerFailure('Requested resource not found.');
-    } else if (statusCode == 500) {
-      return ServerFailure('Server error. Please try again later.');
-    } else {
-      return ServerFailure('Unexpected error occurred. Please try again.');
-    }
+  if (response != null && response is Map<String, dynamic>) {
+    final errorMessage = response['error'] ?? response['message'] ?? 'Unexpected error occurred.';
+
+    return ServerFailure(errorMessage);
   }
+
+  return ServerFailure('Unexpected error occurred. Please try again.');
+}
+
 }

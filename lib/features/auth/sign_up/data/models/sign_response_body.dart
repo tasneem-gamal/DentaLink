@@ -2,10 +2,12 @@
 class SignResponseBody {
   final String? message;
   final String? token;
+  final String? error;
   final String? refreshToken;
   final NewStudent? newStudent;
 
   SignResponseBody({
+    required this.error,
     required this.message,
     required this.token,
     required this.refreshToken,
@@ -15,6 +17,7 @@ class SignResponseBody {
   factory SignResponseBody.fromJson(Map<String, dynamic> json) {
     return SignResponseBody(
       message: json['message'] as String?,
+      error: json['error'] as String?, 
       token: json['token'] as String?,
       refreshToken: json['refreshToken'] as String?,
       newStudent: json.containsKey('newStudent') && json['newStudent'] != null

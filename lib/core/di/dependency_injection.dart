@@ -30,12 +30,12 @@ void setUpGetIt() {
   //forgot password
   getIt.registerSingleton<ForgotPasswordApiService>(ForgotPasswordApiService());
   getIt.registerSingleton<ForgotPasswordRepo>(ForgotPasswordRepo(getIt.get<ForgotPasswordApiService>()));
-  getIt.registerFactory<FogotPasswordCubit>(() => FogotPasswordCubit(getIt()));
+  getIt.registerLazySingleton<FogotPasswordCubit>(() => FogotPasswordCubit(getIt()));
 
   //verify-otp
   getIt.registerSingleton<VerifyOtpApiService>(VerifyOtpApiService());
   getIt.registerSingleton<VerifyOtpRepo>(VerifyOtpRepo(getIt.get<VerifyOtpApiService>()));
-  getIt.registerFactory<VerifyOtpCubit>(() => VerifyOtpCubit(
+  getIt.registerLazySingleton<VerifyOtpCubit>(() => VerifyOtpCubit(
       getIt<VerifyOtpRepo>(), 
       getIt<FogotPasswordCubit>(),
 ));
@@ -43,7 +43,7 @@ void setUpGetIt() {
   //change-password
   getIt.registerSingleton<ChangePasswordApiService>(ChangePasswordApiService());
   getIt.registerSingleton<ChangePasswordRepo>(ChangePasswordRepo(getIt.get<ChangePasswordApiService>()));
-  getIt.registerFactory<ChangePasswordCubit>(() => ChangePasswordCubit(
+  getIt.registerLazySingleton<ChangePasswordCubit>(() => ChangePasswordCubit(
     getIt<ChangePasswordRepo>(), 
     getIt<FogotPasswordCubit>(), 
     getIt<VerifyOtpCubit>()

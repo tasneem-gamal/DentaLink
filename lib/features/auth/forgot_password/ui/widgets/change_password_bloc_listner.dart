@@ -49,7 +49,7 @@ class ChangePasswordBlocListner extends StatelessWidget {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('change password Success'),
+            title: const Text('Success'),
             content: const SingleChildScrollView(
               child: ListBody(
                 children: [

@@ -14,11 +14,6 @@ class FogotPasswordCubit extends Cubit<FogotPasswordState> {
 
   final TextEditingController emailController = TextEditingController();
 
-  @override
-  Future<void> close() {
-    emailController.dispose();
-    return super.close();
-  }
 
   void emitForgotPasswordState()async {
     emit(FogotPasswordLoading());

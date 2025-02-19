@@ -12,6 +12,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
 
   final ChangePasswordRepo changePasswordRepo;
   final TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey();
   final FogotPasswordCubit fogotPasswordCubit;
   final VerifyOtpCubit verifyOtpCubit;
   

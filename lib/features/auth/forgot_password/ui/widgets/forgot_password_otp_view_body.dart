@@ -8,30 +8,26 @@ import 'package:flutter/material.dart';
 
 class ForgotPasswordOtpViewBody extends StatelessWidget {
   const ForgotPasswordOtpViewBody({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: Constants.appPadding,
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.asset('assets/images/dentalink.png'),
-            const HeadWelcomeTextAuth(
-              title: 'Reset Password',
-              subTitle: "Code has sent to Mahmoud@gt.com",
-            ),
-            verticalSpace(18),
-            const OtpBoxes(),
-            verticalSpace(14),
-            const ResendCodeRow(),
-            const VerifyOtpBlocListner()
-          ],
-        )
-      ),
+          child: Column(
+        children: [
+          Image.asset('assets/images/dentalink.png'),
+          const HeadWelcomeTextAuth(
+            title: 'Reset Password',
+            subTitle: "Code has sent to Mahmoud@gt.com",
+          ),
+          verticalSpace(18),
+          const OtpBoxes(),
+          verticalSpace(14),
+          const ResendCodeRow(),
+          const VerifyOtpBlocListner()
+        ],
+      )),
     );
   }
 }
-
-
-

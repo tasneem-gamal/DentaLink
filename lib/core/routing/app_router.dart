@@ -2,6 +2,7 @@ import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/change_password_cubit/change_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/resend_otp_cubit/resend_otp_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/verify_otp_cubit/verify_otp_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/change_password_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_otp_view.dart';
@@ -43,10 +44,14 @@ class AppRouter {
 
       case Routes.forgotPasswordOtpView:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => getIt<VerifyOtpCubit>(),
-                  child: const ForgotPasswordOtpView(),
-                ));
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => getIt<VerifyOtpCubit>()),
+              BlocProvider(create: (context) => getIt<ResendOtpCubit>()),
+            ],
+            child: const ForgotPasswordOtpView(),
+          ),
+        );
 
       case Routes.changePasswordView:
         return MaterialPageRoute(

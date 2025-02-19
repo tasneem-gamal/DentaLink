@@ -5,9 +5,14 @@ import 'package:dentalink/features/auth/forgot_password/ui/widgets/change_passwo
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ChangePasswordView extends StatelessWidget {
+class ChangePasswordView extends StatefulWidget {
   const ChangePasswordView({super.key});
 
+  @override
+  State<ChangePasswordView> createState() => _ChangePasswordViewState();
+}
+
+class _ChangePasswordViewState extends State<ChangePasswordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +22,17 @@ class ChangePasswordView extends StatelessWidget {
         child: CustomAppButton(
           btnText: 'Change',
           onPressed: (){
-            context.read<ChangePasswordCubit>().emitChangepasswordState();
+            validateThenChangePassword(context);
           },
         ),
       ),
     );
   }
+
+  void validateThenChangePassword(BuildContext context) {
+  final formState = context.read<ChangePasswordCubit>().formKey.currentState;
+  if (formState != null && formState.validate()) {
+    context.read<ChangePasswordCubit>().emitChangepasswordState();
+  }
+}
 }

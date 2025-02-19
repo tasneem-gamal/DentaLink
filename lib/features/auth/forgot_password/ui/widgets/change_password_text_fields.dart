@@ -17,6 +17,8 @@ class ChangePasswordTextFields extends StatefulWidget {
 
 class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
   final TextEditingController passwordConfirmController = TextEditingController();
+  bool isObsecureText = true;
+  bool isPasswordConfirmationObscureText = true;
 
   @override
   void dispose() {
@@ -25,32 +27,53 @@ class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        verticalSpace(8),
-        Text(
-          'New Password',
-          style: CustomTextStyles.font14BlackRegular,
-        ),
-        verticalSpace(8),
-        CustomTextFormField(
-          controller: context.read<ChangePasswordCubit>().passwordController,
-          validator: passwordValidate, 
-          hintText: '*****************'
-        ),
-        verticalSpace(12),
-        Text(
-          'Confirm New Password',
-          style: CustomTextStyles.font14BlackRegular,
-        ),
-        verticalSpace(8),
-        CustomTextFormField(
-          controller: passwordConfirmController,
-          validator: confirmPasswordValidate, 
-          hintText: '*****************'
-        ),
-      ],
+    return Form(
+      key: context.read<ChangePasswordCubit>().formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          verticalSpace(8),
+          Text(
+            'New Password',
+            style: CustomTextStyles.font14BlackRegular,
+          ),
+          verticalSpace(8),
+          CustomTextFormField(
+            controller: context.read<ChangePasswordCubit>().passwordController,
+            validator: passwordValidate, 
+            hintText: '*****************',
+            isObsecureText: isObsecureText,
+            suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isObsecureText = !isObsecureText;
+                  });
+                },
+                child: Icon(isObsecureText ? Icons.visibility_off : Icons.visibility,)
+              ),
+          ),
+          verticalSpace(12),
+          Text(
+            'Confirm New Password',
+            style: CustomTextStyles.font14BlackRegular,
+          ),
+          verticalSpace(8),
+          CustomTextFormField(
+            controller: passwordConfirmController,
+            validator: confirmPasswordValidate, 
+            hintText: '*****************',
+            isObsecureText: isPasswordConfirmationObscureText,
+            suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isPasswordConfirmationObscureText = !isPasswordConfirmationObscureText;
+                  });
+                },
+                child: Icon(isPasswordConfirmationObscureText ? Icons.visibility_off : Icons.visibility,)
+              ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -64,15 +87,20 @@ class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
     return null;
   }
 
-    passwordValidate(value) {
+    String? passwordValidate(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password cannot be empty';
     }
-    if (!AppRegex.hasLowerCase(value) &&
-        !AppRegex.hasMinLength(value) &&
-        !AppRegex.isPasswordValid(value) &&
-        !AppRegex.hasSpecialCharacter(value)) {
-      return "Enter a valid password: at least 8 characters,\nincluding one lowercase letter and one special char.";
+    if (!AppRegex.hasMinLength(value)) {
+      return "Password must be at least 8 characters.";
     }
+    if (!AppRegex.hasLowerCase(value)) {
+      return "Password must contain at least one lowercase letter.";
+    }
+    if (!AppRegex.hasSpecialCharacter(value)) {
+      return "Password must contain at least one special character.";
+    }
+    return null;
   }
 }
+

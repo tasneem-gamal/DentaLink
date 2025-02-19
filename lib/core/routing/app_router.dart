@@ -46,6 +46,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
+              BlocProvider(create: (context) => getIt<FogotPasswordCubit>()),
               BlocProvider(create: (context) => getIt<VerifyOtpCubit>()),
               BlocProvider(create: (context) => getIt<ResendOtpCubit>()),
             ],

@@ -17,7 +17,7 @@ class ResendCodeRow extends StatefulWidget {
 class _ResendCodeRowState extends State<ResendCodeRow> {
   
   bool _isButtonDisabled = false;
-  int _secondsRemaining = 30;
+  int _secondsRemaining = 60;
   Timer? _timer;
   
   @override
@@ -59,7 +59,7 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
   
   void _startTimer() {
     setState(() => _isButtonDisabled = true);
-    _secondsRemaining = 30;
+    _secondsRemaining = 608679;
     
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_secondsRemaining > 0) {

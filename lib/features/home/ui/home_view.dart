@@ -6,8 +6,18 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: HomeViewBody()),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: const Icon(Icons.menu),
+        title: Image.asset(
+          'assets/images/dentalink2.png',
+          width: MediaQuery.of(context).size.width * 0.6,
+          fit: BoxFit.contain,
+        ),
+      ),
+      body: const SafeArea(child: HomeViewBody()),
     );
   }
 }

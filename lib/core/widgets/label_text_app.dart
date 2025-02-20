@@ -14,11 +14,19 @@ class LabelTextApp extends StatelessWidget {
       children: [
         Text(
           label,
-          style: textStyleLable
+          style: textStyleLable,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          softWrap: true,
         ),
-        Text(
-          text,
-          style: textStyleText
+        Expanded(
+          child: Text(
+            text,
+            style: textStyleText,
+            maxLines: 1,
+            softWrap: true,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
       ],
     );

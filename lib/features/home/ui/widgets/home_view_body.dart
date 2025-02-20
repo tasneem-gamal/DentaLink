@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/features/home/ui/widgets/home_view_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,13 +7,16 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Text('Home View', style: TextStyle(fontSize: 50),),
-        )
-      ],
+    return Padding(
+      padding: Constants.appPadding,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            HomeViewAppBar()
+          ],
+        ),
+      ),
     );
   }
 }
+

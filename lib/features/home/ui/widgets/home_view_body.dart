@@ -4,6 +4,7 @@ import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/app_categories.dart';
 import 'package:dentalink/features/home/ui/widgets/home_view_app_bar.dart';
+import 'package:dentalink/features/home/ui/widgets/latest_cases_list_view.dart';
 import 'package:dentalink/features/home/ui/widgets/new_in_tools_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -34,13 +35,22 @@ class HomeViewBody extends StatelessWidget {
               style: CustomTextStyles.font16BlackMedium,
             ),
             verticalSpace(10),
-            const NewInToolsListView()
+            const NewInToolsListView(),
+            verticalSpace(24),
+            Text(
+              'Latest Cases',
+              style: CustomTextStyles.font16BlackMedium,
+            ),
+            verticalSpace(10),
+            const LatestCasesListView()
           ],
         ),
       ),
     );
   }
 }
+
+
 
 
 

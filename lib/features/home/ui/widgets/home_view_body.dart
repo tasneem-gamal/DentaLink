@@ -4,7 +4,6 @@ import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/app_categories.dart';
 import 'package:dentalink/features/home/ui/widgets/home_view_app_bar.dart';
-import 'package:dentalink/features/home/ui/widgets/latest_case_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -30,11 +29,10 @@ class HomeViewBody extends StatelessWidget {
             const AppCategories(),
             verticalSpace(30),
             Text(
-              'Latest cases',
+              'New In Tools',
               style: CustomTextStyles.font16BlackMedium,
             ),
             verticalSpace(10),
-            LatestCaseItem()
           ],
         ),
       ),

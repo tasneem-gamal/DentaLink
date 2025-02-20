@@ -20,6 +20,7 @@ class IfImageUploaded extends StatelessWidget {
       children: [
         Text(
           selectedFileName!,
+          overflow: TextOverflow.ellipsis,
           style: CustomTextStyles.font14BlackRegular.copyWith(
             fontWeight: FontWeightHelper.bold
           ),

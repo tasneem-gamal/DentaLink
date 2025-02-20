@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/routing/app_router.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class Dentalink extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingView,
+        initialRoute: Constants.isLoggedIn ? Routes.homeView : Routes.onBoardingView,
         onGenerateRoute: appRouter.generateRoutes,
       )
     );

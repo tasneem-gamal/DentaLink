@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/shared_preference.dart';
 import 'package:dentalink/features/auth/login/data/models/login_request_body.dart';
 import 'package:dentalink/features/auth/login/data/models/login_response_body.dart';
 import 'package:dentalink/features/auth/login/data/repo/login_repo.dart';
@@ -29,7 +31,12 @@ class LoginCubit extends Cubit<LoginState> {
     respose.fold((failure) {
       emit(LoginFailure(failure.errMessage));
     }, (loginSuccess) async {
+      await saveUserToken(loginSuccess.accessToken ?? '');
       emit(LoginSuccess(loginSuccess));
     });
+  }
+
+  Future<void> saveUserToken(String token) async {
+    await SharedPreferenceHelper.setSecuredString(SharedPreferencesKeys.userToken, token);
   }
 }

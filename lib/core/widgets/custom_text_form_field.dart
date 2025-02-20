@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
-    super.key, this.suffixIcon, this.isObsecureText, this.controller, required this.validator, this.onChanged, required this.hintText, this.keyboardType,
+    super.key, this.suffixIcon, this.prefixIcon, this.isObsecureText, this.controller, required this.validator, this.onChanged, required this.hintText, this.keyboardType,
   });
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final bool? isObsecureText;
   final String hintText;
   final TextEditingController? controller;
@@ -45,6 +46,8 @@ class CustomTextFormField extends StatelessWidget {
         filled: true,
         hintText: hintText,
         hintStyle: CustomTextStyles.font12LightGrayRegular,
+        prefixIcon: prefixIcon,
+        prefixIconColor: ColorsManager.lightGray,
         suffixIcon: suffixIcon,
         suffixIconColor: ColorsManager.moreLightGray,
       ),

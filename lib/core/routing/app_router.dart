@@ -1,5 +1,9 @@
 import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/change_password_cubit/change_password_cubit.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/resend_otp_cubit/resend_otp_cubit.dart';
+import 'package:dentalink/features/auth/forgot_password/logic/verify_otp_cubit/verify_otp_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/change_password_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_otp_view.dart';
 import 'package:dentalink/features/auth/forgot_password/ui/forgot_password_view.dart';
@@ -22,7 +26,7 @@ class AppRouter {
 
       case Routes.onBoardingGetStartedView:
         return MaterialPageRoute(builder: (_) => const OnBoardingGetStarted());
-      
+
       //login
       case Routes.loginView:
         return MaterialPageRoute(
@@ -32,13 +36,30 @@ class AppRouter {
                 ));
 
       case Routes.forgotPasswordView:
-        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
-        
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<FogotPasswordCubit>(),
+                  child: const ForgotPasswordView(),
+                ));
+
       case Routes.forgotPasswordOtpView:
-        return MaterialPageRoute(builder: (_) => const ForgotPasswordOtpView());
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => getIt<FogotPasswordCubit>()),
+              BlocProvider(create: (context) => getIt<VerifyOtpCubit>()),
+              BlocProvider(create: (context) => getIt<ResendOtpCubit>()),
+            ],
+            child: const ForgotPasswordOtpView(),
+          ),
+        );
 
       case Routes.changePasswordView:
-        return MaterialPageRoute(builder: (_) => const ChangePasswordView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ChangePasswordCubit>(),
+                  child: const ChangePasswordView(),
+                ));
       //sign
       case Routes.signUpView:
         return MaterialPageRoute(

@@ -33,11 +33,11 @@ class ServerFailure extends Failure {
         }
         return ServerFailure('An unknown error occurred. Please try again.');
       default:
-        return ServerFailure('Unexpected error occurred. Please try later.');
+        return ServerFailure(dioError.message ?? 'Unexpected error occurred. Please try later.');
     }
   }
 
-  factory ServerFailure.fromResponse(int statusCode, dynamic response) {
+factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403 || statusCode == 422) {
       return ServerFailure('Invalid credentials. Please check your email and password.');
     } else if (statusCode == 404) {
@@ -48,4 +48,5 @@ class ServerFailure extends Failure {
       return ServerFailure('Unexpected error occurred. Please try again.');
     }
   }
+
 }

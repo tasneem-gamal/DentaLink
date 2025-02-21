@@ -49,6 +49,7 @@ dependencies:
   path_provider: ^2.1.5
   pinput: ^5.0.1
   pretty_dio_logger: ^1.4.0
+  provider: ^6.1.2
   shared_preferences: ^2.5.2
   smooth_page_indicator: ^1.2.0+3
 
@@ -78,12 +79,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Raleway
-      fonts:
-        - asset: assets/fonts/Raleway-Regular.ttf
-        - asset: assets/fonts/Raleway-Medium.ttf
-        - asset: assets/fonts/Raleway-SemiBold.ttf
-        - asset: assets/fonts/Raleway-Bold.ttf
     - family: Cairo
       fonts:
         - asset: assets/fonts/Cairo-Regular.ttf

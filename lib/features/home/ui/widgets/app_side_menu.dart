@@ -15,7 +15,7 @@ class AppSideMenu extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.7,
       child: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).canvasColor,
         child: ListView(
           children: [
             const SideMenuTopBar(),

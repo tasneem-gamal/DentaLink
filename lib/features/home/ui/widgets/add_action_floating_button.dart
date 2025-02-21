@@ -47,7 +47,9 @@ class AddActionFloatingButton extends StatelessWidget {
             horizontalSpace(8),
             Text(
               text,
-              style: CustomTextStyles.font14LightGrayRegular(context),
+              style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
+                color: Colors.black
+              ),
             )
           ],
         )

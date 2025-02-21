@@ -27,19 +27,19 @@ class NewInToolsItem extends StatelessWidget {
             verticalSpace(12),
             Text(
               'Curette',
-              style: CustomTextStyles.font12BlackMedium
+              style: CustomTextStyles.font12BlackMedium(context)
             ),
             LabelTextApp(
               label: 'Price: ',
               text: '200 ',
-              textStyleLable: CustomTextStyles.font12LightGrayRegular,
-              textStyleText: CustomTextStyles.font12BlackRegular,
+              textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
+              textStyleText: CustomTextStyles.font12BlackRegular(context),
             ),
             LabelTextApp(
               label: 'Description:', 
               text: ' for deep cleaning ', 
-              textStyleLable: CustomTextStyles.font12LightGrayRegular,
-              textStyleText: CustomTextStyles.font12BlackRegular,
+              textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
+              textStyleText: CustomTextStyles.font12BlackRegular(context),
             ),
             verticalSpace(8),
             const Align(

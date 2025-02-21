@@ -22,7 +22,7 @@ class GetStartedButtonsContainer extends StatelessWidget {
             children: [
               Text(
                 'Start your journey with Us.',
-                style: CustomTextStyles.font16BlackMedium,
+                style: CustomTextStyles.font16BlackMedium(context),
               ),
               verticalSpace(16),
               CustomAppButton(
@@ -30,7 +30,7 @@ class GetStartedButtonsContainer extends StatelessWidget {
                 onPressed: (){
                   context.pushNamed(Routes.signUpView);
                 },
-                textStyle: CustomTextStyles.font20WhiteSemiBold,
+                textStyle: CustomTextStyles.font20WhiteSemiBold(context),
                 buttonHeight: 65,
               ),
               verticalSpace(8),
@@ -39,7 +39,7 @@ class GetStartedButtonsContainer extends StatelessWidget {
                 onPressed: (){
                   context.pushNamed(Routes.loginView);
                 },
-                textStyle: CustomTextStyles.font20WhiteSemiBold,
+                textStyle: CustomTextStyles.font20WhiteSemiBold(context),
                 buttonHeight: 65,
               ),
             ],

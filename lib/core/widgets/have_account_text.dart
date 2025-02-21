@@ -14,13 +14,13 @@ class HaveAccountText extends StatelessWidget {
       children: [
         Text(
           title,
-          style: CustomTextStyles.font12LightGrayRegular,
+          style: CustomTextStyles.font12LightGrayRegular(context),
         ),
         GestureDetector(
           onTap: onTap,
           child: Text(
             navTitle,
-            style: CustomTextStyles.font12MainBlueSemiBold
+            style: CustomTextStyles.font12MainBlueSemiBold(context)
           ),
         ),
       ],

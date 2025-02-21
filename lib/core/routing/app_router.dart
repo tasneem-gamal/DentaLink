@@ -11,6 +11,7 @@ import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart
 import 'package:dentalink/features/auth/login/ui/login_view.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
+import 'package:dentalink/features/home/search/ui/search_view.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
@@ -68,9 +69,15 @@ class AppRouter {
                   child: const SignUpView(),
                 ));
 
-      // home
+      // home and related
       case Routes.homeView:
         return MaterialPageRoute(builder: (_) => const HomeView());
+
+      case Routes.searchView:
+        return MaterialPageRoute(builder: (_) => const SearchView());
+
+
+
       default:
         return null;
     }

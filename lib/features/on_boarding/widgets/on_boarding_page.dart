@@ -24,7 +24,7 @@ class OnBoardingPage extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: CustomTextStyles.font24BlackSemiBold,
+                style: CustomTextStyles.font24BlackSemiBold(context),
                 textAlign: TextAlign.center,
               ),
               verticalSpace(6),
@@ -32,11 +32,11 @@ class OnBoardingPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 text: TextSpan(
                   text: subTitle,
-                  style: CustomTextStyles.font14LightGrayRegular,
+                  style: CustomTextStyles.font14LightGrayRegular(context),
                   children: [
                     TextSpan(
                       text: wordSubTitle,
-                      style: CustomTextStyles.font14MainBlueRegular
+                      style: CustomTextStyles.font14MainBlueRegular(context)
                     )
                   ]
                 )

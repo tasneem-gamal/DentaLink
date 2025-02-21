@@ -13,12 +13,12 @@ class HeadWelcomeTextAuth extends StatelessWidget {
       children: [
         Text(
           title,
-          style: CustomTextStyles.font20BlackMedium,
+          style: CustomTextStyles.font20BlackMedium(context),
         ),
         verticalSpace(6),
         Text(
           subTitle,
-          style: CustomTextStyles.font14LightGrayRegular,
+          style: CustomTextStyles.font14LightGrayRegular(context),
           textAlign: TextAlign.center,
         ),
         verticalSpace(24),

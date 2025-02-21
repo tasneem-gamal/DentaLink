@@ -76,7 +76,7 @@ class SignBlocListner extends StatelessWidget {
         ),
         content: Text(
           error,
-          style: CustomTextStyles.font14BlackRegular,
+          style: CustomTextStyles.font14BlackRegular(context),
         ),
         actions: [
           TextButton(
@@ -85,7 +85,7 @@ class SignBlocListner extends StatelessWidget {
             },
             child: Text(
               'Got it',
-              style: CustomTextStyles.font14BlackRegular,
+              style: CustomTextStyles.font14BlackRegular(context),
             ),
           ),
         ],

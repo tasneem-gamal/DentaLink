@@ -66,7 +66,7 @@ class _UploadTitleAndContainerState extends State<UploadTitleAndContainer> {
                   onPressed: _pickFile,
                   child: Text(
                     'Choose file',
-                    style: CustomTextStyles.font12BlackRegular,
+                    style: CustomTextStyles.font12BlackRegular(context),
                   ),
                 )
               ],

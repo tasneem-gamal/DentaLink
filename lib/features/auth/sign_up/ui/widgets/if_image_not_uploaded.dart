@@ -15,7 +15,7 @@ class IfImageNotUploaded extends StatelessWidget {
         horizontalSpace(6),
         Text(
           'Only .jpg and .png files',
-          style: CustomTextStyles.font12LightGrayRegular,
+          style: CustomTextStyles.font12LightGrayRegular(context),
         )
       ],
     );

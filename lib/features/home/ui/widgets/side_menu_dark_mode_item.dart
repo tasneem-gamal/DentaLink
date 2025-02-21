@@ -1,5 +1,4 @@
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/home/logic/theme_provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,13 +20,13 @@ class SideMenuDarkModeItem extends StatelessWidget {
           children: [
             Text(
               text,
-              style: CustomTextStyles.font12BlackRegular,
+              style: const TextStyle(color: Colors.black),
             ),
             Switch(
               activeColor: ColorsManager.mainBlue,
               inactiveTrackColor: ColorsManager.otherLightGrayShade,
               value: themeProvider.isDarkMode,
-              onChanged: (value){
+              onChanged: (value) {
                 themeProvider.toggleTheme();
               },
             )

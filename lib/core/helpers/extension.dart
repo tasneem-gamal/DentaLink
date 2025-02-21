@@ -22,3 +22,7 @@ extension Navigation on BuildContext {
     Navigator.of(this).pop();
   }
 }
+
+extension ThemeColors on BuildContext {
+  Color get textColor => Theme.of(this).textTheme.bodyLarge?.color ?? Colors.black;
+}

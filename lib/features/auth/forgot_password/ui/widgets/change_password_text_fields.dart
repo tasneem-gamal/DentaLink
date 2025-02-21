@@ -35,7 +35,7 @@ class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
           verticalSpace(8),
           Text(
             'New Password',
-            style: CustomTextStyles.font14BlackRegular,
+            style: CustomTextStyles.font14BlackRegular(context),
           ),
           verticalSpace(8),
           CustomTextFormField(
@@ -55,7 +55,7 @@ class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
           verticalSpace(12),
           Text(
             'Confirm New Password',
-            style: CustomTextStyles.font14BlackRegular,
+            style: CustomTextStyles.font14BlackRegular(context),
           ),
           verticalSpace(8),
           CustomTextFormField(

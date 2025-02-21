@@ -27,7 +27,7 @@ class CategoryItem extends StatelessWidget {
         verticalSpace(4),
         Text(
           categoryTitle,
-          style: CustomTextStyles.font12BlackMedium,
+          style: CustomTextStyles.font12BlackMedium(context),
         )
       ],
     );

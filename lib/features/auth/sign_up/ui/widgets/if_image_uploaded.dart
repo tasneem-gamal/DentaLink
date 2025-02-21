@@ -21,7 +21,7 @@ class IfImageUploaded extends StatelessWidget {
         Text(
           selectedFileName!,
           overflow: TextOverflow.ellipsis,
-          style: CustomTextStyles.font14BlackRegular.copyWith(
+          style: CustomTextStyles.font14BlackRegular(context).copyWith(
             fontWeight: FontWeightHelper.bold
           ),
         ),
@@ -31,7 +31,7 @@ class IfImageUploaded extends StatelessWidget {
             const Icon(Icons.done, color: Colors.green,),
             Text(
               'success',
-              style: CustomTextStyles.font14BlackRegular.copyWith(
+              style: CustomTextStyles.font14BlackRegular(context).copyWith(
                 fontWeight: FontWeightHelper.bold,
                 color: Colors.green
               ),

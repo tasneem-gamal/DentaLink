@@ -10,51 +10,56 @@ class AddActionFloatingButton extends StatelessWidget {
     required this.text, 
     required this.image, 
     required this.rightPosition, 
-    required this.bottomPosition,
+    required this.bottomPosition, 
+    this.onTap,
   });
   final String text;
   final String image;
   final double rightPosition;
   final double bottomPosition;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-    right: rightPosition,
-    bottom: bottomPosition,
-    child: Material(
-      color: Colors.transparent,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        width: 180.w,
-        height: 50.h,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(40),
-          border: Border.all(color: ColorsManager.moreLightGray)
+    return GestureDetector(
+      onTap: onTap,
+      child: Positioned(
+      right: rightPosition,
+      bottom: bottomPosition,
+      child: Material(
+        color: Colors.transparent,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          width: 180.w,
+          height: 50.h,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(40),
+            border: Border.all(color: ColorsManager.moreLightGray)
+          ),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: ColorsManager.mainBlue,
+                child: Image.asset(
+                  image,
+                  width: 25,
+                  height: 25,
+                ),
+              ),
+              horizontalSpace(8),
+              Text(
+                text,
+                style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
+                  color: Colors.black
+                ),
+              )
+            ],
+          )
         ),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: ColorsManager.mainBlue,
-              child: Image.asset(
-                image,
-                width: 25,
-                height: 25,
-              ),
-            ),
-            horizontalSpace(8),
-            Text(
-              text,
-              style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
-                color: Colors.black
-              ),
-            )
-          ],
-        )
       ),
-    ),
-            );
+              ),
+    );
   }
 }

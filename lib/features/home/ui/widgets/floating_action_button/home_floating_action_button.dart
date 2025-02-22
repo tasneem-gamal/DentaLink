@@ -1,5 +1,7 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/features/home/ui/widgets/add_action_floating_button.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_action_floating_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,19 +40,6 @@ class _HomeFloatingActionButtonState extends State<HomeFloatingActionButton> {
     );
   }
 
-  void toggleContainer() {
-    if (isPressed) {
-      overlayEntry?.remove();
-      overlayEntry = null;
-    } else {
-      overlayEntry = _createOverlayEntry();
-      Overlay.of(context).insert(overlayEntry!);
-    }
-    setState(() {
-      isPressed = !isPressed;
-    });
-  }
-
   OverlayEntry _createOverlayEntry() {
     return OverlayEntry(
       builder: (context) => Stack(
@@ -62,6 +51,10 @@ class _HomeFloatingActionButtonState extends State<HomeFloatingActionButton> {
             bottomPosition: 210.h,
           ),
           AddActionFloatingButton(
+            onTap: (){
+              toggleContainer(closeOnly: true);
+              context.pushNamed(Routes.addPatient);
+            },
             text: 'Add Patient',
             image: 'assets/images/doctor_icon.png',
             rightPosition: 20.w,
@@ -70,6 +63,26 @@ class _HomeFloatingActionButtonState extends State<HomeFloatingActionButton> {
       ]),
     );
   }
+
+  void toggleContainer({bool closeOnly = false}) {
+  if (isPressed || closeOnly) {
+    removeOverlay();
+  } else {
+    overlayEntry = _createOverlayEntry();
+    Overlay.of(context).insert(overlayEntry!);
+    setState(() {
+      isPressed = true;
+    });
+  }
+}
+
+void removeOverlay() {
+  overlayEntry?.remove();
+  overlayEntry = null;
+  setState(() {
+    isPressed = false;
+  });
+}
 }
 
 

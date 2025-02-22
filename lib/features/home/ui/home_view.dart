@@ -1,7 +1,7 @@
 import 'package:dentalink/features/home/ui/widgets/home_app_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/app_bottom_navigation_bar.dart';
-import 'package:dentalink/features/home/ui/widgets/app_side_menu.dart';
-import 'package:dentalink/features/home/ui/widgets/home_floating_action_button.dart';
+import 'package:dentalink/features/home/ui/widgets/side_menu/app_side_menu.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/home_floating_action_button.dart';
 import 'package:dentalink/features/home/ui/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 

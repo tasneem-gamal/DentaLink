@@ -1,4 +1,5 @@
 import 'package:dentalink/features/home/ui/widgets/app_side_menu.dart';
+import 'package:dentalink/features/home/ui/widgets/home_floating_action_button.dart';
 import 'package:dentalink/features/home/ui/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
@@ -27,9 +28,12 @@ class HomeView extends StatelessWidget {
       ),
       drawer: const AppSideMenu(),
       body: const SafeArea(child: HomeViewBody()),
+      floatingActionButton: const HomeFloatingActionButton(),
     );
   }
 }
+
+
 
 
 

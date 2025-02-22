@@ -1,9 +1,9 @@
-import 'package:dentalink/features/home/ui/widgets/side_menu_dark_mode_item.dart';
-import 'package:dentalink/features/home/ui/widgets/side_menu_item.dart';
-import 'package:dentalink/features/home/ui/widgets/side_menu_top_bar.dart';
+import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_dark_mode_item.dart';
+import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_item.dart';
+import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_top_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/helpers/spacing.dart';
+import '../../../../../core/helpers/spacing.dart';
 
 class AppSideMenu extends StatelessWidget {
   const AppSideMenu({

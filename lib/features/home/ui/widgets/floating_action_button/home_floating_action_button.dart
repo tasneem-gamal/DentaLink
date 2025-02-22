@@ -1,5 +1,5 @@
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/features/home/ui/widgets/add_action_floating_button.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_action_floating_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

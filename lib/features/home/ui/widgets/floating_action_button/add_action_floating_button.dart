@@ -21,11 +21,11 @@ class AddActionFloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return Positioned(
+    right: rightPosition,
+    bottom: bottomPosition,
+    child: GestureDetector(
       onTap: onTap,
-      child: Positioned(
-      right: rightPosition,
-      bottom: bottomPosition,
       child: Material(
         color: Colors.transparent,
         child: Container(
@@ -59,7 +59,7 @@ class AddActionFloatingButton extends StatelessWidget {
           )
         ),
       ),
-              ),
-    );
+    ),
+            );
   }
 }

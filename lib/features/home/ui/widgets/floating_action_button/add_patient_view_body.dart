@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
 class AddPatientViewBody extends StatelessWidget {
@@ -5,6 +6,9 @@ class AddPatientViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column();
+    return Padding(
+      padding: Constants.appPadding,
+      child: const Column(),
+    );
   }
 }

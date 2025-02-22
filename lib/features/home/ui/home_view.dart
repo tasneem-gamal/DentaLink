@@ -1,37 +1,56 @@
+import 'package:dentalink/features/home/ui/widgets/home_app_bar.dart';
+import 'package:dentalink/features/home/ui/widgets/app_bottom_navigation_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/app_side_menu.dart';
 import 'package:dentalink/features/home/ui/widgets/home_floating_action_button.dart';
 import 'package:dentalink/features/home/ui/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  int selectedIndex = 0;
+
+  final List<Widget> appViews = const [
+    HomeViewBody(),
+    Center(child: Text('Shop')),
+    Center(child: Text('AI')),
+    Center(child: Text('Cart')),
+    Center(child: Text('Profile')),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: (){
-            scaffoldKey.currentState?.openDrawer();
-          }, 
-          icon: const Icon(Icons.menu)
-        ),
-        title: Image.asset(
-          'assets/images/dentalink2.png',
-          width: MediaQuery.of(context).size.width * 0.6,
-          fit: BoxFit.contain,
-        ),
-      ),
+      appBar: HomeAppBar(scaffoldKey: scaffoldKey),
       drawer: const AppSideMenu(),
-      body: const SafeArea(child: HomeViewBody()),
-      floatingActionButton: const HomeFloatingActionButton(),
+      body: SafeArea(child: appViews[selectedIndex]),
+      floatingActionButton: selectedIndex == 0 ? const HomeFloatingActionButton() : null,
+      bottomNavigationBar: AppBottomNavigationBar(
+        selectedIndex: selectedIndex,
+        onItemTapped: _onItemTapped,
+      ),
     );
   }
 }
+
+
+
+
+
 
 
 

@@ -23,7 +23,7 @@ class OtherLoginOption extends StatelessWidget {
         children: [
           Image.asset(image),
           horizontalSpace(6),
-          Text(title, style: CustomTextStyles.font16BlackSemiBold,)
+          Text(title, style: CustomTextStyles.font16BlackSemiBold(context),)
         ],
       ),
     );

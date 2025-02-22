@@ -33,18 +33,18 @@ class _ResendCodeRowState extends State<ResendCodeRow> {
       children: [
         Text(
           'Didn’t get your code?',
-          style: CustomTextStyles.font14BlackRegular,
+          style: CustomTextStyles.font14BlackRegular(context),
         ),
         _isButtonDisabled
             ? Text(
                 ' ($_secondsRemaining s)',
-                style: CustomTextStyles.font14LightGrayRegular,
+                style: CustomTextStyles.font14LightGrayRegular(context),
               ) :
         TextButton(
           onPressed: _resendCode, 
           child: Text(
             'Resend',
-            style: CustomTextStyles.font14MainBlueRegular,
+            style: CustomTextStyles.font14MainBlueRegular(context),
           )
         )
       ],

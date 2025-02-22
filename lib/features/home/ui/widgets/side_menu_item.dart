@@ -1,5 +1,4 @@
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class SideMenuItem extends StatelessWidget {
@@ -18,7 +17,9 @@ class SideMenuItem extends StatelessWidget {
             color: ColorsManager.otherLightGrayShade),
         child: Text(
           text,
-          style: CustomTextStyles.font12BlackRegular,
+          style: const TextStyle(
+            color: Colors.black
+          ),
         ));
   }
 }

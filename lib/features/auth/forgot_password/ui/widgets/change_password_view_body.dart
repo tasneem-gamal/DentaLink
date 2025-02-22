@@ -18,7 +18,7 @@ class ChangePasswordViewBody extends StatelessWidget {
           Image.asset('assets/images/dentalink.png'),
           Text(
             'Create a new password',
-            style: CustomTextStyles.font16BlackMedium,
+            style: CustomTextStyles.font16BlackMedium(context),
           ),
           verticalSpace(14),
           const ChangePasswordTextFields(),

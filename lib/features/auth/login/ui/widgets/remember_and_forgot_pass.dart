@@ -21,7 +21,7 @@ class _ForgotPasswordButton extends State<ForgotPasswordButton> {
           },
           child: Text(
             'Forgot Password?',
-            style: CustomTextStyles.font12MainBlueSemiBold,
+            style: CustomTextStyles.font12MainBlueSemiBold(context),
           )),
     );
   }

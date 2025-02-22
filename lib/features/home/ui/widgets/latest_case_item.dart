@@ -36,21 +36,21 @@ class LatestCaseItem extends StatelessWidget {
                   children: [
                     Text(
                       'Dr. Mahmoud',
-                      style: CustomTextStyles.font12BlackMedium,
+                      style: CustomTextStyles.font12BlackMedium(context),
                     ),
                     Text(
                       'Location: Mansoura',
-                      style: CustomTextStyles.font12LightGrayRegular,
+                      style: CustomTextStyles.font12LightGrayRegular(context),
                     ),
                     Row(
                       children: [
                         Text(
                           'Title:',
-                          style: CustomTextStyles.font12LightGrayRegular,
+                          style: CustomTextStyles.font12LightGrayRegular(context),
                         ),
                         Text(
                           ' Cavities',
-                          style: CustomTextStyles.font12MainBlueRegular,
+                          style: CustomTextStyles.font12MainBlueRegular(context),
                         ),
                       ],
                     ),

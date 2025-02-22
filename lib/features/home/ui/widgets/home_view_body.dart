@@ -30,14 +30,14 @@ class HomeViewBody extends StatelessWidget {
             verticalSpace(30),
             Text(
               'New In Tools',
-              style: CustomTextStyles.font16BlackMedium,
+              style: CustomTextStyles.font16BlackMedium(context),
             ),
             verticalSpace(10),
             const NewInToolsListView(),
             verticalSpace(24),
             Text(
               'Latest Cases',
-              style: CustomTextStyles.font16BlackMedium,
+              style: CustomTextStyles.font16BlackMedium(context),
             ),
             verticalSpace(10),
             const LatestCasesListView()

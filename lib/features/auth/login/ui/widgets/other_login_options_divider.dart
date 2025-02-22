@@ -22,7 +22,7 @@ class OtherLoginOptionsDivider extends StatelessWidget {
         horizontalSpace(8),
         Text(
           'Or Login with',
-          style: CustomTextStyles.font12LightGrayRegular,
+          style: CustomTextStyles.font12LightGrayRegular(context),
         ),
         horizontalSpace(8),
         const Expanded(

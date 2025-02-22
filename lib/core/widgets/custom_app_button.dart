@@ -32,7 +32,7 @@ class CustomAppButton extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(16),
         ),
-        child: Text(btnText, style: textStyle ?? CustomTextStyles.font20WhiteSemiBold),
+        child: Text(btnText, style: textStyle ?? CustomTextStyles.font20WhiteSemiBold(context)),
       ),
     );
   }

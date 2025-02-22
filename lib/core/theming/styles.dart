@@ -3,111 +3,88 @@ import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class CustomTextStyles {
+  static TextStyle font24BlackSemiBold(BuildContext context) => TextStyle(
+        fontSize: 24.sp,
+        fontWeight: FontWeightHelper.semiBold,
+        color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
+      );
 
-class CustomTextStyles{
-  //size 24
-  static TextStyle font24BlackSemiBold = TextStyle(
-    fontSize: 24.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.black
-  );
+  static TextStyle font14LightGrayRegular(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: Theme.of(context).textTheme.bodyMedium?.color ?? ColorsManager.lightGray,
+      );
 
+  static TextStyle font14BlackRegular(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
+      );
 
-  //size 14
-  static TextStyle font14LightGrayRegular = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.lightGray,
-  );
+  static TextStyle font14WhiteSemiBold(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.semiBold,
+        color: Colors.white,
+      );
 
-  static TextStyle font14BlackRegular = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: Colors.black,
-  );
+  static TextStyle font14MainBlueRegular(BuildContext context) => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: ColorsManager.mainBlue,
+      );
 
-  static TextStyle font14WhiteSemiBold = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.white,
-  );
+  static TextStyle font12LightGrayRegular(BuildContext context) => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: Theme.of(context).textTheme.bodySmall?.color ?? ColorsManager.lightGray,
+      );
 
-  static TextStyle font14MainBlueRegular = TextStyle(
-    fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.mainBlue,
-  );
-  
+  static TextStyle font12BlackMedium(BuildContext context) => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
+      );
 
+  static TextStyle font12MainBlueRegular(BuildContext context) => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeightHelper.regular,
+        color: ColorsManager.mainBlue,
+      );
 
-  //size 12
-  static TextStyle font12LightGrayRegular = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.lightGray,
-  );
-
-  static TextStyle font12LightGrayMedium = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManager.lightGray,
-  );
-
-  static TextStyle font12MoreLightGrayRegular = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.moreLightGray,
-  );
-
-  static TextStyle font12BlackMedium = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: Colors.black,
-  );
-
-  static TextStyle font12BlackRegular = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: Colors.black,
-  );
-
-  static TextStyle font12MainBlueRegular = TextStyle(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.regular,
-    color: ColorsManager.mainBlue,
-  );
-
-  static TextStyle font12MainBlueSemiBold = TextStyle(
+  static TextStyle font12MainBlueSemiBold(BuildContext context) => TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
 
+  static TextStyle font16BlackMedium(BuildContext context) => TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
+      );
 
-  //size 16
-  static TextStyle font16BlackMedium = TextStyle(
-    fontSize: 16.sp,
-    fontWeight: FontWeightHelper.medium,
-    fontFamily: 'Raleway',
-    color: Colors.black,
-  );
+  static TextStyle font20WhiteSemiBold(BuildContext context) => TextStyle(
+        fontSize: 20.sp,
+        fontWeight: FontWeightHelper.semiBold,
+        color: Colors.white,
+      );
 
-  static TextStyle font16BlackSemiBold = TextStyle(
+  static TextStyle font20BlackMedium(BuildContext context) => TextStyle(
+        fontSize: 20.sp,
+        fontWeight: FontWeightHelper.medium,
+        color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
+      );
+
+  static TextStyle font16BlackSemiBold(BuildContext context) => TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: Colors.black,
+    color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
   );
 
-  //size 20
-  static TextStyle font20WhiteSemiBold = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.semiBold,
-    color: Colors.white,
-  );
-
-  static TextStyle font20BlackMedium = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: Colors.black,
+    static TextStyle font12BlackRegular(BuildContext context) =>  TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
   );
 }

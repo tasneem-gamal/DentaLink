@@ -13,7 +13,7 @@ class TitleOfTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: CustomTextStyles.font14BlackRegular,
+          style: CustomTextStyles.font14BlackRegular(context),
         ),
         horizontalSpace(3),
         const Padding(

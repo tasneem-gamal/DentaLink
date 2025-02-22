@@ -10,15 +10,24 @@ import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_pa
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/upload_patient_images.dart';
 import 'package:flutter/material.dart';
 
-class AddPatientViewBody extends StatelessWidget {
+class AddPatientViewBody extends StatefulWidget {
   const AddPatientViewBody({super.key});
 
+  @override
+  State<AddPatientViewBody> createState() => _AddPatientViewBodyState();
+}
+
+class _AddPatientViewBodyState extends State<AddPatientViewBody> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  final GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: Constants.appPadding,
       child: SingleChildScrollView(
         child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
           child: Column(
             children: [
               verticalSpace(20),

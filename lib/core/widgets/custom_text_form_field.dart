@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? isObsecureText;
   final String hintText;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final Function(String?)? validator;
   final Function(String)? onChanged;
   final TextInputType? keyboardType;
   @override
@@ -19,9 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       keyboardType: keyboardType,
       controller: controller,
-      validator: (value){
-        return validator(value);
-      },
+      validator: validator != null ? (value) => validator!(value) : null,
       onChanged: onChanged,
       obscureText: isObsecureText ?? false,
       decoration: InputDecoration(

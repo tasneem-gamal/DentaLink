@@ -21,7 +21,9 @@ class HomeViewBody extends StatelessWidget {
           children: [
             verticalSpace(16),
             CustomTextFormField(
-              validator: (validator){},
+              validator: (value) {
+                return null;
+              },
               hintText: 'What are you looking for?',
               prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
             ),

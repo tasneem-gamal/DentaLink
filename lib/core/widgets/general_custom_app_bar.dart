@@ -2,7 +2,7 @@ import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class GeneralCustomAppBar extends StatelessWidget {
+class GeneralCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GeneralCustomAppBar({
     super.key, required this.title,
   });
@@ -10,10 +10,9 @@ class GeneralCustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      leading: IconButton(
           onPressed: (){
             context.pop();
           }, 
@@ -21,12 +20,16 @@ class GeneralCustomAppBar extends StatelessWidget {
             Icons.arrow_back_ios
           )
         ),
-        Text(
+        centerTitle: true,
+        title: Text(
           title,
           style: CustomTextStyles.font16BlackMedium(context),
         ),
-        Image.asset('assets/images/tooth_icon.png')
-      ],
+        actions: [
+          Image.asset('assets/images/tooth_icon.png')
+        ],
     );
   }
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

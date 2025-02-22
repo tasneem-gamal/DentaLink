@@ -35,7 +35,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: HomeAppBar(scaffoldKey: scaffoldKey),
+      appBar: selectedIndex == 4 ? null : HomeAppBar(scaffoldKey: scaffoldKey),
       drawer: const AppSideMenu(),
       body: SafeArea(child: appViews[selectedIndex]),
       floatingActionButton: selectedIndex == 0 ? const HomeFloatingActionButton() : null,

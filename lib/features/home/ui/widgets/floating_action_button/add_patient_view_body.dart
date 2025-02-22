@@ -51,7 +51,14 @@ class AddPatientViewBody extends StatelessWidget {
             verticalSpace(16),
             const TitleOfTextField(title: 'Category'),
             verticalSpace(12),
-            const CategoryDropDownMenu()
+            const CategoryDropDownMenu(),
+            verticalSpace(16),
+            const TitleOfTextField(title: 'Location'),
+            verticalSpace(12),
+            CustomTextFormField(
+              validator: (value){},
+              hintText: 'Mansoura',
+            )
           ],
         )
       ),

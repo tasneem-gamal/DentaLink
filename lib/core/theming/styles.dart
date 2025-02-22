@@ -37,7 +37,7 @@ class CustomTextStyles {
   static TextStyle font12LightGrayRegular(BuildContext context) => TextStyle(
         fontSize: 12.sp,
         fontWeight: FontWeightHelper.regular,
-        color: Theme.of(context).textTheme.bodySmall?.color ?? ColorsManager.lightGray,
+        color: ColorsManager.lightGray,
       );
 
   static TextStyle font12BlackMedium(BuildContext context) => TextStyle(

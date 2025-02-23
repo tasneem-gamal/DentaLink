@@ -15,6 +15,7 @@ class NameTitleAgeFields extends StatelessWidget {
         const TitleOfTextField(title: 'Patient Name'),
         verticalSpace(12),
         CustomTextFormField(
+          controller: TextEditingController(),
           keyboardType: TextInputType.name,
           validator: nameValidate, 
           hintText: 'Hassan'

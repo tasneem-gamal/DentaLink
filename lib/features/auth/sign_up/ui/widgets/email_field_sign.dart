@@ -6,14 +6,8 @@ import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EmailFieldSign extends StatefulWidget {
+class EmailFieldSign extends StatelessWidget {
   const EmailFieldSign({super.key});
-
-  @override
-  State<EmailFieldSign> createState() => _EmailFieldState();
-}
-
-class _EmailFieldState extends State<EmailFieldSign> {
 
   @override
   Widget build(BuildContext context) {

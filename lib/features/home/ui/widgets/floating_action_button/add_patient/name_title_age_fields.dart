@@ -14,7 +14,11 @@ class NameTitleAgeFields extends StatelessWidget {
       children: [
         const TitleOfTextField(title: 'Patient Name'),
         verticalSpace(12),
-        CustomTextFormField(validator: (value) {}, hintText: 'Hassan'),
+        CustomTextFormField(
+          keyboardType: TextInputType.name,
+          validator: nameValidate, 
+          hintText: 'Hassan'
+        ),
         verticalSpace(16),
         const TitleOfTextField(title: 'Title'),
         verticalSpace(12),
@@ -26,5 +30,11 @@ class NameTitleAgeFields extends StatelessWidget {
         CustomTextFormField(validator: (value) {}, hintText: '36'),
       ],
     );
+  }
+
+  nameValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Name cannot be empty';
+    }
   }
 }

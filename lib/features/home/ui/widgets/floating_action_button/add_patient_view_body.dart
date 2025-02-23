@@ -2,7 +2,6 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
-import 'package:dentalink/core/widgets/general_custom_app_bar.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/category_drop_down_menu.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/description_form_field.dart';
@@ -21,10 +20,7 @@ class AddPatientViewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const GeneralCustomAppBar(
-              title: 'Add Patient',
-            ),
-            verticalSpace(30),
+            verticalSpace(20),
             const TitleOfTextField(title: 'Patient Name'),
             verticalSpace(12),
             CustomTextFormField(

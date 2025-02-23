@@ -1,11 +1,14 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/general_custom_app_bar.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/category_drop_down_menu.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/description_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/gender_radio_buttons.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/phone_number_input_add_patient.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/upload_patient_images.dart';
 import 'package:flutter/material.dart';
 
 class AddPatientViewBody extends StatelessWidget {
@@ -58,13 +61,20 @@ class AddPatientViewBody extends StatelessWidget {
             CustomTextFormField(
               validator: (value){},
               hintText: 'Mansoura',
-            )
+            ),
+            verticalSpace(16),
+            const DescriptionFormField()
+            //UploadPatientImages()
           ],
         )
       ),
     );
   }
 }
+
+
+
+
 
 
 

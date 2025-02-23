@@ -1,5 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/general_custom_app_bar.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
@@ -64,7 +65,12 @@ class AddPatientViewBody extends StatelessWidget {
             verticalSpace(16),
             const DescriptionFormField(),
             verticalSpace(16),
-            const UploadPatientImages()
+            const UploadPatientImages(),
+            verticalSpace(16),
+            CustomAppButton(
+              onPressed: (){},
+              btnText: 'Add'
+            )
           ],
         )
       ),

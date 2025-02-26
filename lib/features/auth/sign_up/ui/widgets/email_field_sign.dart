@@ -28,11 +28,11 @@ class EmailFieldSign extends StatelessWidget {
   }
 
   emailValidate(value) {
-          if(value == null || value.isEmpty){
-            return 'Email cannot be empty';
-          }
-          if(!AppRegex.isEmailValid(value)){
-            return 'Enter a valid email address';
-          }
-        }
+    if (value == null || value.isEmpty) {
+      return 'Email cannot be empty';
+    }
+    if (!AppRegex.isEmailValid(value)) {
+      return 'Enter a valid email address';
+    }
+  }
 }

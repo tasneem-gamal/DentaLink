@@ -20,11 +20,18 @@ class CategoryAndLocationFields extends StatelessWidget {
         const TitleOfTextField(title: 'Location'),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (value){},
+          controller: TextEditingController(),
+          validator: locationValidate,
           hintText: 'Mansoura',
         ),
         verticalSpace(16),
       ],
     );
+  }
+
+    locationValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Location cannot be empty';
+    }
   }
 }

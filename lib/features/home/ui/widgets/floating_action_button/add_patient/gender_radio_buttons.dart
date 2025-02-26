@@ -13,7 +13,12 @@ class GenderRadioButtons extends StatefulWidget {
 
 class _GenderRadioButtonsState extends State<GenderRadioButtons> {
   String? selectedGender;
-
+  
+  @override
+  void initState() {
+    super.initState();
+    selectedGender = 'Male';
+  }
   @override
   Widget build(BuildContext context) {
     return Row(

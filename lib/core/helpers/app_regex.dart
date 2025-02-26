@@ -33,4 +33,8 @@ class AppRegex {
   static bool hasMinLength(String password) {
     return RegExp(r'^(?=.{8,})').hasMatch(password);
   }
+
+  static bool isAgeValid(String age) {
+    return RegExp(r'^(1[8-9]|[2-9][0-9])$').hasMatch(age);
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
@@ -24,11 +25,18 @@ class NameTitleAgeFields extends StatelessWidget {
         const TitleOfTextField(title: 'Title'),
         verticalSpace(12),
         CustomTextFormField(
-            validator: (value) {}, hintText: 'ex. Chipped tooth '),
+          controller: TextEditingController(),
+          validator: titleValidate, 
+          hintText: 'ex. Chipped tooth '
+        ),
         verticalSpace(16),
         const TitleOfTextField(title: 'Age'),
         verticalSpace(12),
-        CustomTextFormField(validator: (value) {}, hintText: '36'),
+        CustomTextFormField(
+          controller: TextEditingController(),
+          validator: ageValidate, 
+          hintText: '36'
+        ),
       ],
     );
   }
@@ -36,6 +44,21 @@ class NameTitleAgeFields extends StatelessWidget {
   nameValidate(value) {
     if (value == null || value.isEmpty) {
       return 'Name cannot be empty';
+    }
+  }
+
+  titleValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Title cannot be empty';
+    }
+  }
+
+  ageValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Age cannot be empty';
+    }
+    if (!AppRegex.isAgeValid(value)) {
+      return 'Enter a valid Age';
     }
   }
 }

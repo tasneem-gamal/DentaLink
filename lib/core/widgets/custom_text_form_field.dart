@@ -26,9 +26,10 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   @override
   Widget build(BuildContext context) {
+    final int effectiveMaxLines = (isObsecureText == true) ? 1 : (maxLines ?? 1);
     return TextFormField(
       keyboardType: keyboardType,
-      maxLines: maxLines,
+      maxLines: effectiveMaxLines,
       controller: controller,
       validator: validator != null ? (value) => validator!(value) : null,
       onChanged: onChanged,

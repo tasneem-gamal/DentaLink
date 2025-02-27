@@ -1,10 +1,49 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:flutter/material.dart';
 
-class AddToolViewBody extends StatelessWidget {
+class AddToolViewBody extends StatefulWidget {
   const AddToolViewBody({super.key});
 
   @override
+  State<AddToolViewBody> createState() => _AddToolViewBodyState();
+}
+
+class _AddToolViewBodyState extends State<AddToolViewBody> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  final GlobalKey<FormState> formKey = GlobalKey();
+  bool isFileUploaded = false;
+  @override
   Widget build(BuildContext context) {
-    return const Column();
+    return Padding(
+      padding: Constants.appPadding,
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            children: [
+              verticalSpace(20),
+              const TitleOfTextField(title: 'Tool Name'),
+              verticalSpace(12),
+              CustomTextFormField(
+                validator: (validator){}, 
+                hintText: 'ex. Mouth Mirror'
+              ),
+              verticalSpace(16),
+              const TitleOfTextField(title: 'Price'),
+              verticalSpace(12),
+              CustomTextFormField(
+                validator: (validator){}, 
+                hintText: 'ex. 200LE'
+              ),
+              verticalSpace(16)
+            ],
+          )
+        )
+      ),
+    );
   }
 }

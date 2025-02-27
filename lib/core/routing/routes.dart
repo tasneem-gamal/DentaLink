@@ -15,4 +15,5 @@ class Routes {
   // home and related to it
   static const homeView = '/homeView';
   static const addPatient = '/addPatient';
+  static const addTool = '/addTool';
 }

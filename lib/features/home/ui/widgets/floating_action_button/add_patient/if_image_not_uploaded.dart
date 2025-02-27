@@ -8,14 +8,17 @@ class IfImageNotUploaded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset('assets/images/upload_icon.png'),
-        Text(
-          'Only .jpg and .png files',
-          style: CustomTextStyles.font12LightGrayRegular(context),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Column(
+        children: [
+          Image.asset('assets/images/upload_icon.png'),
+          Text(
+            'Only .jpg and .png files',
+            style: CustomTextStyles.font12LightGrayRegular(context),
+          ),
+        ],
+      ),
     );
   }
 }

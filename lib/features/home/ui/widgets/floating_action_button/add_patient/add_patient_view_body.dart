@@ -49,7 +49,7 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
               ),
               verticalSpace(16),
               CustomAppButton(
-                onPressed: (){},
+                onPressed: () => validateThenAddPatient(context),
                 btnText: 'Add'
               )
             ],
@@ -61,6 +61,17 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
     void setFileUploaded(bool value) {
     setState(() {
       isFileUploaded = value;
+    });
+  }
+
+  void validateThenAddPatient(BuildContext context){
+    if(formKey.currentState!.validate()){
+      
+    }
+  }
+  void updateFileUploadStatus(bool uploaded) {
+    setState(() {
+      isFileUploaded = uploaded;
     });
   }
 }

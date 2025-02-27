@@ -1,24 +1,41 @@
+import 'dart:io';
+
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/if_image_not_uploaded.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/if_image_uploaded.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
-class UploadPatientImages extends StatelessWidget {
+import '../../../../../auth/sign_up/data/models/uploaded_file.dart';
+
+
+class UploadPatientImages extends StatefulWidget {
   const UploadPatientImages({
-    super.key,
+    super.key, required this.onFileUploaded, required this.onFileSelected,
   });
 
+  final Function(bool) onFileUploaded;
+  final Function(File?) onFileSelected;
+
+  @override
+  State<UploadPatientImages> createState() => _UploadPatientImagesState();
+}
+
+class _UploadPatientImagesState extends State<UploadPatientImages> {
+  List<UploadedFile> selectedFiles = [];
+  bool isFileUploaded = false;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
+        const Row(
           children: [
-            const Icon(Icons.upload_file_outlined),
-            Text(
-              'Upload Images',
-              style: CustomTextStyles.font14BlackRegular(context),
-            )
+            Icon(Icons.upload_file_outlined),
+            TitleOfTextField(title: 'Upload Images'),
           ],
         ),
         verticalSpace(12),
@@ -34,18 +51,19 @@ class UploadPatientImages extends StatelessWidget {
             padding: const EdgeInsets.only(top: 12),
             child: Column(
               children: [
-                Image.asset('assets/images/upload_icon.png'),
-                Text(
-                  'Only .jpg and .png files',
-                  style: CustomTextStyles.font12LightGrayRegular(context),
+                selectedFiles.isEmpty ?
+                const IfImageNotUploaded() :
+                IfImageUploaded(
+                  selectedFileName: selectedFiles.first.name,
+                  isFileUploaded: isFileUploaded,
                 ),
                 ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed: _pickFile, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff34FF9D),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6),
-                    )
+                    ),
                   ),
                   child: Text(
                     'Choose File',
@@ -59,4 +77,77 @@ class UploadPatientImages extends StatelessWidget {
       ],
     );
   }
+
+  Future<File> _saveFileToPermanentDirectory(PlatformFile platformFile) async {
+  final directory = await getApplicationDocumentsDirectory(); 
+  final newPath = "${directory.path}/${platformFile.name}";  
+  final newFile = File(newPath);
+
+  if (platformFile.path != null) {
+    return File(platformFile.path!).copy(newPath); 
+  } else if (platformFile.bytes != null) {
+    return newFile.writeAsBytes(platformFile.bytes!);
+  } else {
+    throw Exception("Unable to save file: both bytes and path are null");
+  }
 }
+
+Future<void> _pickFile() async {
+    final result = await FilePicker.platform.pickFiles(type: FileType.any);
+
+    if (result != null && result.files.isNotEmpty) {
+      final platformFile = result.files.first;
+      final savedFile = await _saveFileToPermanentDirectory(platformFile);
+
+      _setNewFile(savedFile);
+      await _simulateUpload();
+
+      if (mounted) {
+        _completeUpload();
+      }
+    }
+  }
+
+void _setNewFile(File file) {
+  _removeFile();
+  setState(() {
+    selectedFiles = [
+      UploadedFile(
+        name: file.path.split('/').last,
+        size: '${(file.lengthSync() / (1024 * 1024)).toStringAsFixed(2)} MB',
+        type: file.path.split('.').last,
+        isUploading: true,
+      ),
+    ];
+  });
+
+  widget.onFileSelected(file);  
+  // context.read<SignCubit>().imageFile = file;
+}
+
+  Future<void> _simulateUpload() async {
+    await Future.delayed(const Duration(seconds: 2));
+  }
+
+  void _completeUpload() {
+    setState(() {
+      if (selectedFiles.isNotEmpty) {
+        selectedFiles.last.isUploading = false;
+        isFileUploaded = true;
+      }
+    });
+
+    widget.onFileUploaded(true);
+  }
+
+void _removeFile() {
+  setState(() {
+    selectedFiles.clear();
+    isFileUploaded = false;
+  });
+
+  widget.onFileUploaded(false);
+}
+
+}
+

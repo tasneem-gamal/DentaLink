@@ -20,6 +20,7 @@ class AddPatientViewBody extends StatefulWidget {
 class _AddPatientViewBodyState extends State<AddPatientViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey();
+  bool isFileUploaded = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,7 +43,10 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
               const CategoryAndLocationFields(),
               const DescriptionFormField(),
               verticalSpace(16),
-              const UploadPatientImages(),
+              UploadPatientImages(
+                onFileUploaded: setFileUploaded,
+                onFileSelected: (file){},
+              ),
               verticalSpace(16),
               CustomAppButton(
                 onPressed: (){},
@@ -53,6 +57,11 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
         )
       ),
     );
+  }
+    void setFileUploaded(bool value) {
+    setState(() {
+      isFileUploaded = value;
+    });
   }
 }
 

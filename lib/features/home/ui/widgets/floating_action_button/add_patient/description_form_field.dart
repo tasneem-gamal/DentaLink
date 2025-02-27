@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class DescriptionFormField extends StatelessWidget {
   const DescriptionFormField({
-    super.key,
+    super.key, required this.hintText,
   });
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class DescriptionFormField extends StatelessWidget {
         verticalSpace(12),
         CustomTextFormField(
           validator: (validator){}, 
-          hintText: 'ex. Cavity in the back molar with intermittent pain',
+          hintText: hintText,
           maxLines: 4,
         ),
       ],

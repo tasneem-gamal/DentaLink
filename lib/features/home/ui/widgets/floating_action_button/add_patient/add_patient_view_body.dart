@@ -41,7 +41,9 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
               const PhoneNumberInputAddPatient(),
               verticalSpace(16),
               const CategoryAndLocationFields(),
-              const DescriptionFormField(),
+              const DescriptionFormField(
+                hintText: 'ex. Cavity in the back molar with intermittent pain',
+              ),
               verticalSpace(16),
               UploadPatientImages(
                 onFileUploaded: setFileUploaded,

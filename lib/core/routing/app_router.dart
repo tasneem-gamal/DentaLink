@@ -13,6 +13,7 @@ import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart
 import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_view.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/add_tool_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +76,9 @@ class AppRouter {
 
       case Routes.addPatient:
         return MaterialPageRoute(builder: (_) => const AddPatientView());
-
+      
+      case Routes.addTool:
+        return MaterialPageRoute(builder: (_) => const AddToolView());
 
 
       default:

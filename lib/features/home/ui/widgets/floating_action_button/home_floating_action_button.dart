@@ -45,6 +45,10 @@ class _HomeFloatingActionButtonState extends State<HomeFloatingActionButton> {
       builder: (context) => Stack(
         children: [
           AddActionFloatingButton(
+            onTap: (){
+              toggleContainer(closeOnly: true);
+              context.pushNamed(Routes.addTool);
+            },
             text: 'Add Tool',
             image: 'assets/images/tools_icon.png',
             rightPosition: 20.w,

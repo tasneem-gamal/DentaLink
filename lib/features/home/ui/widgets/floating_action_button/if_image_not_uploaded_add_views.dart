@@ -1,8 +1,8 @@
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class IfImageNotUploaded extends StatelessWidget {
-  const IfImageNotUploaded({
+class IfImageNotUploadedAddViews extends StatelessWidget {
+  const IfImageNotUploadedAddViews({
     super.key,
   });
 

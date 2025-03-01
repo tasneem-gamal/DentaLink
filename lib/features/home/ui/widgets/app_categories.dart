@@ -29,6 +29,9 @@ class AppCategories extends StatelessWidget {
         CategoryItem(
           image: Image.asset('assets/images/tools_icon.png'),
           categoryTitle: 'Tools',
+          onTap: (){
+            context.pushNamed(Routes.toolsView);
+          },
         ),
       ],
     );

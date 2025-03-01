@@ -1,5 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/description_form_field.dart';
@@ -54,6 +55,11 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
               UploadToolImages(
                 onFileUploaded: setFileUploaded,
                 onFileSelected: (files){},
+              ),
+              verticalSpace(16),
+              CustomAppButton(
+                onPressed: (){},
+                btnText: 'Add'
               )
             ],
           )

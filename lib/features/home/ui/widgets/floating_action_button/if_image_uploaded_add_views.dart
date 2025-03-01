@@ -2,8 +2,8 @@ import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class IfImageUploaded extends StatelessWidget {
-  const IfImageUploaded({
+class IfImageUploadedAddViews extends StatelessWidget {
+  const IfImageUploadedAddViews({
     super.key,
     required this.selectedFileName,
     required this.isFileUploaded,

@@ -9,8 +9,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../add_patient/if_image_not_uploaded.dart';
-import '../add_patient/if_image_uploaded.dart';
+import '../if_image_not_uploaded_add_views.dart';
+import '../if_image_uploaded_add_views.dart';
 
 class UploadToolImages extends StatefulWidget {
   const UploadToolImages({
@@ -51,11 +51,11 @@ class _UploadToolImages extends State<UploadToolImages> {
             child: Column(
               children: [
                 selectedFiles.isEmpty ?
-                const IfImageNotUploaded() :
+                const IfImageNotUploadedAddViews() :
                 Expanded(
                   child: ListView.builder(
                     itemCount: selectedFiles.length,
-                    itemBuilder: (context, index) => IfImageUploaded(
+                    itemBuilder: (context, index) => IfImageUploadedAddViews(
                       selectedFileName: selectedFiles[index].name,
                       isFileUploaded: isFileUploaded,
                     ),

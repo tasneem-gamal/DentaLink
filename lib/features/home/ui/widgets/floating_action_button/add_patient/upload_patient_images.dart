@@ -4,8 +4,8 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
-import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/if_image_not_uploaded.dart';
-import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/if_image_uploaded.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/if_image_not_uploaded_add_views.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/if_image_uploaded_add_views.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -52,11 +52,11 @@ class _UploadPatientImagesState extends State<UploadPatientImages> {
             child: Column(
               children: [
                 selectedFiles.isEmpty ?
-                const IfImageNotUploaded() :
+                const IfImageNotUploadedAddViews() :
                 Expanded(
                   child: ListView.builder(
                     itemCount: selectedFiles.length,
-                    itemBuilder: (context, index) => IfImageUploaded(
+                    itemBuilder: (context, index) => IfImageUploadedAddViews(
                       selectedFileName: selectedFiles[index].name,
                       isFileUploaded: isFileUploaded,
                     ),

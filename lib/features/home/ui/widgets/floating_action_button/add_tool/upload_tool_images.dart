@@ -5,12 +5,12 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/auth/sign_up/data/models/uploaded_file.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/if_image_not_uploaded_list_view.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../if_image_not_uploaded_add_views.dart';
-import '../if_image_uploaded_add_views.dart';
 
 class UploadToolImages extends StatefulWidget {
   const UploadToolImages({
@@ -52,15 +52,7 @@ class _UploadToolImages extends State<UploadToolImages> {
               children: [
                 selectedFiles.isEmpty ?
                 const IfImageNotUploadedAddViews() :
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: selectedFiles.length,
-                    itemBuilder: (context, index) => IfImageUploadedAddViews(
-                      selectedFileName: selectedFiles[index].name,
-                      isFileUploaded: isFileUploaded,
-                    ),
-                  ),
-                ),
+                IfImageNotUploadedListView(selectedFiles: selectedFiles, isFileUploaded: isFileUploaded),
                 ElevatedButton(
                   onPressed: _pickFile, 
                   style: ElevatedButton.styleFrom(
@@ -150,3 +142,4 @@ class _UploadToolImages extends State<UploadToolImages> {
 
 
 }
+

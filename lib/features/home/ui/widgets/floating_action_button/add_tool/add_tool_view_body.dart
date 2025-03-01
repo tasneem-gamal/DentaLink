@@ -46,7 +46,7 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
               ),
               verticalSpace(16),
               CustomAppButton(
-                onPressed: (){},
+                onPressed: () => validateThenAddTool(context),
                 btnText: 'Add'
               )
             ],
@@ -59,6 +59,17 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
       void setFileUploaded(bool value) {
     setState(() {
       isFileUploaded = value;
+    });
+  }
+
+    void validateThenAddTool(BuildContext context){
+    if(formKey.currentState!.validate()){
+      
+    }
+  }
+  void updateFileUploadStatus(bool uploaded) {
+    setState(() {
+      isFileUploaded = uploaded;
     });
   }
 

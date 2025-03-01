@@ -20,7 +20,7 @@ class LabelTextApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isLongText = text.length > 20;
+    bool isLongText = text.length > 40;
 
     return isLongText
         ? Column(

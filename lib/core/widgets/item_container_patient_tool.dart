@@ -16,8 +16,9 @@ class ItemContainerPatientTool extends StatelessWidget {
     required this.firstLabelText, 
     required this.secondLabel, 
     required this.secondLabelText,
+    this.onTap
   });
-
+  
   final double? width;
   final double? height;
   final String image;
@@ -27,6 +28,7 @@ class ItemContainerPatientTool extends StatelessWidget {
   final String firstLabelText;
   final String secondLabel;
   final String secondLabelText;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -65,12 +67,15 @@ class ItemContainerPatientTool extends StatelessWidget {
               textStyleText: CustomTextStyles.font12MainBlueRegular(context),
             ),
             verticalSpace(8),
-            const Align(
+            Align(
               alignment: Alignment.bottomRight,
-              child: CircleAvatar(
-                radius: 20,
-                backgroundColor: ColorsManager.mainBlue,
-                child: Icon(Icons.arrow_forward_ios, color: Colors.white,),
+              child: GestureDetector(
+                onTap: onTap,
+                child: const CircleAvatar(
+                  radius: 20,
+                  backgroundColor: ColorsManager.mainBlue,
+                  child: Icon(Icons.arrow_forward_ios, color: Colors.white,),
+                ),
               ),
             )
           ],

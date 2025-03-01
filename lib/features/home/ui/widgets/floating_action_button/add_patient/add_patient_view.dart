@@ -9,7 +9,7 @@ class AddPatientView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: GeneralCustomAppBar(title: 'Add Patient'),
-      body: SafeArea(child: AddPatientViewBody()),
+      body: AddPatientViewBody(),
     );
   }
 }

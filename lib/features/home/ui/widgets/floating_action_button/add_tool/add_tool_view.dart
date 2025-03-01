@@ -9,7 +9,7 @@ class AddToolView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: GeneralCustomAppBar(title: 'Add Tool'),
-      body: SafeArea(child: AddToolViewBody()),
+      body: AddToolViewBody(),
     );
   }
 }

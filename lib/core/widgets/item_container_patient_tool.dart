@@ -4,16 +4,33 @@ import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:flutter/material.dart';
 
-class NewInToolsItem extends StatelessWidget {
-  const NewInToolsItem({
-    super.key,
+class ItemContainerPatientTool extends StatelessWidget {
+  const ItemContainerPatientTool({
+    super.key, 
+    this.width, 
+    this.height, 
+    required this.image, 
+    required this.itemTitle, 
+    required this.firstLabel, 
+    required this.firstLabelText, 
+    required this.secondLabel, 
+    required this.secondLabelText,
   });
+
+  final double? width;
+  final double? height;
+  final String image;
+  final String itemTitle;
+  final String firstLabel;
+  final String firstLabelText;
+  final String secondLabel;
+  final String secondLabelText;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 154,
-      height: 230,
+      width: width ?? 154,
+      height: height ?? 230,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: ColorsManager.moreLightGray)
@@ -23,21 +40,21 @@ class NewInToolsItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset('assets/images/tools.png'),
+            Image.asset(image),
             verticalSpace(12),
             Text(
-              'Curette',
+              itemTitle,
               style: CustomTextStyles.font12BlackMedium(context)
             ),
             LabelTextApp(
-              label: 'Price: ',
-              text: '200 ',
+              label: firstLabel,
+              text: firstLabelText,
               textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
               textStyleText: CustomTextStyles.font12BlackRegular(context),
             ),
             LabelTextApp(
-              label: 'Description:', 
-              text: ' for deep cleaning ', 
+              label: secondLabel, 
+              text: secondLabelText, 
               textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
               textStyleText: CustomTextStyles.font12BlackRegular(context),
             ),

@@ -10,7 +10,7 @@ class AppRegex {
         .hasMatch(password);
   }
 
-    static bool isPhoneNumberValid(String phoneNumber) {
+  static bool isPhoneNumberValid(String phoneNumber) {
     return RegExp(r'^(010|011|012|015)[0-9]{8}$').hasMatch(phoneNumber);
   }
 
@@ -36,5 +36,9 @@ class AppRegex {
 
   static bool isAgeValid(String age) {
     return RegExp(r'^(1[8-9]|[2-9][0-9])$').hasMatch(age);
+  }
+
+  static bool isPriceValid(String price) {
+    return RegExp(r'^\d+(\.\d{1,2})?$').hasMatch(price);
   }
 }

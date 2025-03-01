@@ -57,13 +57,10 @@ class ItemContainerPatientTool extends StatelessWidget {
             LabelTextApp(
               label: firstLabel,
               text: firstLabelText,
-              textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
-              textStyleText: CustomTextStyles.font12BlackRegular(context),
             ),
             LabelTextApp(
               label: secondLabel, 
               text: secondLabelText, 
-              textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
               textStyleText: CustomTextStyles.font12MainBlueRegular(context),
             ),
             verticalSpace(8),

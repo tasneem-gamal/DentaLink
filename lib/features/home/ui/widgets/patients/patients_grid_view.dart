@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/item_container_patient_tool.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +20,17 @@ class PatientsGridView extends StatelessWidget {
           childAspectRatio: 0.7,
         ),
         itemCount: 2,
-        itemBuilder: (context, index) => const ItemContainerPatientTool(
+        itemBuilder: (context, index) => ItemContainerPatientTool(
           image: 'assets/images/patient.png', 
           imageWidth: 180,
           itemTitle: 'Dr. Mahmoud', 
           firstLabel: 'Location: ', 
           firstLabelText: 'Mansoura', 
           secondLabel: 'Title: ', 
-          secondLabelText: 'Cavities'
+          secondLabelText: 'Cavities',
+          onTap: (){
+            context.pushNamed(Routes.patientDetails);
+          },
         ),
         )
     );

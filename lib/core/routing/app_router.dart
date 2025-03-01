@@ -14,6 +14,7 @@ import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/add_tool_view.dart';
+import 'package:dentalink/features/home/ui/widgets/patients/patient_details_view.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patients_view.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
@@ -87,6 +88,9 @@ class AppRouter {
 
       case Routes.toolsView:
         return MaterialPageRoute(builder: (_) => const ToolsView());
+
+      case Routes.patientDetails:
+        return MaterialPageRoute(builder: (_) => const PatientDetailsView());
 
 
       default:

@@ -1,4 +1,5 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patients_grid_view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,10 @@ class PatientsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: Constants.appPadding,
-      child: const  Column(
+      child:  Column(
         children: [
-          PatientsGridView()
+          verticalSpace(20),
+          const PatientsGridView()
         ],
       ),
     );

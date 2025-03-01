@@ -10,6 +10,7 @@ class ItemContainerPatientTool extends StatelessWidget {
     this.width, 
     this.height, 
     required this.image, 
+    this.imageWidth,
     required this.itemTitle, 
     required this.firstLabel, 
     required this.firstLabelText, 
@@ -20,6 +21,7 @@ class ItemContainerPatientTool extends StatelessWidget {
   final double? width;
   final double? height;
   final String image;
+  final double? imageWidth;
   final String itemTitle;
   final String firstLabel;
   final String firstLabelText;
@@ -39,8 +41,12 @@ class ItemContainerPatientTool extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(image),
+            Image.asset(
+              image,
+              width: imageWidth,
+            ),
             verticalSpace(12),
             Text(
               itemTitle,
@@ -56,7 +62,7 @@ class ItemContainerPatientTool extends StatelessWidget {
               label: secondLabel, 
               text: secondLabelText, 
               textStyleLable: CustomTextStyles.font12LightGrayRegular(context),
-              textStyleText: CustomTextStyles.font12BlackRegular(context),
+              textStyleText: CustomTextStyles.font12MainBlueRegular(context),
             ),
             verticalSpace(8),
             const Align(

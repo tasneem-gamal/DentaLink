@@ -4,6 +4,7 @@ import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/description_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/category_drop_down_menu_add_tool.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/upload_tool_images.dart';
 import 'package:flutter/material.dart';
 
 class AddToolViewBody extends StatefulWidget {
@@ -48,6 +49,11 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
               verticalSpace(16),
               const DescriptionFormField(
                 hintText: 'ex. Reflects light for better visibility during procedures.'
+              ),
+              verticalSpace(16),
+              UploadToolImages(
+                onFileUploaded: setFileUploaded,
+                onFileSelected: (files){},
               )
             ],
           )
@@ -55,4 +61,11 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
       ),
     );
   }
+
+      void setFileUploaded(bool value) {
+    setState(() {
+      isFileUploaded = value;
+    });
+  }
+
 }

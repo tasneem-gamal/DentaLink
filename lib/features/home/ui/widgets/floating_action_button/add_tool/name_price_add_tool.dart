@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
@@ -22,7 +23,7 @@ class NamePriceAddTool extends StatelessWidget {
         const TitleOfTextField(title: 'Price'),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (validator){}, 
+          validator: priceValidate, 
           hintText: 'ex. 200LE'
         ),
       ],
@@ -34,4 +35,13 @@ class NamePriceAddTool extends StatelessWidget {
       return 'Name cannot be empty';
     }
   }
+
+  priceValidate(value) {
+  if (value == null || value.isEmpty) {
+    return 'Price cannot be empty';
+  }
+  if (!AppRegex.isPriceValid(value)) {
+    return 'Enter a valid Price';
+  }
+}
 }

@@ -15,7 +15,7 @@ class NamePriceAddTool extends StatelessWidget {
         const TitleOfTextField(title: 'Tool Name'),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (validator){}, 
+          validator: nameValidate, 
           hintText: 'ex. Mouth Mirror'
         ),
         verticalSpace(16),
@@ -27,5 +27,11 @@ class NamePriceAddTool extends StatelessWidget {
         ),
       ],
     );
+  }
+
+    nameValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Name cannot be empty';
+    }
   }
 }

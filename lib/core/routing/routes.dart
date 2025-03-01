@@ -16,4 +16,5 @@ class Routes {
   static const homeView = '/homeView';
   static const addPatient = '/addPatient';
   static const addTool = '/addTool';
+  static const patientsView = '/patientsView';
 }

@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_image_container.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_title_price.dart';
 import 'package:flutter/material.dart';
 
 class ToolDetailsViewBody extends StatelessWidget {
@@ -14,11 +15,15 @@ class ToolDetailsViewBody extends StatelessWidget {
         child: Column(
           children: [
             verticalSpace(20),
-            const ToolImageContainer()
+            const ToolImageContainer(),
+            verticalSpace(20),
+            const ToolTitlePrice()
           ],
         )
       ),
     );
   }
 }
+
+
 

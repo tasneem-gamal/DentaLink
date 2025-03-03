@@ -19,4 +19,5 @@ class Routes {
   static const patientsView = '/patientsView';
   static const patientDetails = '/patientDetails';
   static const toolsView = '/toolsView';
+  static const toolDetails = '/toolDetails';
 }

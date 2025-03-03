@@ -3,6 +3,7 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/publisher_info_section.dart';
 import 'package:flutter/material.dart';
 
 class ToolInfo extends StatelessWidget {
@@ -41,31 +42,9 @@ class ToolInfo extends StatelessWidget {
           label: 'Category: ', 
           text: 'Endodontics'
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Text(
-                  'Publisher: ',
-                  style: CustomTextStyles.font12LightGrayRegular(context),
-                ),
-                TextButton(
-                  onPressed: (){}, 
-                  child: Text(
-                    'Dentsply Sirona',
-                    style: CustomTextStyles.font12MainBlueRegular(context),
-                  )
-                ),
-              ],
-            ),
-            IconButton(
-              onPressed: (){}, 
-              icon: const Icon(Icons.info_outline)
-            )
-          ],
-        )
+        const PublisherInfoSection()
       ],
     );
   }
 }
+

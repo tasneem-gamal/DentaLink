@@ -2,8 +2,8 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class ReviewsTitle extends StatelessWidget {
-  const ReviewsTitle({
+class ReviewsSection extends StatelessWidget {
+  const ReviewsSection({
     super.key,
   });
 

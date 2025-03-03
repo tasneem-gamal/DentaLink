@@ -1,3 +1,6 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_image_container.dart';
 import 'package:flutter/material.dart';
 
 class ToolDetailsViewBody extends StatelessWidget {
@@ -5,6 +8,17 @@ class ToolDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column();
+    return Padding(
+      padding: Constants.appPadding,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            verticalSpace(20),
+            const ToolImageContainer()
+          ],
+        )
+      ),
+    );
   }
 }
+

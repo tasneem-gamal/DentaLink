@@ -34,6 +34,7 @@ class ReviewContainer extends StatelessWidget {
                       width: 200,
                       height: 50,
                       child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
                         itemBuilder: (context, index) => const Icon(

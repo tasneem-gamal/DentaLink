@@ -12,7 +12,7 @@ class ToolImageContainer extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: 205.h,
+          height: 190.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: ColorsManager.moreLightGray),

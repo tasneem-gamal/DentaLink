@@ -1,4 +1,5 @@
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/publisher/publisher_info_details_button.dart';
 import 'package:flutter/material.dart';
 
 class PublisherInfoSection extends StatelessWidget {
@@ -26,11 +27,9 @@ class PublisherInfoSection extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(
-          onPressed: (){}, 
-          icon: const Icon(Icons.info_outline)
-        )
+        const PublisherInfoDetailsButton()
       ],
     );
   }
 }
+

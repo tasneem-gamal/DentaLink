@@ -1,5 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/related_tools.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/reviews_section.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_image_container.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_info.dart';
@@ -21,12 +22,15 @@ class ToolDetailsViewBody extends StatelessWidget {
             const ToolInfo(),
             verticalSpace(16),
             const ReviewsSection(),
+            verticalSpace(16),
+            const RelatedTools(),
           ],
         )
       ),
     );
   }
 }
+
 
 
 

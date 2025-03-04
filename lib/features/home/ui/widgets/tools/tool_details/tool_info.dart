@@ -3,7 +3,7 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
-import 'package:dentalink/features/home/ui/widgets/tools/publisher_info_section.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/publisher_info_section.dart';
 import 'package:flutter/material.dart';
 
 class ToolInfo extends StatelessWidget {

@@ -16,7 +16,7 @@ import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_pa
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/add_tool_view.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_details_view.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patients_view.dart';
-import 'package:dentalink/features/home/ui/widgets/tools/tool_details_view.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/tool_details_view.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';

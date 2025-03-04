@@ -1,6 +1,7 @@
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/font_weight_helper.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/review_rating_stars_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,19 +31,7 @@ class ReviewContainer extends StatelessWidget {
                       'Roaa',
                       style: CustomTextStyles.font12BlackMedium(context),
                     ),
-                    SizedBox(
-                      width: 200,
-                      height: 50,
-                      child: ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (context, index) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                      ),
-                    )
+                    const ReviewRatingStarsList()
                   ],
                 ),
                 Text(
@@ -64,3 +53,4 @@ class ReviewContainer extends StatelessWidget {
     );
   }
 }
+

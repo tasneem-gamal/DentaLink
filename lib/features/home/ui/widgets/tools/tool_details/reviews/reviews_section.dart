@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/features/home/ui/widgets/tools/tool_details/review_container.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/reviews/review_container.dart';
 import 'package:flutter/material.dart';
 
 class ReviewsSection extends StatelessWidget {

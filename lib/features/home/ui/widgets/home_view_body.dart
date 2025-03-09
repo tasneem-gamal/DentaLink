@@ -1,5 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/app_categories.dart';
@@ -21,6 +23,10 @@ class HomeViewBody extends StatelessWidget {
           children: [
             verticalSpace(16),
             CustomTextFormField(
+              readOnly: true,
+              onTap: (){
+                context.pushNamed(Routes.searchView);
+              },
               validator: (value) {
                 return null;
               },

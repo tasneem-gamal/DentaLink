@@ -18,6 +18,7 @@ import 'package:dentalink/features/home/ui/widgets/patients/patient_details_view
 import 'package:dentalink/features/home/ui/widgets/patients/patients_view.dart';
 import 'package:dentalink/features/home/ui/widgets/search/search_view.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_details/reviews/reviews_view.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/specific_shop/specific_shop_view.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_details/tool_details_view.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
@@ -103,6 +104,9 @@ class AppRouter {
 
       case Routes.searchView:
         return MaterialPageRoute(builder: (_) => const SearchView());
+
+      case Routes.specificShopView:
+        return MaterialPageRoute(builder: (_) => const SpecificShopView());
 
 
       default:

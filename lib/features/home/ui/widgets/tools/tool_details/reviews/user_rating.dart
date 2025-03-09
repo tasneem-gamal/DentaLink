@@ -1,4 +1,3 @@
-import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
@@ -19,48 +18,43 @@ class _UserRatingState extends State<UserRating> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: Constants.appPadding,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RatingBar(
-                  initialRating: userRating,
-                  minRating: 1,
-                  maxRating: 5,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 18,
-                  ratingWidget: RatingWidget(
-                    full: const Icon(Icons.star, color: Colors.amber),
-                    half: const Icon(Icons.star_half, color: Colors.amber),
-                    empty: const Icon(Icons.star_border, color: Colors.grey),
-                  ), 
-                  onRatingUpdate: (rating){
-                    setState(() {
-                      userRating = rating;
-                    });
-                  }
-                ),
-                Text(
-                  'Rate Us',
-                  style: CustomTextStyles.font12LightGrayRegular(context),
-                )
-              ],
+            RatingBar(
+              initialRating: userRating,
+              minRating: 1,
+              maxRating: 5,
+              allowHalfRating: true,
+              itemCount: 5,
+              itemSize: 18,
+              ratingWidget: RatingWidget(
+                full: const Icon(Icons.star, color: Colors.amber),
+                half: const Icon(Icons.star_half, color: Colors.amber),
+                empty: const Icon(Icons.star_border, color: Colors.grey),
+              ), 
+              onRatingUpdate: (rating){
+                setState(() {
+                  userRating = rating;
+                });
+              }
             ),
-            verticalSpace(12),
-            CustomTextFormField(
-              validator: (validator){}, 
-              hintText: 'Type your review',
-              suffixIcon: const Icon(Icons.edit),
+            Text(
+              'Rate Us',
+              style: CustomTextStyles.font12LightGrayRegular(context),
             )
           ],
         ),
-      ),
+        verticalSpace(12),
+        CustomTextFormField(
+          validator: (validator){}, 
+          hintText: 'Type your review',
+          suffixIcon: const Icon(Icons.edit),
+        )
+      ],
     );
   }
 }

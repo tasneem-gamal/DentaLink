@@ -13,7 +13,10 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged, 
     required this.hintText,
     this.keyboardType,
-    this.maxLines
+    this.maxLines,
+    this.readOnly = false,
+    this.onTap,
+    this.onFieldSubmitted
   });
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -22,18 +25,24 @@ class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String?)? validator;
   final Function(String)? onChanged;
+  final Function(String)? onFieldSubmitted;
+  final Function()? onTap;
   final TextInputType? keyboardType;
   final int? maxLines;
+  final bool readOnly;
   @override
   Widget build(BuildContext context) {
     final int effectiveMaxLines = (isObsecureText == true) ? 1 : (maxLines ?? 1);
     return TextFormField(
+      onTap: onTap,
       keyboardType: keyboardType,
       maxLines: effectiveMaxLines,
       controller: controller,
       validator: validator != null ? (value) => validator!(value) : null,
       onChanged: onChanged,
       obscureText: isObsecureText ?? false,
+      readOnly: readOnly,
+      onFieldSubmitted: onFieldSubmitted,
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),

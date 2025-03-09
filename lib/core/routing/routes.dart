@@ -21,4 +21,6 @@ class Routes {
   static const toolsView = '/toolsView';
   static const toolDetails = '/toolDetails';
   static const reviewsView = '/reviewsView';
+  static const searchView = '/searchView';
+  static const specificShopView = '/specificShopView';
 }

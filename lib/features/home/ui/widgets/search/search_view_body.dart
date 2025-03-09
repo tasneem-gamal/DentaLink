@@ -1,5 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -31,7 +32,9 @@ class SearchViewBody extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          verticalSpace(16),
+          
         ],
       ),
     );

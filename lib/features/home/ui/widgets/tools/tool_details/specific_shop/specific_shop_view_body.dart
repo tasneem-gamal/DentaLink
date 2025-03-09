@@ -1,4 +1,6 @@
+import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tool_details/specific_shop/specific_shop_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class SpecificShopViewBody extends StatelessWidget {
@@ -6,10 +8,15 @@ class SpecificShopViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        verticalSpace(20)
-      ],
+    return Padding(
+      padding: Constants.appPadding,
+      child: Column(
+        children: [
+          verticalSpace(20),
+          const SpecificShopGridView()
+        ],
+      ),
     );
   }
 }
+

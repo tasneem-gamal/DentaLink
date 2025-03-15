@@ -24,6 +24,9 @@ class AppCategories extends StatelessWidget {
         CategoryItem(
           image: Image.asset('assets/images/exchange_icon.png'),
           categoryTitle: 'Exchange',
+          onTap: (){
+            context.pushNamed(Routes.exchangeView);
+          },
         ),
         horizontalSpace(10),
         CategoryItem(

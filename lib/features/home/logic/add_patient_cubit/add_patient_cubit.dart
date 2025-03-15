@@ -26,6 +26,7 @@ class AddPatientCubit extends Cubit<AddPatientState> {
 
   void updateGender(String gender) {
     selectedGender = gender;
+    emit(AddPatientGenderUpdated()); 
   }
 
   void updateCategory(String category) {

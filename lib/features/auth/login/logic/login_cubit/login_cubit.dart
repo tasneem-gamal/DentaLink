@@ -14,7 +14,7 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginRepo loginRepo;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  final loginFormKey = GlobalKey<FormState>();
 
   @override
   Future<void> close() {

@@ -21,7 +21,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<LoginCubit>().formKey,
+      key: context.read<LoginCubit>().loginFormKey,
       autovalidateMode: autovalidateMode,
         child: Column(
       children: [
@@ -42,7 +42,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   void validateThenDologin(BuildContext context){
-    if(context.read<LoginCubit>().formKey.currentState!.validate()){
+    if(context.read<LoginCubit>().loginFormKey.currentState!.validate()){
       context.read<LoginCubit>().emitLoginStates();
     }
   }

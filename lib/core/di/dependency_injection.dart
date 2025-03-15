@@ -16,6 +16,9 @@ import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart
 import 'package:dentalink/features/auth/sign_up/data/apis/sign_api_service.dart';
 import 'package:dentalink/features/auth/sign_up/data/repo/sign_repo.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
+import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_service.dart';
+import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -59,4 +62,10 @@ void setUpGetIt() {
     getIt<ResendOtpRepo>(), 
     getIt<FogotPasswordCubit>(),
   ));
+
+
+  //add patient
+  getIt.registerSingleton<AddPatientApiService>(AddPatientApiService());
+  getIt.registerSingleton<AddPatientRepo>(AddPatientRepo(getIt.get<AddPatientApiService>()));
+  getIt.registerLazySingleton<AddPatientCubit>(() => AddPatientCubit(getIt()));
 }

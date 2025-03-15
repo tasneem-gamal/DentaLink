@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/shared_preference.dart';
 import 'package:dentalink/core/networking/api_constants.dart';
 import 'package:dentalink/core/networking/dio_factory.dart';
 import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_const.dart';
@@ -10,11 +12,27 @@ class AddPatientApiService {
   AddPatientApiService(){
     dio = DioFactory.getDio();
   }
-
+  
   Future<AddPatientResponseBody> addPatient(AddPatientRequestBody addPatientRequestBody)async {
+    final formData = await addPatientRequestBody.toFormData();
+    print(formData.fields);
+    print(formData.files);
+    String? userToken = await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken);
+
+    if (userToken == null || userToken.isEmpty) {
+      throw Exception("No token found! User not authenticated.");
+    }
+
     final response = await dio.post(
       '${ApiConstants.baseUrl}${AddPatientApiConst.addpatient}',
-      data: addPatientRequestBody.toJson()
+      data: formData,
+      options: Options(
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "multipart/form-data",
+          "Authorization": "Bearer $userToken",
+        },
+      ),
     );
     return AddPatientResponseBody.fromJson(response.data);
   }

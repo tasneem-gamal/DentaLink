@@ -1,5 +1,7 @@
 import 'package:dentalink/core/theming/colors.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class PhoneNumberInputAddPatient extends StatefulWidget {
@@ -11,7 +13,6 @@ class PhoneNumberInputAddPatient extends StatefulWidget {
 
 class _PhoneNumberInputAddPatient extends State<PhoneNumberInputAddPatient> {
   final AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  final TextEditingController phoneController = TextEditingController();
   PhoneNumber number = PhoneNumber(isoCode: 'EG');
   @override
   Widget build(BuildContext context)  {
@@ -33,7 +34,7 @@ class _PhoneNumberInputAddPatient extends State<PhoneNumberInputAddPatient> {
         autoValidateMode: autovalidateMode,
         selectorTextStyle: const TextStyle(color: Colors.black),
         initialValue: number,
-        textFieldController: phoneController,
+        textFieldController: context.read<AddPatientCubit>().phoneController,
         formatInput: true,
         keyboardType: TextInputType.phone,
         inputDecoration: const InputDecoration(

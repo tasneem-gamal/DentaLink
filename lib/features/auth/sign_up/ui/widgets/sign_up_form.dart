@@ -29,7 +29,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<SignCubit>().formKey,
+      key: context.read<SignCubit>().signFormKey,
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [

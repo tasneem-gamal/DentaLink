@@ -28,7 +28,7 @@ class _ChangePasswordTextFieldsState extends State<ChangePasswordTextFields> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<ChangePasswordCubit>().formKey,
+      key: context.read<ChangePasswordCubit>().changePasswordFormKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -17,7 +17,7 @@ class AddToolViewBody extends StatefulWidget {
 
 class _AddToolViewBodyState extends State<AddToolViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> addToolFormKey = GlobalKey();
   bool isFileUploaded = false;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
       padding: Constants.appPadding,
       child: SingleChildScrollView(
         child: Form(
-          key: formKey,
+          key: addToolFormKey,
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
@@ -63,7 +63,7 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
   }
 
     void validateThenAddTool(BuildContext context){
-    if(formKey.currentState!.validate()){
+    if(addToolFormKey.currentState!.validate()){
       
     }
   }

@@ -1,24 +1,14 @@
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class GenderRadioButtons extends StatefulWidget {
+class GenderRadioButtons extends StatelessWidget {
   const GenderRadioButtons({
     super.key,
   });
 
-  @override
-  State<GenderRadioButtons> createState() => _GenderRadioButtonsState();
-}
-
-class _GenderRadioButtonsState extends State<GenderRadioButtons> {
-  String? selectedGender;
-  
-  @override
-  void initState() {
-    super.initState();
-    selectedGender = 'Male';
-  }
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,12 +22,10 @@ class _GenderRadioButtonsState extends State<GenderRadioButtons> {
           children: [
             Radio<String>(
               value: 'Male', 
-              groupValue: selectedGender, 
+              groupValue: context.read<AddPatientCubit>().selectedGender, 
               fillColor:  fillColor(),
               onChanged: (value){
-                setState(() {
-                  selectedGender = value;
-                });
+                context.read<AddPatientCubit>().updateGender(value!);
               }
             ),
             const Text('Male')
@@ -47,12 +35,10 @@ class _GenderRadioButtonsState extends State<GenderRadioButtons> {
           children: [
             Radio<String>(
               value: 'Female', 
-              groupValue: selectedGender, 
+              groupValue: context.read<AddPatientCubit>().selectedGender, 
               fillColor: fillColor(),
               onChanged: (value){
-                setState(() {
-                  selectedGender = value;
-                });
+                context.read<AddPatientCubit>().updateGender(value!);
               }
             ),
             const Text('Female')

@@ -30,7 +30,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
   }
 
   void validateThenChangePassword(BuildContext context) {
-  final formState = context.read<ChangePasswordCubit>().formKey.currentState;
+  final formState = context.read<ChangePasswordCubit>().changePasswordFormKey.currentState;
   if (formState != null && formState.validate()) {
     context.read<ChangePasswordCubit>().emitChangepasswordState();
   }

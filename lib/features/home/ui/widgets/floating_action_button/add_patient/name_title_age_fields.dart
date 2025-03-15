@@ -2,7 +2,9 @@ import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NameTitleAgeFields extends StatelessWidget {
   const NameTitleAgeFields({
@@ -16,7 +18,7 @@ class NameTitleAgeFields extends StatelessWidget {
         const TitleOfTextField(title: 'Patient Name'),
         verticalSpace(12),
         CustomTextFormField(
-          controller: TextEditingController(),
+          controller: context.read<AddPatientCubit>().nameController,
           keyboardType: TextInputType.name,
           validator: nameValidate, 
           hintText: 'Hassan'
@@ -25,7 +27,7 @@ class NameTitleAgeFields extends StatelessWidget {
         const TitleOfTextField(title: 'Title'),
         verticalSpace(12),
         CustomTextFormField(
-          controller: TextEditingController(),
+          controller: context.read<AddPatientCubit>().titleController,
           validator: titleValidate, 
           hintText: 'ex. Chipped tooth '
         ),
@@ -33,7 +35,7 @@ class NameTitleAgeFields extends StatelessWidget {
         const TitleOfTextField(title: 'Age'),
         verticalSpace(12),
         CustomTextFormField(
-          controller: TextEditingController(),
+          controller: context.read<AddPatientCubit>().ageController,
           validator: ageValidate, 
           hintText: '36'
         ),

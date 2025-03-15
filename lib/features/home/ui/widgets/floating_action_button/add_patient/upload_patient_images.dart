@@ -4,9 +4,11 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/if_image_not_uploaded_add_views.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../../../../../auth/sign_up/data/models/uploaded_file.dart';
@@ -124,6 +126,7 @@ class _UploadPatientImagesState extends State<UploadPatientImages> {
       }
     });
     widget.onFileSelected(files);
+    context.read<AddPatientCubit>().imageFile = files;
   }
 
   Future<void> _simulateUpload() async {

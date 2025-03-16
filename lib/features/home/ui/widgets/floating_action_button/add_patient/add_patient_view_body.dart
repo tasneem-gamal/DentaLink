@@ -74,11 +74,7 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
       context.read<AddPatientCubit>().emitAddPetientStates();
     }
   }
-  void updateFileUploadStatus(bool uploaded) {
-    setState(() {
-      isFileUploaded = uploaded;
-    });
-  }
+  
 }
 
 

@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/bottom_sheet_add/add_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -34,7 +35,14 @@ class SearchFieldAndAddButton extends StatelessWidget {
               ),
               padding: EdgeInsets.zero,
             ),
-            onPressed: (){}, 
+            onPressed: (){
+              showModalBottomSheet(
+                backgroundColor: Colors.white,
+                isScrollControlled: true,
+                context: context, 
+                builder: (context) => const AddBottomSheet()
+              );
+            }, 
             child: const Icon(Icons.add, color: Colors.white,)
           ),
         )
@@ -42,3 +50,4 @@ class SearchFieldAndAddButton extends StatelessWidget {
     );
   }
 }
+

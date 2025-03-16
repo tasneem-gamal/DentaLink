@@ -1,8 +1,8 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/features/home/ui/widgets/exchange/edit_button_and_date.dart';
-import 'package:dentalink/features/home/ui/widgets/exchange/notes_and_contact.dart';
-import 'package:dentalink/features/home/ui/widgets/exchange/tooth_and_info.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/items_card/edit_button_and_date.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/items_card/notes_and_contact.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/items_card/tooth_and_info.dart';
 import 'package:flutter/material.dart';
 
 class ExchangeContainerItem extends StatelessWidget {

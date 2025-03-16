@@ -56,7 +56,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   }
 
   void validateThenDoSign(BuildContext context){
-    if(context.read<SignCubit>().formKey.currentState!.validate()){
+    if(context.read<SignCubit>().signFormKey.currentState!.validate()){
       context.read<SignCubit>().emitSignState();
     }
   }

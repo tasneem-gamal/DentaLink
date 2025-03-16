@@ -19,7 +19,7 @@ class SignCubit extends Cubit<SignState> {
   final TextEditingController selectedYear = TextEditingController();
   final TextEditingController studentIdController = TextEditingController();
   File? imageFile;
-  final GlobalKey<FormState> formKey = GlobalKey();
+  final GlobalKey<FormState> signFormKey = GlobalKey();
 
   @override
   Future<void> close() {
@@ -33,7 +33,7 @@ class SignCubit extends Cubit<SignState> {
   }
 
   Future<void> emitSignState() async {
-    if (formKey.currentState?.validate() != true) {
+    if (signFormKey.currentState?.validate() != true) {
       return;
     }
 

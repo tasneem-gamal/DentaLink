@@ -1,6 +1,8 @@
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoryDropDownMenu extends StatefulWidget {
   const CategoryDropDownMenu({
@@ -35,7 +37,7 @@ class _CategoryDropDownMenuState extends State<CategoryDropDownMenu> {
       builder: (context, value, child) {
         return DropdownButtonFormField<String>(
           validator: categoryValidate,
-          value: value,
+          value: context.read<AddPatientCubit>().selectedCategory,
           decoration: categoryDecoration(),
           items: items.map((item) {
             return DropdownMenuItem(
@@ -47,7 +49,7 @@ class _CategoryDropDownMenuState extends State<CategoryDropDownMenu> {
             );
           }).toList(),
           onChanged: (newValue) {
-            selectedValue.value = newValue;
+            context.read<AddPatientCubit>().updateCategory(newValue!);
           },
         );
       },

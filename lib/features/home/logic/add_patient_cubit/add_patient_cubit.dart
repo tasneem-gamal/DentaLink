@@ -13,7 +13,7 @@ class AddPatientCubit extends Cubit<AddPatientState> {
 
   final AddPatientRepo addPatientRepo;
   final GlobalKey<FormState> formKey = GlobalKey();
-  File? imageFile;
+  late List<File?> imageFile;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController ageController = TextEditingController();
@@ -60,7 +60,7 @@ class AddPatientCubit extends Cubit<AddPatientState> {
           category: selectedCategory, 
           location: locationController.text, 
           description: descriptionController.text, 
-          images: imageFile != null ? [imageFile] : [],
+          images: imageFile
         )
       );
 

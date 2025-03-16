@@ -13,3 +13,4 @@ class AddPatientFailure extends AddPatientState{
 
   AddPatientFailure(this.errMessage);
 }
+class AddPatientGenderUpdated extends AddPatientState {}

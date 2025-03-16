@@ -1,5 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/exchange_container_item.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/search_field_and_add_button.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +14,19 @@ class ExchangeViewBody extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(20),
-          const SearchFieldAndAddButton()
+          const SearchFieldAndAddButton(),
+          verticalSpace(20),
+          const ExchangeContainerItem()
         ],
       ),
     );
   }
 }
+
+
+
+
+
+
+
 

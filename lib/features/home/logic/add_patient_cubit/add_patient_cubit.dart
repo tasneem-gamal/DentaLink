@@ -24,17 +24,6 @@ class AddPatientCubit extends Cubit<AddPatientState> {
   String selectedGender = 'Male';
   String selectedCategory = 'Endodontics';
 
-    @override
-  Future<void> close() {
-    nameController.dispose();
-    phoneController.dispose();
-    titleController.dispose();
-    ageController.dispose();
-    locationController.dispose();
-    descriptionController.dispose();
-    return super.close();
-  }
-
   void updateGender(String gender) {
     selectedGender = gender;
   }

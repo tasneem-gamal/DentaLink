@@ -40,7 +40,7 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                   onFileUploaded: setFileUploaded,
                   onFileSelected: (file) {}
                 ),
-                verticalSpace(12),
+                verticalSpace(24),
                 CustomAppButton(
                   onPressed: (){
                     validateThenAddItem(context);

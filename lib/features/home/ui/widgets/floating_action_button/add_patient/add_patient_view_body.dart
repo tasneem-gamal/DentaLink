@@ -3,6 +3,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_bloc_listner.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/category_and_location_fields.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/description_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/gender_radio_buttons.dart';
@@ -28,7 +29,7 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
       padding: Constants.appPadding,
       child: SingleChildScrollView(
         child: Form(
-          key: context.read<AddPatientCubit>().formKey,
+          key: context.read<AddPatientCubit>().addPatientFormKey,
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
@@ -54,7 +55,8 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
               CustomAppButton(
                 onPressed: () => validateThenAddPatient(context),
                 btnText: 'Add'
-              )
+              ),
+              const AddPatientBlocListner()
             ],
           ),
         )
@@ -68,8 +70,8 @@ class _AddPatientViewBodyState extends State<AddPatientViewBody> {
   }
 
   void validateThenAddPatient(BuildContext context){
-    if(context.read<AddPatientCubit>().formKey.currentState!.validate()){
-      
+    if(context.read<AddPatientCubit>().addPatientFormKey.currentState!.validate()){
+      context.read<AddPatientCubit>().emitAddPetientStates();
     }
   }
   void updateFileUploadStatus(bool uploaded) {

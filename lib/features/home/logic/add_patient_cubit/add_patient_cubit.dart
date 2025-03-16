@@ -12,8 +12,8 @@ class AddPatientCubit extends Cubit<AddPatientState> {
   AddPatientCubit(this.addPatientRepo) : super(AddPatientInitial());
 
   final AddPatientRepo addPatientRepo;
-  final GlobalKey<FormState> formKey = GlobalKey();
-  late List<File?> imageFile;
+  final GlobalKey<FormState> addPatientFormKey = GlobalKey();
+  late List<File> imageFile;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController ageController = TextEditingController();
@@ -44,7 +44,7 @@ class AddPatientCubit extends Cubit<AddPatientState> {
   }
 
   Future<void> emitAddPetientStates() async {
-    if (formKey.currentState?.validate() != true) {
+    if (addPatientFormKey.currentState?.validate() != true) {
       return;
     }
     emit(AddPatientLoading());

@@ -10,7 +10,7 @@ class AddPatientResponseBody {
   factory AddPatientResponseBody.fromJson(Map<String, dynamic> json){
     return AddPatientResponseBody(
       message: json['message'],
-      patient: json['patient']
+      patient: json['patient'] != null ? Patient.fromJson(json['patient']) : null,
     );
   }
 }
@@ -58,7 +58,7 @@ class Patient{
       category: json['category'], 
       location: json['location'], 
       description: json['description'], 
-      images: json['images'], 
+      images: (json['images'] as List<dynamic>).map((e) => e.toString()).toList(), 
       createdBy: json['createdBy'], 
       id: json['_id'], 
       createdAt: json['createdAt'], 

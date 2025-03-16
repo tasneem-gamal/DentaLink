@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class AddPatientRequestBody {
   final String name;
   final int age;
@@ -7,7 +9,7 @@ class AddPatientRequestBody {
   final String category;
   final String location;
   final String description;
-  final List<String> images;
+  final List<File?> images;
 
   AddPatientRequestBody({
     required this.name, 

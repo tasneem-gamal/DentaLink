@@ -15,8 +15,6 @@ class AddPatientApiService {
   
   Future<AddPatientResponseBody> addPatient(AddPatientRequestBody addPatientRequestBody)async {
     final formData = await addPatientRequestBody.toFormData();
-    print(formData.fields);
-    print(formData.files);
     String? userToken = await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken);
 
     if (userToken == null || userToken.isEmpty) {

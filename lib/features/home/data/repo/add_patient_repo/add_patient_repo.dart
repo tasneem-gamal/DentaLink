@@ -16,9 +16,7 @@ Future<Either<Failure, AddPatientResponseBody>> addNewPatient(
   try {
     final response = await addPatientApiService.addPatient(addPatientRequestBody);
     return right(response);
-  } catch (e, stacktrace) {
-    print("❌ Error in addNewPatient: $e");  // 🔍 طبع الخطأ الفعلي
-    print("❌ Stacktrace: $stacktrace");
+  } catch (e) {
 
     if (e is DioException) {
       return left(ServerFailure.fromDioError(e));

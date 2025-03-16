@@ -13,6 +13,7 @@ import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart
 import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/exchange_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/add_tool_view.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_details_view.dart';
@@ -112,6 +113,9 @@ class AppRouter {
 
       case Routes.specificShopView:
         return MaterialPageRoute(builder: (_) => const SpecificShopView());
+
+      case Routes.exchangeView:
+        return MaterialPageRoute(builder: (_) => const ExchangeView());
 
       default:
         return null;

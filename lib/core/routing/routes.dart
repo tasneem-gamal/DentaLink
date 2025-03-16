@@ -23,4 +23,5 @@ class Routes {
   static const reviewsView = '/reviewsView';
   static const searchView = '/searchView';
   static const specificShopView = '/specificShopView';
+  static const exchangeView = '/exchangeView';
 }

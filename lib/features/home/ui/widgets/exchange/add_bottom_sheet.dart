@@ -1,0 +1,58 @@
+import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:flutter/material.dart';
+
+class AddBottomSheet extends StatelessWidget {
+  const AddBottomSheet({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.65,
+      width: double.infinity,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+            left: 16,
+            right: 16,
+            top: 16
+          ),
+          child: Form(
+            child: Column(
+              children: [
+                CustomTextFormField(
+                  validator: (value){},
+                  hintText: 'Your name',
+                ),
+                verticalSpace(12),
+                CustomTextFormField(
+                  validator: (value){},
+                  hintText: 'Tooth name',
+                ),
+                verticalSpace(12),
+                CustomTextFormField(
+                  validator: (value){},
+                  hintText: 'Exchange with',
+                ),
+                verticalSpace(12),
+                CustomTextFormField(
+                  validator: (value){},
+                  hintText: 'Notes',
+                ),
+                verticalSpace(12),
+                CustomTextFormField(
+                  validator: (value){},
+                  hintText: 'Phone number',
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

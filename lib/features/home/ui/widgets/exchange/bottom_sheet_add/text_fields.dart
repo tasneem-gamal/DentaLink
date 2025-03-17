@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -12,30 +13,45 @@ class TextFields extends StatelessWidget {
     return Column(
       children: [
         CustomTextFormField(
-          validator: (value){},
+          validator: textValidations,
           hintText: 'Your name',
         ),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (value){},
+          validator: textValidations,
           hintText: 'Tooth name',
         ),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (value){},
+          validator: textValidations,
           hintText: 'Exchange with',
         ),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (value){},
+          validator: textValidations,
           hintText: 'Notes',
         ),
         verticalSpace(12),
         CustomTextFormField(
-          validator: (value){},
+          validator: phoneValidate,
           hintText: 'Phone number',
         ),
       ],
     );
+  }
+
+  textValidations(value) {
+    if (value == null || value.isEmpty) {
+      return 'This field cannot be empty';
+    }
+  }
+
+  phoneValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone cannot be empty';
+    }
+    if (!AppRegex.isPhoneNumberValid(value)) {
+      return 'Enter a valid Phone';
+    }
   }
 }

@@ -15,6 +15,7 @@ class AddBottomSheet extends StatefulWidget {
 
 class _AddBottomSheetState extends State<AddBottomSheet> {
     bool isFileUploaded = false;
+    final GlobalKey<FormState> exchangeAddFormKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
             top: 24
           ),
           child: Form(
+            key: exchangeAddFormKey,
             child: Column(
               children: [
                 const TextFields(),

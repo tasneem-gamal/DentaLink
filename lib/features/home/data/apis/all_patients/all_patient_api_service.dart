@@ -13,7 +13,7 @@ class AllPatientApiService {
     dio = DioFactory.getDio();
   }
 
-  Future<AllPatientsResponseBody> getAllPatients() async{
+  Future<AllPatientsResponseBody> allPatientsService() async{
     try{
       final response = await dio.get(
         '${ApiConstants.baseUrl}${AllPatientsApiConstants.allPatients}',

@@ -1,4 +1,5 @@
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/upload_image_exchange.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,9 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
         child: Padding(
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).viewInsets.bottom,
-            left: 16,
-            right: 16,
-            top: 16
+            left: 24,
+            right: 24,
+            top: 24
           ),
           child: Form(
             child: Column(
@@ -59,6 +60,10 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                 UploadImageExchange(
                   onFileUploaded: setFileUploaded,
                   onFileSelected: (file) {}
+                ),
+                verticalSpace(12),
+                const CustomAppButton(
+                  btnText: 'Submit'
                 )
               ],
             ),

@@ -8,8 +8,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
-class UploadImageExchange extends StatefulWidget {
-  const UploadImageExchange({
+class UploadImageExchangeEdit extends StatefulWidget {
+  const UploadImageExchangeEdit({
     super.key,
     required this.onFileUploaded,
     required this.onFileSelected,
@@ -19,11 +19,11 @@ class UploadImageExchange extends StatefulWidget {
   final Function(File?) onFileSelected;
 
   @override
-  State<UploadImageExchange> createState() =>
-      _UploadImageExchangeState();
+  State<UploadImageExchangeEdit> createState() =>
+      _UploadImageExchangeEditState();
 }
 
-class _UploadImageExchangeState extends State<UploadImageExchange> {
+class _UploadImageExchangeEditState extends State<UploadImageExchangeEdit> {
   List<UploadedFile> selectedFiles = [];
   bool isFileUploaded = false;
 

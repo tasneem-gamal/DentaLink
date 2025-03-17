@@ -1,6 +1,6 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/bottom_sheet_add/text_fields.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/bottom_sheet_add/upload_image_exchange.dart';
 import 'package:flutter/material.dart';
 
@@ -32,30 +32,7 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
           child: Form(
             child: Column(
               children: [
-                CustomTextFormField(
-                  validator: (value){},
-                  hintText: 'Your name',
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){},
-                  hintText: 'Tooth name',
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){},
-                  hintText: 'Exchange with',
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){},
-                  hintText: 'Notes',
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){},
-                  hintText: 'Phone number',
-                ),
+                const TextFields(),
                 verticalSpace(12),
                 UploadImageExchange(
                   onFileUploaded: setFileUploaded,
@@ -79,3 +56,4 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
     });
   }
 }
+

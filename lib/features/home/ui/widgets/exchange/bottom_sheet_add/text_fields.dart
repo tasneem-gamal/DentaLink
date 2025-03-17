@@ -14,26 +14,31 @@ class TextFields extends StatelessWidget {
       children: [
         CustomTextFormField(
           validator: textValidations,
+          controller: TextEditingController(),
           hintText: 'Your name',
         ),
         verticalSpace(12),
         CustomTextFormField(
           validator: textValidations,
+          controller: TextEditingController(),
           hintText: 'Tooth name',
         ),
         verticalSpace(12),
         CustomTextFormField(
           validator: textValidations,
+          controller: TextEditingController(),
           hintText: 'Exchange with',
         ),
         verticalSpace(12),
         CustomTextFormField(
           validator: textValidations,
+          controller: TextEditingController(),
           hintText: 'Notes',
         ),
         verticalSpace(12),
         CustomTextFormField(
           validator: phoneValidate,
+          controller: TextEditingController(),
           hintText: 'Phone number',
         ),
       ],

@@ -41,7 +41,10 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                   onFileSelected: (file) {}
                 ),
                 verticalSpace(12),
-                const CustomAppButton(
+                CustomAppButton(
+                  onPressed: (){
+                    validateThenAddItem(context);
+                  },
                   btnText: 'Submit'
                 )
               ],
@@ -56,6 +59,12 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
     setState(() {
       isFileUploaded = value;
     });
+  }
+
+  void validateThenAddItem(BuildContext context){
+    if(exchangeAddFormKey.currentState!.validate()){
+      
+    }
   }
 }
 

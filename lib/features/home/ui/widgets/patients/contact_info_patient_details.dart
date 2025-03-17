@@ -1,12 +1,13 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:flutter/material.dart';
 
 class ContactInfoPatientDetails extends StatelessWidget {
   const ContactInfoPatientDetails({
-    super.key,
+    super.key, required this.patientData,
   });
-
+  final PatientData patientData;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +23,7 @@ class ContactInfoPatientDetails extends StatelessWidget {
             const Icon(Icons.phone),
             horizontalSpace(4),
             Text(
-              '01012345678',
+              patientData.phone,
               style: CustomTextStyles.font12BlackRegular(context),
             )
           ],

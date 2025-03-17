@@ -1,13 +1,14 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_avatar.dart';
 import 'package:flutter/material.dart';
 
 class PatientMainDetails extends StatelessWidget {
   const PatientMainDetails({
-    super.key,
+    super.key, required this.patientData,
   });
-
+  final PatientData patientData;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,29 +21,29 @@ class PatientMainDetails extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const LabelTextApp(
+              LabelTextApp(
                 label: 'Publisher: ', 
-                text: 'Dr Osama', 
+                text: patientData.createdBy.name, 
               ),
               verticalSpace(4),
-              const LabelTextApp(
+              LabelTextApp(
                 label: 'patient name: ', 
-                text: 'Salma Hussien', 
+                text: patientData.name, 
               ),
               verticalSpace(4),
-              const LabelTextApp(
+              LabelTextApp(
                 label: 'Location: ', 
-                text: 'Mansoura', 
+                text: patientData.location, 
               ),
               verticalSpace(4),
-              const LabelTextApp(
+              LabelTextApp(
                 label: 'Age: ', 
-                text: '65', 
+                text: patientData.age.toString(), 
               ),
               verticalSpace(4),
-              const LabelTextApp(
+              LabelTextApp(
                 label: 'Gender: ', 
-                text: 'Female', 
+                text: patientData.gander, 
               ),
             ],
           ),

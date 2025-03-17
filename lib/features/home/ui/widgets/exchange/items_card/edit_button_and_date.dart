@@ -1,5 +1,6 @@
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/items_card/edit_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 class EditButtonAndDate extends StatelessWidget {
@@ -13,7 +14,14 @@ class EditButtonAndDate extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          onPressed: (){}, 
+          onPressed: (){
+            showModalBottomSheet(
+                backgroundColor: Colors.white,
+                isScrollControlled: true,
+                context: context, 
+                builder: (context) => const EditBottomSheet()
+              );
+          }, 
           icon: const Icon(Icons.edit, color: ColorsManager.mainBlue,)
         ),
         Text(

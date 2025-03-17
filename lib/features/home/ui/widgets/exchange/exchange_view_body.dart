@@ -1,6 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/features/home/ui/widgets/exchange/exchange_item_list_view.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/items_card/exchange_item_list_view.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/search_field_and_add_button.dart';
 import 'package:flutter/material.dart';
 

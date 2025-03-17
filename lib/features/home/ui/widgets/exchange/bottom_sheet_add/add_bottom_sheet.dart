@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
-import 'package:dentalink/features/home/ui/widgets/exchange/upload_image_exchange.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/bottom_sheet_add/upload_image_exchange.dart';
 import 'package:flutter/material.dart';
 
 class AddBottomSheet extends StatefulWidget {

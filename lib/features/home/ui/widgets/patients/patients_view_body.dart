@@ -13,7 +13,7 @@ class PatientsViewBody extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(20),
-          AllPaientsBlocBuilder()
+          const AllPaientsBlocBuilder()
         ],
       ),
     );

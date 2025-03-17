@@ -18,7 +18,7 @@ class AllPaientsBlocBuilder extends StatelessWidget {
         current is AllPatientsFailure,
       builder: (context, state) {
         if(state is AllPatientsLoading){
-          return const CustomLoadingIndicator();
+          return const Center(child: CustomLoadingIndicator());
         }
         else if(state is AllPatientsSuccess){
           return PatientsGridView(

@@ -97,7 +97,7 @@ class AppRouter {
       case Routes.patientsView:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                  create: (context) => getIt<AllPatientsCubit>(),
+                  create: (context) => getIt<AllPatientsCubit>()..getPatients(),
                   child: const PatientsView(),
                 ));
 

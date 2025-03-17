@@ -17,8 +17,11 @@ import 'package:dentalink/features/auth/sign_up/data/apis/sign_api_service.dart'
 import 'package:dentalink/features/auth/sign_up/data/repo/sign_repo.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_service.dart';
+import 'package:dentalink/features/home/data/apis/all_patients/all_patient_api_service.dart';
 import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
+import 'package:dentalink/features/home/data/repo/all_patients_repo/all_patients_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
+import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -68,4 +71,9 @@ void setUpGetIt() {
   getIt.registerSingleton<AddPatientApiService>(AddPatientApiService());
   getIt.registerSingleton<AddPatientRepo>(AddPatientRepo(getIt.get<AddPatientApiService>()));
   getIt.registerLazySingleton<AddPatientCubit>(() => AddPatientCubit(getIt()));
+
+  //all patients
+  getIt.registerSingleton<AllPatientApiService>(AllPatientApiService());
+  getIt.registerSingleton<AllPatientsRepo>(AllPatientsRepo(getIt.get<AllPatientApiService>()));
+  getIt.registerLazySingleton<AllPatientsCubit>(() => AllPatientsCubit(getIt()));
 }

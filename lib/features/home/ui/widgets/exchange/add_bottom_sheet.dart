@@ -1,11 +1,19 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/features/home/ui/widgets/exchange/upload_image_exchange.dart';
 import 'package:flutter/material.dart';
 
-class AddBottomSheet extends StatelessWidget {
+class AddBottomSheet extends StatefulWidget {
   const AddBottomSheet({
     super.key,
   });
+
+  @override
+  State<AddBottomSheet> createState() => _AddBottomSheetState();
+}
+
+class _AddBottomSheetState extends State<AddBottomSheet> {
+    bool isFileUploaded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +55,22 @@ class AddBottomSheet extends StatelessWidget {
                   validator: (value){},
                   hintText: 'Phone number',
                 ),
-
+                verticalSpace(12),
+                UploadImageExchange(
+                  onFileUploaded: setFileUploaded,
+                  onFileSelected: (file) {}
+                )
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+    void setFileUploaded(bool value) {
+    setState(() {
+      isFileUploaded = value;
+    });
   }
 }

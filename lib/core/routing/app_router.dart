@@ -14,6 +14,7 @@ import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
 import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
+import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/exchange_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_view.dart';
@@ -83,7 +84,14 @@ class AppRouter {
 
       // home and related
       case Routes.homeView:
-        return MaterialPageRoute(builder: (_) => const HomeView());
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => getIt<LatestPatientsCubit>(),)
+            ],
+            child: const HomeView()
+          )
+        );
 
       case Routes.addPatient:
         return MaterialPageRoute(

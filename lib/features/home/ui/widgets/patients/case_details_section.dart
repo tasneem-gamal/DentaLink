@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/format_date.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
@@ -39,7 +40,7 @@ class CaseDetailsSection extends StatelessWidget {
         verticalSpace(10),
         LabelTextApp(
           label: 'Date Added: ', 
-          text: patientData.createdAt,
+          text: formatDate(patientData.createdAt),
         ),
       ],
     );

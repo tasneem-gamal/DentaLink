@@ -1,3 +1,4 @@
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/ui/widgets/home_app_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/app_bottom_navigation_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/side_menu/app_side_menu.dart';
@@ -6,7 +7,9 @@ import 'package:dentalink/features/home/ui/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+  const HomeView({super.key, required this.patientData});
+
+  final List<PatientData> patientData;
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -17,13 +20,13 @@ class _HomeViewState extends State<HomeView> {
 
   int selectedIndex = 0;
 
-  final List<Widget> appViews = const [
-    HomeViewBody(),
-    Center(child: Text('Shop')),
-    Center(child: Text('AI')),
-    Center(child: Text('Cart')),
-    Center(child: Text('Profile')),
-  ];
+  List<Widget> appViews = const [
+      HomeViewBody(),
+      Center(child: Text('Shop')),
+      Center(child: Text('AI')),
+      Center(child: Text('Cart')),
+      Center(child: Text('Profile')),
+    ];
 
   void _onItemTapped(int index) {
     setState(() {

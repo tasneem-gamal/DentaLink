@@ -1,6 +1,5 @@
 import 'package:dentalink/core/networking/api_constants.dart';
 import 'package:dentalink/core/networking/dio_factory.dart';
-import 'package:dentalink/features/auth/forgot_password/data/apis/forgot_password_api_constants.dart';
 import 'package:dio/dio.dart';
 
 class ResendOtpApiService {
@@ -12,7 +11,7 @@ class ResendOtpApiService {
 
   Future<void> resendOtp(String email) async {
     await dio.post(
-      '${ApiConstants.baseUrl}${ForgotPasswordApiConstants.forgotPassword}',
+      '${ApiConstants.baseUrl}${ApiConstants.forgotPassword}',
       data: {"email": email},
     );
   }

@@ -1,12 +1,13 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:flutter/material.dart';
 
 class PatientAttachmentsList extends StatelessWidget {
   const PatientAttachmentsList({
-    super.key,
+    super.key, required this.patientData,
   });
-
+  final PatientData patientData;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,7 +29,7 @@ class PatientAttachmentsList extends StatelessWidget {
                 children: [
                   const Icon(Icons.image_outlined),
                   Text(
-                    'images.jpg',
+                    patientData.images.length.toString(),
                     style: CustomTextStyles.font12LightGrayRegular(
                         context),
                   ),

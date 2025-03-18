@@ -25,15 +25,21 @@ class PatientDetailsViewBody extends StatelessWidget {
           verticalSpace(26),
           const CustomDivider(),
           verticalSpace(12),
-          const CaseDetailsSection(),
+          CaseDetailsSection(
+            patientData: patientData,
+          ),
           verticalSpace(26),
           const CustomDivider(),
           verticalSpace(12),
-          const PatientAttachmentsList(),
+          PatientAttachmentsList(
+            patientData: patientData,
+          ),
           verticalSpace(18),
           const CustomDivider(),
           verticalSpace(12),
-          const ContactInfoPatientDetails()
+          ContactInfoPatientDetails(
+            patientData: patientData,
+          )
         ],
       ),
     );

@@ -1,12 +1,15 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:flutter/material.dart';
 
 class CaseDetailsSection extends StatelessWidget {
   const CaseDetailsSection({
-    super.key,
+    super.key, required this.patientData,
   });
+
+  final PatientData patientData;
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +23,23 @@ class CaseDetailsSection extends StatelessWidget {
         verticalSpace(10),
         LabelTextApp(
           label: 'Case type: ', 
-          text: 'Cavities',
+          text: patientData.title,
           textStyleText: CustomTextStyles.font12MainBlueRegular(context),
         ),
         verticalSpace(10),
-        const LabelTextApp(
+        LabelTextApp(
           label: 'Category: ', 
-          text: 'Endodontics',
+          text: patientData.category,
         ),
         verticalSpace(10),
-        const LabelTextApp(
+        LabelTextApp(
           label: 'Case description: ', 
-          text: 'Cavity in the back molar with intermittent pain Cavity in the back molar with intermittent pain',
+          text: patientData.description,
         ),
         verticalSpace(10),
-        const LabelTextApp(
+        LabelTextApp(
           label: 'Date Added: ', 
-          text: '20/10/2025',
+          text: patientData.createdAt,
         ),
       ],
     );

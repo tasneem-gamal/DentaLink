@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_divider.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/case_details_section.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/contact_info_patient_details.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_attachments_list.dart';
@@ -8,8 +9,9 @@ import 'package:dentalink/features/home/ui/widgets/patients/patient_main_details
 import 'package:flutter/material.dart';
 
 class PatientDetailsViewBody extends StatelessWidget {
-  const PatientDetailsViewBody({super.key});
+  const PatientDetailsViewBody({super.key, required this.patientData});
 
+  final PatientData patientData;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +19,9 @@ class PatientDetailsViewBody extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(20),
-          const PatientMainDetails(),
+          PatientMainDetails(
+            patientData: patientData,
+          ),
           verticalSpace(26),
           const CustomDivider(),
           verticalSpace(12),

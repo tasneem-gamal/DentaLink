@@ -30,7 +30,10 @@ class PatientsGridView extends StatelessWidget {
           secondLabel: 'Title: ', 
           secondLabelText: patientData[index].title,
           onTap: (){
-            context.pushNamed(Routes.patientDetails);
+            context.pushNamed(
+              Routes.patientDetails,
+              arguments: patientData[index],
+            );
           },
         ),
         )

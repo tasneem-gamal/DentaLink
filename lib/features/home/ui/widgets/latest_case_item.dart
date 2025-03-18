@@ -59,7 +59,8 @@ class LatestCaseItem extends StatelessWidget {
               ],
             ),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+              }, 
               icon: const Icon(Icons.arrow_forward_ios)
             )
           ],

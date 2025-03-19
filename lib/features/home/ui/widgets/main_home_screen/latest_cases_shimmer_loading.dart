@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,61 +12,61 @@ class LatestCasesShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100.h,
+      height: 50.h,
       child: Row(
         children: [
           Shimmer.fromColors(
-              baseColor: ColorsManager.lightGray,
+              baseColor: ColorsManager.moreLightGray,
               highlightColor: Colors.white,
               child: Container(
-                width: 110.w,
-                height: 120.h,
+                width: 50.w,
+                height: 50.h,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(12.0),
-                  color: ColorsManager.lightGray,
+                  color: ColorsManager.moreLightGray,
                 ),
               ),
             ),
-            SizedBox(width: 16.h,),
+            horizontalSpace(16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Shimmer.fromColors(
-                    baseColor: ColorsManager.lightGray,
+                    baseColor: ColorsManager.moreLightGray,
                     highlightColor: Colors.white,
                     child: Container(
-                      height: 18.h,
+                      height: 6.h,
                       width: 180.w,
                       decoration: BoxDecoration(
-                        color: ColorsManager.lightGray,
+                        color: ColorsManager.moreLightGray,
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
                   ),
-                  SizedBox(width: 12.h,),
+                  verticalSpace(12),
                   Shimmer.fromColors(
-                    baseColor: ColorsManager.lightGray,
+                    baseColor: ColorsManager.moreLightGray,
                     highlightColor: Colors.white,
                     child: Container(
-                      height: 14.h,
+                      height: 6.h,
                       width: 160.w,
                       decoration: BoxDecoration(
-                        color: ColorsManager.lightGray,
+                        color: ColorsManager.moreLightGray,
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
                   ),
-                  SizedBox(width: 12.h,),
+                  verticalSpace(12),
                   Shimmer.fromColors(
-                    baseColor: ColorsManager.lightGray,
+                    baseColor: ColorsManager.moreLightGray,
                     highlightColor: Colors.white,
                     child: Container(
-                      height: 14.h,
+                      height: 6.h,
                       width: 160.w,
                       decoration: BoxDecoration(
-                        color: ColorsManager.lightGray,
+                        color: ColorsManager.moreLightGray,
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),

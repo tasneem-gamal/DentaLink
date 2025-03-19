@@ -1,6 +1,5 @@
 import 'package:dentalink/core/networking/api_constants.dart';
 import 'package:dentalink/core/networking/dio_factory.dart';
-import 'package:dentalink/features/auth/sign_up/data/apis/sign_api_constants.dart';
 import 'package:dentalink/features/auth/sign_up/data/models/sign_request_body.dart';
 import 'package:dentalink/features/auth/sign_up/data/models/sign_response_body.dart';
 import 'package:dio/dio.dart';
@@ -15,7 +14,7 @@ class SignApiService {
     final formData = await signRequestBody.toFormData();
 
     final response = await dio.post(
-      '${ApiConstants.baseUrl}${SignApiConstants.signUp}',
+      '${ApiConstants.baseUrl}${ApiConstants.signUp}',
       data: formData,
       options: Options(
         headers: {

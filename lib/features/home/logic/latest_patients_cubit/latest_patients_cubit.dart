@@ -10,7 +10,7 @@ class LatestPatientsCubit extends Cubit<LatestPatientsState> {
   final LatestPatientsRepo latestPatientsRepo;
   List<PatientData> patientDataList = [];
 
-  void getPatients() async{
+  void getLatestPatients() async{
     emit(LatestPatientsLoading());
     final response = await latestPatientsRepo.getLatestPatients();
     response.fold(

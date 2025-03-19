@@ -22,11 +22,10 @@ class LatestPatientsApiService {
           },
         ),
       );
-
       return LatestPatientsResponseModel.fromJson(response.data);
 
     } catch (e){
-      throw Exception('Failed to load specializations: $e');
+      throw Exception('Failed to load data: $e');
     }
   }
 }

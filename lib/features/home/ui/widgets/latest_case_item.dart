@@ -1,13 +1,16 @@
+import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:flutter/material.dart';
 
 class LatestCaseItem extends StatelessWidget {
   const LatestCaseItem({
-    super.key,
+    super.key, required this.patientData,
   });
-
+  final PatientData patientData;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,11 +38,11 @@ class LatestCaseItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Dr. Mahmoud',
+                      patientData.createdBy.name,
                       style: CustomTextStyles.font12BlackMedium(context),
                     ),
                     Text(
-                      'Location: Mansoura',
+                      'Location: ${patientData.location}',
                       style: CustomTextStyles.font12LightGrayRegular(context),
                     ),
                     Row(
@@ -49,7 +52,7 @@ class LatestCaseItem extends StatelessWidget {
                           style: CustomTextStyles.font12LightGrayRegular(context),
                         ),
                         Text(
-                          ' Cavities',
+                          patientData.title,
                           style: CustomTextStyles.font12MainBlueRegular(context),
                         ),
                       ],
@@ -60,6 +63,10 @@ class LatestCaseItem extends StatelessWidget {
             ),
             IconButton(
               onPressed: (){
+                context.pushNamed(
+                  Routes.patientDetails,
+                  arguments: patientData
+                );
               }, 
               icon: const Icon(Icons.arrow_forward_ios)
             )

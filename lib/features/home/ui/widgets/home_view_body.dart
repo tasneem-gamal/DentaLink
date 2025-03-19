@@ -5,7 +5,7 @@ import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:dentalink/features/home/ui/widgets/app_categories.dart';
-import 'package:dentalink/features/home/ui/widgets/latest_cases_list_view.dart';
+import 'package:dentalink/features/home/ui/widgets/latest_patients_bloc_builder.dart';
 import 'package:dentalink/features/home/ui/widgets/new_in_tools_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -48,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
               style: CustomTextStyles.font16BlackMedium(context),
             ),
             verticalSpace(10),
-            const LatestCasesListView()
+            const LatestPatientsBlocBuilder()
           ],
         ),
       ),

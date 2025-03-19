@@ -1,18 +1,21 @@
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/ui/widgets/latest_case_item.dart';
 import 'package:flutter/material.dart';
 
 class LatestCasesListView extends StatelessWidget {
   const LatestCasesListView({
-    super.key,
+    super.key, required this.patientData,
   });
-
+  final List<PatientData> patientData;
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemBuilder: (context, index) => const LatestCaseItem(), 
+      itemBuilder: (context, index) => LatestCaseItem(
+        patientData: patientData[index],
+      ), 
       separatorBuilder: (context, index) => verticalSpace(14), 
-      itemCount: 10,
+      itemCount: patientData.length,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
     );

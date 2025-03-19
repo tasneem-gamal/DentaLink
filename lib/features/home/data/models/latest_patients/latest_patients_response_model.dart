@@ -1,3 +1,4 @@
+
 import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 
 class LatestPatientsResponseModel {
@@ -13,3 +14,4 @@ class LatestPatientsResponseModel {
     );
   }
 }
+

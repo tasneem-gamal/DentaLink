@@ -84,12 +84,15 @@ class AppRouter {
 
       // home and related
       case Routes.homeView:
+      final patientData = settings.arguments as List<PatientData>? ?? [];
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => getIt<LatestPatientsCubit>(),)
+              BlocProvider(create: (context) => getIt<LatestPatientsCubit>()..getLatestPatients(),)
             ],
-            child: const HomeView()
+            child: HomeView(
+              patientData: patientData,
+            )
           )
         );
 

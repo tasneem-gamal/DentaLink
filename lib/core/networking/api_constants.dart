@@ -6,4 +6,6 @@ class ApiConstants {
   static const String changePassword = "users/reset-password";
   static const String login = "users/login";
   static const String signUp = "users/signup";
+  static const String addpatient = "patients/add";
+  static const String allPatients = "patients";
 }

@@ -2,7 +2,6 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/shared_preference.dart';
 import 'package:dentalink/core/networking/api_constants.dart';
 import 'package:dentalink/core/networking/dio_factory.dart';
-import 'package:dentalink/features/home/data/apis/all_patients/all_patients_api_constants.dart';
 import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dio/dio.dart';
 
@@ -16,7 +15,7 @@ class AllPatientApiService {
   Future<AllPatientsResponseBody> allPatientsService() async{
     try{
       final response = await dio.get(
-        '${ApiConstants.baseUrl}${AllPatientsApiConstants.allPatients}',
+        '${ApiConstants.baseUrl}${ApiConstants.allPatients}',
         options: Options(
           headers: {
             'Authorization': 'Bearer ${await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)}',

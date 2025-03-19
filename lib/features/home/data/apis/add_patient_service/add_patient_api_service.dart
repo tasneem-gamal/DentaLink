@@ -2,7 +2,6 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/shared_preference.dart';
 import 'package:dentalink/core/networking/api_constants.dart';
 import 'package:dentalink/core/networking/dio_factory.dart';
-import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_const.dart';
 import 'package:dentalink/features/home/data/models/add_patient/add_patient_request_body.dart';
 import 'package:dentalink/features/home/data/models/add_patient/add_patient_response_body.dart';
 import 'package:dio/dio.dart';
@@ -22,7 +21,7 @@ class AddPatientApiService {
     }
 
     final response = await dio.post(
-      '${ApiConstants.baseUrl}${AddPatientApiConst.addpatient}',
+      '${ApiConstants.baseUrl}${ApiConstants.addpatient}',
       data: formData,
       options: Options(
         headers: {

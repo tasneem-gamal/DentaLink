@@ -16,53 +16,53 @@ class PatientsShimmerLoading extends StatelessWidget {
         child: Column(
           children: [
             Shimmer.fromColors(
-              baseColor: ColorsManager.moreLightGray,
+              baseColor: ColorsManager.shimmerColorLoading,
               highlightColor: Colors.white,
               child: Container(
                 width: 180.w,
-                height: 70.h,
+                height: 100.h,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(12.0),
-                  color: ColorsManager.moreLightGray,
+                  color: ColorsManager.shimmerColorLoading,
                 ),
               ),
             ),
             verticalSpace(12),
             Shimmer.fromColors(
-              baseColor: ColorsManager.moreLightGray,
+              baseColor: ColorsManager.shimmerColorLoading,
               highlightColor: Colors.white,
               child: Container(
                 height: 6.h,
                 width: 180.w,
                 decoration: BoxDecoration(
-                  color: ColorsManager.moreLightGray,
+                  color: ColorsManager.shimmerColorLoading,
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
             verticalSpace(12),
             Shimmer.fromColors(
-              baseColor: ColorsManager.moreLightGray,
+              baseColor: ColorsManager.shimmerColorLoading,
               highlightColor: Colors.white,
               child: Container(
                 height: 6.h,
                 width: 160.w,
                 decoration: BoxDecoration(
-                  color: ColorsManager.moreLightGray,
+                  color: ColorsManager.shimmerColorLoading,
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
             verticalSpace(12),
             Shimmer.fromColors(
-              baseColor: ColorsManager.moreLightGray,
+              baseColor: ColorsManager.shimmerColorLoading,
               highlightColor: Colors.white,
               child: Container(
                 height: 6.h,
                 width: 160.w,
                 decoration: BoxDecoration(
-                  color: ColorsManager.moreLightGray,
+                  color: ColorsManager.shimmerColorLoading,
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),

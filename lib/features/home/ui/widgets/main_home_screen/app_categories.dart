@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/routing/routes.dart';
-import 'package:dentalink/features/home/ui/widgets/category_item.dart';
+import 'package:dentalink/features/home/ui/widgets/main_home_screen/category_item.dart';
 import 'package:flutter/material.dart';
 
 class AppCategories extends StatelessWidget {

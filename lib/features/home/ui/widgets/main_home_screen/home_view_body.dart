@@ -4,9 +4,9 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
-import 'package:dentalink/features/home/ui/widgets/app_categories.dart';
-import 'package:dentalink/features/home/ui/widgets/latest_patients_bloc_builder.dart';
-import 'package:dentalink/features/home/ui/widgets/new_in_tools_list_view.dart';
+import 'package:dentalink/features/home/ui/widgets/main_home_screen/app_categories.dart';
+import 'package:dentalink/features/home/ui/widgets/main_home_screen/latest_patients_bloc_builder.dart';
+import 'package:dentalink/features/home/ui/widgets/main_home_screen/new_in_tools_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

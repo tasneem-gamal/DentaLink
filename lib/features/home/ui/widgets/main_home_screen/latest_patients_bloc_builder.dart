@@ -1,6 +1,6 @@
 import 'package:dentalink/core/widgets/custom_loading_indicator.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
-import 'package:dentalink/features/home/ui/widgets/latest_cases_list_view.dart';
+import 'package:dentalink/features/home/ui/widgets/main_home_screen/latest_cases_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

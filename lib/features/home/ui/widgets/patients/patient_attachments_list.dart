@@ -22,7 +22,7 @@ class PatientAttachmentsList extends StatelessWidget {
         ),
         verticalSpace(10),
         SizedBox(
-          height: 50,
+          height: 80,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: patientData.images.length,
@@ -30,24 +30,26 @@ class PatientAttachmentsList extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: GestureDetector(
                 onTap: () => showFullImage(context, patientData.images[index]),
-                child: Row(
-                  children: [
-                    const Icon(Icons.image_outlined),
-                    Text(
-                      (index + 1).toString(),
-                      style: CustomTextStyles.font12LightGrayRegular(context),
-                    ),
-                  ],
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    patientData.images[index],
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                        const Icon(Icons.broken_image, size: 50),
+                  ),
                 ),
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
 
-    void showFullImage(BuildContext context, String imageUrl) {
+  void showFullImage(BuildContext context, String imageUrl) {
     showDialog(
       context: context,
       builder: (context) => Dialog(

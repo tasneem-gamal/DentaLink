@@ -35,7 +35,7 @@ class AppRegex {
   }
 
   static bool isAgeValid(String age) {
-    return RegExp(r'^(1[8-9]|[2-9][0-9])$').hasMatch(age);
+    return RegExp(r'^[1-9][0-9]?$').hasMatch(age);
   }
 
   static bool isPriceValid(String price) {

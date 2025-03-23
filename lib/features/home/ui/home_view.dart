@@ -4,6 +4,7 @@ import 'package:dentalink/features/home/ui/widgets/main_home_screen/app_bottom_n
 import 'package:dentalink/features/home/ui/widgets/side_menu/app_side_menu.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/home_floating_action_button.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/home_view_body.dart';
+import 'package:dentalink/features/shop/ui/shop_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
 
   List<Widget> appViews = const [
       HomeViewBody(),
-      Center(child: Text('Shop')),
+      ShopView(),
       Center(child: Text('AI')),
       Center(child: Text('Cart')),
       Center(child: Text('Profile')),

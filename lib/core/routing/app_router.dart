@@ -11,6 +11,8 @@ import 'package:dentalink/features/auth/login/logic/login_cubit/login_cubit.dart
 import 'package:dentalink/features/auth/login/ui/login_view.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/auth/sign_up/ui/sign_up_view.dart';
+import 'package:dentalink/features/cart/ui/widgets/cart_view_body.dart';
+import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_confirm.dart';
 import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
@@ -142,6 +144,14 @@ class AppRouter {
         //shop and related
       case Routes.shopView:
         return MaterialPageRoute(builder: (_) => const ShopView());
+
+
+        //cart and related
+      case Routes.cartView:
+        return MaterialPageRoute(builder: (_) => const CartViewBody());
+
+      case Routes.checkoutConfirmView:
+        return MaterialPageRoute(builder: (_) => const CheckoutConfirm());
 
       default:
         return null;

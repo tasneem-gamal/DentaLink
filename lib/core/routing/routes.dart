@@ -28,4 +28,8 @@ class Routes {
 
   //shop and related
   static const shopView = '/shopView';
+
+  //cart and related
+  static const cartView = '/cartView';
+  static const checkoutConfirmView = '/checkoutConfirmView';
 }

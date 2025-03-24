@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/features/cart/ui/widgets/cart_item.dart';
+import 'package:dentalink/features/cart/ui/widgets/cart_item_list.dart';
 import 'package:flutter/material.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -21,11 +21,12 @@ class CartViewBody extends StatelessWidget {
               style: CustomTextStyles.font20BlackMedium(context),
             ),
             verticalSpace(16),
-            const CartItem()
+            const CartItemList()
           ],
         )
       ),
     );
   }
 }
+
 

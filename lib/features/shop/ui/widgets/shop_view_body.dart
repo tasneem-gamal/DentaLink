@@ -26,7 +26,7 @@ class ShopViewBody extends StatelessWidget {
             hintText: 'What are you looking for?',
             prefixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
           ),
-          verticalSpace(16),
+          verticalSpace(20),
           const ShopItemsGridView()
         ],
       ),

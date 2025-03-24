@@ -28,6 +28,7 @@ import 'package:dentalink/features/home/ui/widgets/tools/tool_details/tool_detai
 import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
+import 'package:dentalink/features/shop/ui/shop_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -136,6 +137,11 @@ class AppRouter {
 
       case Routes.exchangeView:
         return MaterialPageRoute(builder: (_) => const ExchangeView());
+
+
+        //shop and related
+      case Routes.shopView:
+        return MaterialPageRoute(builder: (_) => const ShopView());
 
       default:
         return null;

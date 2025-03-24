@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/widgets/custom_divider.dart';
-import 'package:dentalink/features/cart/ui/widgets/checkout/price_details.dart';
+import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_confirm/price_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

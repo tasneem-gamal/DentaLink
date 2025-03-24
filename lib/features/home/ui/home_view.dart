@@ -1,3 +1,4 @@
+import 'package:dentalink/features/cart/ui/cart_view.dart';
 import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/home_app_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/app_bottom_navigation_bar.dart';
@@ -25,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
       HomeViewBody(),
       ShopView(),
       Center(child: Text('AI')),
-      Center(child: Text('Cart')),
+      CartView(),
       Center(child: Text('Profile')),
     ];
 

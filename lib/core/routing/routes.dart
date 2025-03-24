@@ -28,4 +28,7 @@ class Routes {
 
   //shop and related
   static const shopView = '/shopView';
+
+  //cart
+  static const cartView = '/cartView';
 }

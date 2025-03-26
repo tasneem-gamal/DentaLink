@@ -1,6 +1,5 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/cart/ui/widgets/cart_item_list.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_summary_container.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +18,6 @@ class CheckoutConfirmBody extends StatelessWidget {
             verticalSpace(12),
             const CartItemList(),
             verticalSpace(24),
-            Text(
-              'Order summary',
-              style: CustomTextStyles.font20BlackMedium(context),
-            ),
-            verticalSpace(16),
             const OrderSummaryContainer()
           ],
         )

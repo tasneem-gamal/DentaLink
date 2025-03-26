@@ -4,6 +4,7 @@ import 'package:dentalink/core/widgets/custom_divider.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_info_details.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_id_section.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/success_image.dart';
+import 'package:dentalink/features/cart/ui/widgets/checkout/order_summary_container.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailsViewBody extends StatelessWidget {
@@ -25,7 +26,8 @@ class OrderDetailsViewBody extends StatelessWidget {
             const CustomDivider(),
             verticalSpace(16),
             const OrderInfoDetails(),
-            
+            verticalSpace(20),
+            OrderSummaryContainer()
           ],
         )
       ),

@@ -23,12 +23,6 @@ class CheckoutPayViewBody extends StatelessWidget {
             ),
             verticalSpace(16),
             const PaymentMethods(),
-            verticalSpace(24),
-            Text(
-              'Order summary',
-              style: CustomTextStyles.font20BlackMedium(context),
-            ),
-            verticalSpace(16),
             const OrderSummaryContainer()
           ],
         )

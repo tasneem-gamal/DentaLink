@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/core/widgets/custom_divider.dart';
+import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_id_section.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/success_image.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +19,15 @@ class OrderDetailsViewBody extends StatelessWidget {
             verticalSpace(20),
             const SuccessImage(),
             verticalSpace(30),
-            Text(
-              'Order ID',
-              style: CustomTextStyles.font16BlackMedium(context),
-            ),
+            const OrderIdSection(),
+            verticalSpace(10),
+            const CustomDivider()
           ],
         )
       ),
     );
   }
 }
+
+
 

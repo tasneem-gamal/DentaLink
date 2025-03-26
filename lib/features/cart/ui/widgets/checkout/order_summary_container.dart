@@ -16,7 +16,7 @@ class OrderSummaryContainer extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        verticalSpace(20),
+        verticalSpace(24),
         Text(
           'Order summary',
           style: CustomTextStyles.font20BlackMedium(context),

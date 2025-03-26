@@ -26,8 +26,7 @@ class OrderDetailsViewBody extends StatelessWidget {
             const CustomDivider(),
             verticalSpace(16),
             const OrderInfoDetails(),
-            verticalSpace(20),
-            OrderSummaryContainer()
+            const OrderSummaryContainer()
           ],
         )
       ),

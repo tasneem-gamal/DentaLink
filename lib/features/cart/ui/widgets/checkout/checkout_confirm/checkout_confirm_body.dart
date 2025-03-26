@@ -17,7 +17,6 @@ class CheckoutConfirmBody extends StatelessWidget {
           children: [
             verticalSpace(12),
             const CartItemList(),
-            verticalSpace(24),
             const OrderSummaryContainer()
           ],
         )

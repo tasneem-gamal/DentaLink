@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_divider.dart';
+import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/date_payment_details.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_id_section.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/success_image.dart';
 import 'package:flutter/material.dart';
@@ -21,13 +22,16 @@ class OrderDetailsViewBody extends StatelessWidget {
             verticalSpace(30),
             const OrderIdSection(),
             verticalSpace(10),
-            const CustomDivider()
+            const CustomDivider(),
+            verticalSpace(16),
+            const DatePaymentDetails()
           ],
         )
       ),
     );
   }
 }
+
 
 
 

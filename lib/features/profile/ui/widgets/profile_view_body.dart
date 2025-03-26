@@ -1,7 +1,10 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/features/profile/ui/widgets/doctor_avatar.dart';
 import 'package:dentalink/features/profile/ui/widgets/profile_option_item.dart';
+import 'package:dentalink/features/profile/ui/widgets/sign_out.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -28,7 +31,9 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: const Icon(Icons.info_outline, size: 26,),
             title: 'About Us',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.aboutUsView);
+            }
           ),
           ProfileOptionItem(
             icon: const Icon(Icons.verified_user_outlined, size: 26,),
@@ -40,9 +45,12 @@ class ProfileViewBody extends StatelessWidget {
             title: 'Terms & Conditions',
             onTap: (){}
           ),
+          const SignOut()
         ],
       ),
     );
   }
 }
+
+
 

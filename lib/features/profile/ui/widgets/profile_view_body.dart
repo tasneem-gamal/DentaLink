@@ -38,7 +38,9 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: const Icon(Icons.verified_user_outlined, size: 26,),
             title: 'Privacy Policy',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.privacyPolicyView);
+            }
           ),
           ProfileOptionItem(
             icon: Image.asset('assets/images/terms_conditions_icon.png'),

@@ -1,4 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/general_custom_app_bar.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_pay/checkout_pay_view_body.dart';
@@ -14,8 +16,11 @@ class CheckoutPayView extends StatelessWidget {
       body: const CheckoutPayViewBody(),
       bottomNavigationBar: Padding(
         padding: Constants.appPadding,
-        child: const CustomAppButton(
-          btnText: 'Pay'
+        child: CustomAppButton(
+          btnText: 'Pay',
+          onPressed: (){
+            context.pushNamed(Routes.orderDetailsView);
+          },
         ),
       ),
     );

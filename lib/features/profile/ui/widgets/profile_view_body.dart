@@ -2,6 +2,7 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/profile/ui/widgets/doctor_avatar.dart';
 import 'package:dentalink/features/profile/ui/widgets/profile_option_item.dart';
+import 'package:dentalink/features/profile/ui/widgets/sign_out.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -40,9 +41,12 @@ class ProfileViewBody extends StatelessWidget {
             title: 'Terms & Conditions',
             onTap: (){}
           ),
+          const SignOut()
         ],
       ),
     );
   }
 }
+
+
 

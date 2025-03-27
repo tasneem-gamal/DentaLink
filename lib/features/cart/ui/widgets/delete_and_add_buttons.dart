@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 
 class DeleteAndAddButtons extends StatelessWidget {
   const DeleteAndAddButtons({
-    super.key,
+    super.key, required this.quantity, this.onIncrease, this.onDecrease,
   });
 
+  final int quantity;
+  final Function()? onIncrease;
+  final Function()? onDecrease;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,27 +24,36 @@ class DeleteAndAddButtons extends StatelessWidget {
         ),
         Row(
           children: [
-            Container(
-              height: 24,
-              width: 24,
-              decoration: const BoxDecoration(
-                color: ColorsManager.shimmerColorLoading
+            GestureDetector(
+              onTap: onDecrease,
+              child: Container(
+                height: 24,
+                width: 24,
+                decoration: const BoxDecoration(
+                  color: ColorsManager.shimmerColorLoading
+                ),
+                child: Icon(
+                  quantity > 1 ? Icons.remove : Icons.delete,
+                  color: quantity > 1 ? Colors.black : Colors.red,
+                ),
               ),
-              child: const Icon(Icons.delete, color: Colors.red,),
             ),
             horizontalSpace(6),
             Text(
-              '1',
+              '$quantity',
               style: CustomTextStyles.font16BlackMedium(context),
             ),
             horizontalSpace(6),
-            Container(
-              height: 24,
-              width: 24,
-              decoration: const BoxDecoration(
-                color: ColorsManager.shimmerColorLoading
+            GestureDetector(
+              onTap: onIncrease,
+              child: Container(
+                height: 24,
+                width: 24,
+                decoration: const BoxDecoration(
+                  color: ColorsManager.shimmerColorLoading
+                ),
+                child: const Icon(Icons.add),
               ),
-              child: const Icon(Icons.add),
             ),
           ],
         )

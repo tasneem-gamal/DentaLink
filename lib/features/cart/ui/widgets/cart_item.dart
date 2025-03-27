@@ -5,10 +5,35 @@ import 'package:dentalink/features/cart/ui/widgets/delete_and_add_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   const CartItem({
-    super.key,
+    super.key, required this.onDelete,
   });
+
+  final Function() onDelete;
+
+  @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+  int quantity = 1;
+
+  void _increaseQuantity() {
+    setState(() {
+      quantity++;
+    });
+  }
+
+  void _decreaseQuantity() {
+    if (quantity > 1) {
+      setState(() {
+        quantity--;
+      });
+    } else {
+      widget.onDelete();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +63,11 @@ class CartItem extends StatelessWidget {
                     style: CustomTextStyles.font12LightGrayRegular(context),
                   ),
                   verticalSpace(8),
-                  const DeleteAndAddButtons()
+                  DeleteAndAddButtons(
+                    quantity: quantity,
+                    onDecrease: _decreaseQuantity,
+                    onIncrease: _increaseQuantity,
+                  )
                 ],
               ),
             )

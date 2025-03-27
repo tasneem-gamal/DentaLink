@@ -33,6 +33,7 @@ import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
 import 'package:dentalink/features/profile/profile_view.dart';
+import 'package:dentalink/features/profile/ui/widgets/about_us/about_us_view.dart';
 import 'package:dentalink/features/shop/ui/shop_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -165,6 +166,9 @@ class AppRouter {
       //profile and related
       case Routes.profileView:
         return MaterialPageRoute(builder: (_) => const ProfileView());
+
+      case Routes.aboutUsView:
+        return MaterialPageRoute(builder: (_) => const AboutUsView());
 
       default:
         return null;

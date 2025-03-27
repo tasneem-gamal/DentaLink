@@ -37,5 +37,6 @@ class Routes {
 
   //profile and related
   static const profileView = '/profileView';
+  static const aboutUsView = '/aboutUsView';
 
 }

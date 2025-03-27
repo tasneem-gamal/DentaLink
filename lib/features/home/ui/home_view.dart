@@ -6,6 +6,7 @@ import 'package:dentalink/features/home/ui/widgets/side_menu/app_side_menu.dart'
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/home_floating_action_button.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/home_view_body.dart';
 import 'package:dentalink/features/profile/profile_view.dart';
+import 'package:dentalink/features/profile/ui/widgets/profile_app_bar.dart';
 import 'package:dentalink/features/shop/ui/shop_view.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: selectedIndex == 4 ? null : HomeAppBar(scaffoldKey: scaffoldKey),
+      appBar: selectedIndex == 4 ? ProfileAppBar(scaffoldKey: scaffoldKey) : HomeAppBar(scaffoldKey: scaffoldKey),
       drawer: const AppSideMenu(),
       body: SafeArea(child: appViews[selectedIndex]),
       floatingActionButton: selectedIndex == 0 ? const HomeFloatingActionButton() : null,

@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/profile/ui/widgets/doctor_avatar.dart';
+import 'package:dentalink/features/profile/ui/widgets/profile_option_item.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -12,8 +13,33 @@ class ProfileViewBody extends StatelessWidget {
       padding: Constants.appPadding,
       child: Column(
         children: [
-          verticalSpace(20),
-          const DoctorAvatar()
+          const DoctorAvatar(),
+          verticalSpace(30),
+          ProfileOptionItem(
+            icon: Image.asset('assets/images/my_posts_pin.png'),
+            title: 'My Posts',
+            onTap: (){}
+          ),
+          ProfileOptionItem(
+            icon: const Icon(Icons.shopping_bag_outlined, size: 26,),
+            title: 'All orders',
+            onTap: (){}
+          ),
+          ProfileOptionItem(
+            icon: const Icon(Icons.info_outline, size: 26,),
+            title: 'About Us',
+            onTap: (){}
+          ),
+          ProfileOptionItem(
+            icon: const Icon(Icons.verified_user_outlined, size: 26,),
+            title: 'Privacy Policy',
+            onTap: (){}
+          ),
+          ProfileOptionItem(
+            icon: Image.asset('assets/images/terms_conditions_icon.png'),
+            title: 'Terms & Conditions',
+            onTap: (){}
+          ),
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/app_regex.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_pay/build_radio_option.dart';
 import 'package:flutter/material.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
@@ -14,6 +15,8 @@ class PaymentMethods extends StatefulWidget {
 
 class _PaymentMethodsState extends State<PaymentMethods> {
   String selectedPaymentMethod = 'credit_card';
+  final GlobalKey<FormState> deliveryPaymentMethodFormKey = GlobalKey();
+  final AutovalidateMode autovalidateMode = AutovalidateMode.always;
 
   @override
   Widget build(BuildContext context) {
@@ -48,24 +51,37 @@ class _PaymentMethodsState extends State<PaymentMethods> {
           if (selectedPaymentMethod == 'cash_on_delivery')
             Padding(
               padding: const EdgeInsets.only(left: 10, bottom: 16, top: 10),
-              child: Column(
-                children: [
-                  CustomTextFormField(
-                    validator: (value) {},
-                    hintText: 'Address in details',
-                    maxLines: 3,
-                  ),
-                  verticalSpace(8),
-                  CustomTextFormField(
-                    validator: (value) {},
-                    hintText: 'Phone number',
-                  ),
-                ],
+              child: Form(
+                key: deliveryPaymentMethodFormKey,
+                autovalidateMode: autovalidateMode,
+                child: Column(
+                  children: [
+                    CustomTextFormField(
+                      validator: (value) {},
+                      hintText: 'Address in details',
+                      maxLines: 3,
+                    ),
+                    verticalSpace(8),
+                    CustomTextFormField(
+                      validator: phoneValidate,
+                      hintText: 'Phone number',
+                    ),
+                  ],
+                ),
               ),
             ),
         ],
       ),
     );
+  }
+
+  phoneValidate(value) {
+    if (value == null || value.isEmpty) {
+      return 'Phone cannot be empty';
+    }
+    if (!AppRegex.isPhoneNumberValid(value)) {
+      return 'Enter a valid Phone';
+    }
   }
 }
 

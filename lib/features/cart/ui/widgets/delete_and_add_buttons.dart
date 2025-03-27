@@ -25,9 +25,9 @@ class DeleteAndAddButtons extends StatelessWidget {
               height: 24,
               width: 24,
               decoration: const BoxDecoration(
-                color: ColorsManager.moreLightGray
+                color: ColorsManager.shimmerColorLoading
               ),
-              child: const Icon(Icons.delete_forever_outlined),
+              child: const Icon(Icons.delete, color: Colors.red,),
             ),
             horizontalSpace(6),
             Text(
@@ -39,7 +39,7 @@ class DeleteAndAddButtons extends StatelessWidget {
               height: 24,
               width: 24,
               decoration: const BoxDecoration(
-                color: ColorsManager.moreLightGray
+                color: ColorsManager.shimmerColorLoading
               ),
               child: const Icon(Icons.add),
             ),

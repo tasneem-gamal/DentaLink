@@ -9,7 +9,7 @@ class PrivacyPolicyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GeneralCustomAppBar(title: 'About Us'),
+      appBar: const GeneralCustomAppBar(title: 'Privacy Policy'),
       body: const PrivacyPolicyViewBody(),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),

@@ -57,7 +57,22 @@ class PrivacyPolicyViewBody extends StatelessWidget {
             verticalSpace(8),
             const CustomDotText(
               text: 'Facilitate patient discovery and connections between users.',
-            )
+            ),
+            const CustomDotText(
+              text: 'Provide access to the dental equipment marketplace.',
+            ),
+            const CustomDotText(
+              text: 'Enable the exchange of educational materials.',
+            ),
+            const CustomDotText(
+              text: 'Improve app functionality and user experience.',
+            ),
+            const CustomDotText(
+              text: 'Communicate with you about updates, promotions, and support.',
+            ),
+            const CustomDotText(
+              text: 'Ensure compliance with applicable laws and academic guidelines.',
+            ),
           ],
         ),
       ),

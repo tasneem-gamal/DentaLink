@@ -83,6 +83,29 @@ class PrivacyPolicyViewBody extends StatelessWidget {
             const CustomText(
               text: 'We implement reasonable measures to protect your data from unauthorized access, loss, or misuse.' 
               'However, no method of transmission over the internet or electronic storage is 100% secure.'
+            ),
+            verticalSpace(20),
+            Text(
+              '5. Contact Us',
+              style: CustomTextStyles.font14BlackRegular(context),
+            ),
+            verticalSpace(8),
+            const LabelTextApp(
+              label: 'If you have questions or concerns contact us at: ', 
+              text: ''
+            ),
+            const LabelTextApp(
+              label: 'Email: ', 
+              text: 'DentaLink@g.com'
+            ),
+            const LabelTextApp(
+              label: 'Address: ', 
+              text: 'Mansoura'
+            ),
+            const CustomTextRich(
+              firstTextSpan: 'Thank you for using ', 
+              mainBlueText: 'DentaLink', 
+              text: '! Your trust and privacy are our top priorities.'
             )
           ],
         ),

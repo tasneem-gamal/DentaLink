@@ -39,5 +39,6 @@ class Routes {
   static const profileView = '/profileView';
   static const aboutUsView = '/aboutUsView';
   static const privacyPolicyView = '/privacyPolicyView';
+  static const termsAndConditionsView = '/termsAndConditionsView';
 
 }

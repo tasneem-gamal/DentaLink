@@ -5,6 +5,7 @@ import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/features/profile/ui/widgets/doctor_avatar.dart';
 import 'package:dentalink/features/profile/ui/widgets/profile_option_item.dart';
 import 'package:dentalink/features/profile/ui/widgets/sign_out.dart';
+import 'package:dentalink/features/profile/ui/widgets/sign_out_bloc_listner.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -45,9 +46,12 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: Image.asset('assets/images/terms_conditions_icon.png'),
             title: 'Terms & Conditions',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.termsAndConditionsView);
+            }
           ),
-          const SignOut()
+          const SignOut(),
+          const SignOutBlocListner()
         ],
       ),
     );

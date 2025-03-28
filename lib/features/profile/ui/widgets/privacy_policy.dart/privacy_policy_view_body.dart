@@ -1,7 +1,8 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/profile/ui/widgets/custom_text_rich.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyViewBody extends StatelessWidget {
@@ -21,31 +22,32 @@ class PrivacyPolicyViewBody extends StatelessWidget {
               style: CustomTextStyles.font14BlackRegular(context),
             ),
             verticalSpace(8),
-            Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Welcome to ',
-                    style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
-                      color: ColorsManager.lightGray
-                    )
-                  ),
-                  TextSpan(
-                    text: 'DentaLink',
-                    style: CustomTextStyles.font14MainBlueRegular(context)
-                  ),
-                  TextSpan(
-                    text: '! Your privacy is important to us. '
-                        'This Privacy Policy outlines how we collect, use, disclose, and protect your information when you use our mobile application designed to assist dental students with patient discovery, equipment marketplaces, and educational material exchange.',
-                    style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
-                      color: ColorsManager.lightGray
-                    )
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.start,
-              softWrap: true,
+            const CustomTextRich(
+              firstTextSpan: 'Welcome to ', 
+              mainBlueText: 'DentaLink', 
+              text: '! Your privacy is important to us. '
+                    'This Privacy Policy outlines how we collect, use, disclose, and protect your information when you use our mobile application designed to assist dental students with patient discovery, equipment marketplaces, and educational material exchange.',
             ),
+            verticalSpace(20),
+            Text(
+              '2. Information We Collect',
+              style: CustomTextStyles.font14BlackRegular(context),
+            ),
+            verticalSpace(8),
+            const LabelTextApp(
+              label: 'Personal Information: ', 
+              text: 'Name, email address, phone number and age.'
+            ),
+            verticalSpace(8),
+            const LabelTextApp(
+              label: 'Patient Matching Information: ', 
+              text: 'Any data you voluntarily provide for patient discovery and matching services.'
+            ),
+            verticalSpace(8),
+            const LabelTextApp(
+              label: 'Information We Collect Automatically:', 
+              text: 'Usage Data: Details about how you interact with the app, including clicks, page views, and time spent on features.'
+            )
           ],
         ),
       ),

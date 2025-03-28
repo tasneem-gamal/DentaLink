@@ -3,6 +3,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:dentalink/features/profile/ui/widgets/custom_dot_text.dart';
+import 'package:dentalink/features/profile/ui/widgets/custom_text.dart';
 import 'package:dentalink/features/profile/ui/widgets/custom_text_rich.dart';
 import 'package:flutter/material.dart';
 
@@ -73,6 +74,16 @@ class PrivacyPolicyViewBody extends StatelessWidget {
             const CustomDotText(
               text: 'Ensure compliance with applicable laws and academic guidelines.',
             ),
+            verticalSpace(20),
+            Text(
+              '4. Data Security',
+              style: CustomTextStyles.font14BlackRegular(context),
+            ),
+            verticalSpace(8),
+            const CustomText(
+              text: 'We implement reasonable measures to protect your data from unauthorized access, loss, or misuse.' 
+              'However, no method of transmission over the internet or electronic storage is 100% secure.'
+            )
           ],
         ),
       ),

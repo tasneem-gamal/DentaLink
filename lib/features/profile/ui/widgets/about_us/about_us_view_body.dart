@@ -1,8 +1,8 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/profile/ui/widgets/custom_text.dart';
+import 'package:dentalink/features/profile/ui/widgets/custom_text_rich.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsViewBody extends StatelessWidget {
@@ -17,31 +17,12 @@ class AboutUsViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             verticalSpace(20),
-            Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Welcome to our innovative ',
-                    style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
-                      color: ColorsManager.lightGray
-                    )
-                  ),
-                  TextSpan(
-                    text: 'DentaLink',
-                    style: CustomTextStyles.font14MainBlueRegular(context)
-                  ),
-                  TextSpan(
-                    text: ', designed exclusively for dental students! '
-                        'We understand the challenges you face in finding patients, sourcing tools, and exchanging study materials. '
-                        'That’s why we’ve created a one-stop platform to make your journey as a dental student smoother, more efficient, and more collaborative.',
-                    style: CustomTextStyles.font14LightGrayRegular(context).copyWith(
-                      color: ColorsManager.lightGray
-                    )
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.start,
-              softWrap: true,
+            const CustomTextRich(
+              firstTextSpan: 'Welcome to our innovative ',
+              mainBlueText: 'DentaLink',
+              text: ', designed exclusively for dental students! '
+                'We understand the challenges you face in finding patients, sourcing tools, and exchanging study materials. '
+                'That’s why we’ve created a one-stop platform to make your journey as a dental student smoother, more efficient, and more collaborative.',
             ),
             verticalSpace(20),
             const CustomText(
@@ -82,5 +63,7 @@ class AboutUsViewBody extends StatelessWidget {
     );
   }
 }
+
+
 
 

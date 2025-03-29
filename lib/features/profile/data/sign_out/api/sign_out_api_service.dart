@@ -10,7 +10,7 @@ class SignOutApiService {
     dio = DioFactory.getDio();
   }
 
-  Future<SignOutResponseBody> login(SignOutRequestBody signOutRequestBody) async{
+  Future<SignOutResponseBody> signOutService(SignOutRequestBody signOutRequestBody) async{
     final response = await dio.post(
       '${ApiConstants.baseUrl}${ApiConstants.signOut}',
       data: signOutRequestBody.toJson()

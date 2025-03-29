@@ -15,11 +15,20 @@ class SignOutBlocListner extends StatelessWidget {
           current is SignOutFailure,
       listener: (context, state) {
         if (state is SignOutSuccess) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              backgroundColor: Colors.green,
+              content: Text('Logout successful')
+            )
+          );
           context.pop();
           context.pushNamed(Routes.loginView);
         } else if (state is SignOutFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.errMessage))
+            SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(state.errMessage)
+            )
           );
         }
       },

@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,7 +20,9 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {}, 
+          onPressed: () {
+            context.pushNamed(Routes.editProfileView);
+          }, 
           icon: const Icon(FontAwesomeIcons.penToSquare, color: ColorsManager.mainBlue),
         ),
       ],

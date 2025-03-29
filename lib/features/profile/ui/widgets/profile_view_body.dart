@@ -45,7 +45,9 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: Image.asset('assets/images/terms_conditions_icon.png'),
             title: 'Terms & Conditions',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.termsAndConditionsView);
+            }
           ),
           const SignOut()
         ],

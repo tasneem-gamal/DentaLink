@@ -32,6 +32,7 @@ import 'package:dentalink/features/home/ui/widgets/tools/tool_details/tool_detai
 import 'package:dentalink/features/home/ui/widgets/tools/tools_view.dart';
 import 'package:dentalink/features/on_boarding/on_boarding_view.dart';
 import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.dart';
+import 'package:dentalink/features/profile/logic/sign_out_cubit/sign_out_cubit.dart';
 import 'package:dentalink/features/profile/profile_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/about_us/about_us_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/privacy_policy.dart/privacy_policy_view.dart';
@@ -93,17 +94,22 @@ class AppRouter {
 
       // home and related
       case Routes.homeView:
-      final patientData = settings.arguments as List<PatientData>? ?? [];
+        final patientData = settings.arguments as List<PatientData>? ?? [];
         return MaterialPageRoute(
-          builder: (_) => MultiBlocProvider(
-            providers: [
-              BlocProvider(create: (context) => getIt<LatestPatientsCubit>()..getLatestPatients(),)
-            ],
-            child: HomeView(
-              patientData: patientData,
-            )
-          )
-        );
+            builder: (_) => MultiBlocProvider(
+                    providers: [
+                      BlocProvider(
+                        create: (context) =>
+                            getIt<LatestPatientsCubit>()..getLatestPatients(),
+                      ),
+                      BlocProvider(
+                        create: (context) =>
+                            getIt<SignOutCubit>()
+                      ),
+                    ],
+                    child: HomeView(
+                      patientData: patientData,
+                    )));
 
       case Routes.addPatient:
         return MaterialPageRoute(
@@ -126,10 +132,11 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ToolsView());
 
       case Routes.patientDetails:
-      final patientData = settings.arguments as PatientData;
-        return MaterialPageRoute(builder: (_) => PatientDetailsView(
-          patientData: patientData,
-        ));
+        final patientData = settings.arguments as PatientData;
+        return MaterialPageRoute(
+            builder: (_) => PatientDetailsView(
+                  patientData: patientData,
+                ));
 
       case Routes.toolDetails:
         return MaterialPageRoute(builder: (_) => const ToolDetailsView());
@@ -146,13 +153,11 @@ class AppRouter {
       case Routes.exchangeView:
         return MaterialPageRoute(builder: (_) => const ExchangeView());
 
-
-        //shop and related
+      //shop and related
       case Routes.shopView:
         return MaterialPageRoute(builder: (_) => const ShopView());
 
-
-        //cart and related
+      //cart and related
       case Routes.cartView:
         return MaterialPageRoute(builder: (_) => const CartViewBody());
 
@@ -167,7 +172,8 @@ class AppRouter {
 
       //profile and related
       case Routes.profileView:
-        return MaterialPageRoute(builder: (_) => const ProfileView());
+        return MaterialPageRoute(
+            builder: (_) => const ProfileView());
 
       case Routes.aboutUsView:
         return MaterialPageRoute(builder: (_) => const AboutUsView());
@@ -176,7 +182,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PrivacyPolicyView());
 
       case Routes.termsAndConditionsView:
-        return MaterialPageRoute(builder: (_) => const TermsAndConditionsView());
+        return MaterialPageRoute(
+            builder: (_) => const TermsAndConditionsView());
 
       default:
         return null;

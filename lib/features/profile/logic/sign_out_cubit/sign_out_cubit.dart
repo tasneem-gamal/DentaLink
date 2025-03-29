@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/shared_preference.dart';
 import 'package:dentalink/features/profile/data/sign_out/models/sign_out_request_body.dart';
 import 'package:dentalink/features/profile/data/sign_out/models/sign_out_response_body.dart';
 import 'package:dentalink/features/profile/data/sign_out/repo/sign_out_repo.dart';
@@ -13,16 +14,12 @@ class SignOutCubit extends Cubit<SignOutState> {
 
   void emitSignOutStates() async {
     emit(SignOutLoading());
-    final respose = await signOutRepo.signOut(
-      SignOutRequestBody(
-        token: SharedPreferencesKeys.userToken
-      )
-    );
-    respose.fold((failure) {
+    final response = await signOutRepo.signOut(SignOutRequestBody(
+        token: await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)));
+    response.fold((failure) {
       emit(SignOutFailure(failure.errMessage));
     }, (signOutSuccess) {
       emit(SignOutSuccess(signOutSuccess));
     });
   }
-
 }

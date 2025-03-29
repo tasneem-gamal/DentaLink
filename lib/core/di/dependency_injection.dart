@@ -25,6 +25,9 @@ import 'package:dentalink/features/home/data/repo/latest_patients/latest_patient
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
+import 'package:dentalink/features/profile/data/sign_out/api/sign_out_api_service.dart';
+import 'package:dentalink/features/profile/data/sign_out/repo/sign_out_repo.dart';
+import 'package:dentalink/features/profile/logic/sign_out_cubit/sign_out_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -84,4 +87,9 @@ void setUpGetIt() {
   getIt.registerSingleton<LatestPatientsApiService>(LatestPatientsApiService());
   getIt.registerSingleton<LatestPatientsRepo>(LatestPatientsRepo(getIt.get<LatestPatientsApiService>()));
   getIt.registerLazySingleton<LatestPatientsCubit>(() => LatestPatientsCubit(getIt()));
+
+  //sign out
+  getIt.registerSingleton<SignOutApiService>(SignOutApiService());
+  getIt.registerSingleton<SignOutRepo>(SignOutRepo(getIt.get<SignOutApiService>()));
+  getIt.registerLazySingleton<SignOutCubit>(() => SignOutCubit(getIt()));
 }

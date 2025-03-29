@@ -8,4 +8,5 @@ class ApiConstants {
   static const String signUp = "users/signup";
   static const String addpatient = "patients/add";
   static const String allPatients = "patients";
+  static const String signOut = "users/logout";
 }

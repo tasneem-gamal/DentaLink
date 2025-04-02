@@ -22,7 +22,9 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: Image.asset('assets/images/my_posts_pin.png'),
             title: 'My Posts',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.myPostsView);
+            }
           ),
           ProfileOptionItem(
             icon: const Icon(Icons.shopping_bag_outlined, size: 26,),

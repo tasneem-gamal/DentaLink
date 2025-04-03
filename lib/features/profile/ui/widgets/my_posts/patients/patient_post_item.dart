@@ -1,8 +1,7 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/change_image.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/description_and_attachment.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/patient_text_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,42 +38,12 @@ class PatientPostItem extends StatelessWidget {
               ],
             ),
             verticalSpace(12),
-            Column(
-              children: [
-                const LabelTextApp(label: 'Description: ', text: 'Used to adjust braces, wires, and other orthodontic appliances.'),
-                verticalSpace(10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Attachments',
-                      style: CustomTextStyles.font14BlackRegular(context),
-                    ),
-                    Container(
-                      width: 134,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: ColorsManager.moreLightGray),
-                        borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(Icons.image_outlined),
-                          Text('data.png'),
-                          Icon(Icons.close)
-                        ],
-                      ),
-                    ),
-                    const Icon(Icons.delete, color: Colors.red,)
-                  ],
-                )
-              ],
-            )
+            const DescriptionAndAttachment()
           ],
         ),
       ),
     );
   }
 }
+
 

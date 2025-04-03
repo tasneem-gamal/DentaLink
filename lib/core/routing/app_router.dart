@@ -36,6 +36,7 @@ import 'package:dentalink/features/profile/logic/sign_out_cubit/sign_out_cubit.d
 import 'package:dentalink/features/profile/profile_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/about_us/about_us_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/edit_profile/edit_profile_view.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/privacy_policy.dart/privacy_policy_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/terms_and_conditions/terms_and_conditions_view.dart';
 import 'package:dentalink/features/shop/ui/shop_view.dart';
@@ -189,6 +190,10 @@ class AppRouter {
       case Routes.editProfileView:
         return MaterialPageRoute(
             builder: (_) => const EditProfileView());
+
+      case Routes.myPostsView:
+        return MaterialPageRoute(
+            builder: (_) => const MyPostsView());
 
       default:
         return null;

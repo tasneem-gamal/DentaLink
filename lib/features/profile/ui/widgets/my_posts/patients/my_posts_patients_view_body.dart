@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/patient_post_item.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/patient_post_item_list.dart';
 import 'package:flutter/material.dart';
 
 class MyPostsPatientsViewBody extends StatelessWidget {
@@ -20,10 +20,12 @@ class MyPostsPatientsViewBody extends StatelessWidget {
             style: CustomTextStyles.font20BlackMedium(context),
           ),
           verticalSpace(16),
-          PatientPostItem()
+          const PatientPostItemList()
         ],
       ),
     );
   }
 }
+
+
 

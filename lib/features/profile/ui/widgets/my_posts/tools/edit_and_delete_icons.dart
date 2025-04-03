@@ -1,4 +1,5 @@
 import 'package:dentalink/core/theming/colors.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/delete_alert_dialog.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_post_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
@@ -26,10 +27,20 @@ class EditAndDeleteIcons extends StatelessWidget {
             color: ColorsManager.mainBlue,
           )
         ),
-        const Icon(Icons.delete, color: Colors.red,),
+        GestureDetector(
+          onTap: (){
+            showDialog(
+              context: context, 
+              builder: (context) => const DeleteAlertDialog()
+            );
+          },
+          child: const Icon(Icons.delete, color: Colors.red,)
+        ),
       ],
     );
   }
 }
+
+
 
 

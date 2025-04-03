@@ -13,7 +13,7 @@ class ChangeImage extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          height: 135.h,
+          height: 150.h,
           width: 90.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),

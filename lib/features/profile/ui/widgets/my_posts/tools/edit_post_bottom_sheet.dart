@@ -1,3 +1,4 @@
+import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
@@ -32,7 +33,10 @@ class EditPostBottomSheet extends StatelessWidget {
                       'Edit Post',
                       style: CustomTextStyles.font16BlackMedium(context),
                     ),
-                    const Icon(Icons.cancel, color: ColorsManager.lightGray,)
+                    GestureDetector(
+                      onTap: (){context.pop();},
+                      child: const Icon(Icons.cancel, color: ColorsManager.lightGray,)
+                    )
                   ],
                 ),
                 verticalSpace(16),

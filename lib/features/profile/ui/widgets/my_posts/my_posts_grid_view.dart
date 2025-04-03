@@ -1,0 +1,23 @@
+import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_item.dart';
+import 'package:flutter/material.dart';
+
+class MyPostsGridView extends StatelessWidget {
+  const MyPostsGridView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 0.7,
+          ),
+          itemCount: 2,
+          itemBuilder: (context, index) => MyPostsItem()),
+    );
+  }
+}

@@ -25,7 +25,7 @@ class MyPostsToolsViewBody extends StatelessWidget {
             ),
             verticalSpace(16),
             Container(
-              height: 180.h,
+              height: 190.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: ColorsManager.moreLightGray)

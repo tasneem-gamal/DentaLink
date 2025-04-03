@@ -1,9 +1,8 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/patient_post_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyPostsPatientsViewBody extends StatelessWidget {
   const MyPostsPatientsViewBody({super.key});
@@ -21,22 +20,10 @@ class MyPostsPatientsViewBody extends StatelessWidget {
             style: CustomTextStyles.font20BlackMedium(context),
           ),
           verticalSpace(16),
-          Container(
-            height: 220.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: ColorsManager.moreLightGray)),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: Row(
-                children: [
-                  
-                ],
-              ),
-            ),
-          )
+          PatientPostItem()
         ],
       ),
     );
   }
 }
+

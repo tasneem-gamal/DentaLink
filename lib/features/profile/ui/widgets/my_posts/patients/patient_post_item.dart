@@ -3,6 +3,7 @@ import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/change_image.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/patient_text_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,25 +31,7 @@ class PatientPostItem extends StatelessWidget {
                   height: 180.h,
                 ),
                 horizontalSpace(20),
-                Expanded(
-                  child: Column(
-                    children: [
-                      const LabelTextApp(label: 'Patient name: ', text: 'Malek'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Age: ', text: '40'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Title: ', text: 'Cavity'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Location: ', text: 'Mansoura'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Gender: ', text: 'Male'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Phone number: ', text: '3456205'),
-                      verticalSpace(8),
-                      const LabelTextApp(label: 'Category: ', text: 'Endodontics'),
-                    ],
-                  ),
-                ),
+                const PatientTextInfo(),
                 const Icon(
                 Icons.edit_square, 
                 color: ColorsManager.mainBlue,
@@ -94,3 +77,4 @@ class PatientPostItem extends StatelessWidget {
     );
   }
 }
+

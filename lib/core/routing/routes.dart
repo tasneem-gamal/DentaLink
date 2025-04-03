@@ -42,5 +42,6 @@ class Routes {
   static const termsAndConditionsView = '/termsAndConditionsView';
   static const editProfileView = '/editProfileView';
   static const myPostsView = '/myPostsView';
+  static const myPostsToolsView = '/myPostsToolsView';
 
 }

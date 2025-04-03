@@ -1,4 +1,5 @@
 import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_item.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/my_posts_tools_view.dart';
 import 'package:flutter/material.dart';
 
 class MyPostsGridView extends StatelessWidget {
@@ -9,8 +10,8 @@ class MyPostsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> posts = [
-      {"image": "assets/images/tools_icon.png", "text": "Tools", "page" : ''},
-      {"image": "assets/images/patients_icon.png", "text": "Patients", "page" : ''},
+      {"image": "assets/images/tools_icon.png", "text": "Tools", "page" : const MyPostsToolsView()},
+      {"image": "assets/images/patients_icon.png", "text": "Patients", "page" : const MyPostsToolsView()},
     ];
     return Expanded(
       child: GridView.builder(
@@ -27,7 +28,7 @@ class MyPostsGridView extends StatelessWidget {
             onTap: (){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => posts[index]["page"]),
+                MaterialPageRoute(builder: (context) => posts[index]["page"] as Widget),
               );
             },
           )),

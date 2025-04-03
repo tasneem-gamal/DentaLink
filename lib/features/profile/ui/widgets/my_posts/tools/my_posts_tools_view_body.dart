@@ -3,6 +3,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/change_image.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/tool_text_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +34,9 @@ class MyPostsToolsViewBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 child: Row(
                   children: [
-                    ChangeImage()
+                    const ChangeImage(),
+                    horizontalSpace(15),
+                    const ToolTextInfo()
                   ],
                 ),
               ),
@@ -44,4 +47,6 @@ class MyPostsToolsViewBody extends StatelessWidget {
     );
   }
 }
+
+
 

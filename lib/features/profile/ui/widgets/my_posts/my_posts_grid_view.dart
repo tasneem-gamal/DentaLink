@@ -8,9 +8,9 @@ class MyPostsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> posts = [
-      {"image": "assets/images/tools_icon.png", "text": "Tools"},
-      {"image": "assets/images/patients_icon.png", "text": "Patients"},
+    final List<Map<String, dynamic>> posts = [
+      {"image": "assets/images/tools_icon.png", "text": "Tools", "page" : ''},
+      {"image": "assets/images/patients_icon.png", "text": "Patients", "page" : ''},
     ];
     return Expanded(
       child: GridView.builder(
@@ -24,6 +24,12 @@ class MyPostsGridView extends StatelessWidget {
           itemBuilder: (context, index) => MyPostsItem(
             image: posts[index]["image"]!,
             text: posts[index]["text"]!,
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => posts[index]["page"]),
+              );
+            },
           )),
     );
   }

@@ -4,22 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChangeImage extends StatelessWidget {
   const ChangeImage({
-    super.key,
+    super.key, required this.image, this.height, this.width,
   });
-
+  final String image;
+  final double? height, width;
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
-          height: 150.h,
-          width: 70.w,
+          height: height ?? 150.h,
+          width: width ?? 70.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: ColorsManager.moreLightGray)
           ),
-          child: Image.asset('assets/images/item.png'),
+          child: Image.asset(image),
         ),
         const Positioned(
           bottom: -10,

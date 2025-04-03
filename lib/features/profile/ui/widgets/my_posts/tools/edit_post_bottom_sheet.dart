@@ -3,7 +3,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/core/widgets/custom_text_form_field.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_post_form_fields.dart';
 import 'package:flutter/material.dart';
 
 class EditPostBottomSheet extends StatelessWidget {
@@ -40,25 +40,7 @@ class EditPostBottomSheet extends StatelessWidget {
                   ],
                 ),
                 verticalSpace(16),
-                CustomTextFormField(
-                  validator: (value){}, 
-                  hintText: 'Mirror'
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){}, 
-                  hintText: '300LE'
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){}, 
-                  hintText: 'Endodontics'
-                ),
-                verticalSpace(12),
-                CustomTextFormField(
-                  validator: (value){}, 
-                  hintText: 'Used to ...'
-                ),
+                const EditPostFormFields(),
                 verticalSpace(16),
                 CustomAppButton(
                   onPressed: (){},
@@ -72,3 +54,4 @@ class EditPostBottomSheet extends StatelessWidget {
     );
   }
 }
+

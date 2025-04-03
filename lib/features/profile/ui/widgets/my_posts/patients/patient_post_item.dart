@@ -31,9 +31,17 @@ class PatientPostItem extends StatelessWidget {
                 ),
                 horizontalSpace(20),
                 const PatientTextInfo(),
-                const Icon(
-                Icons.edit_square, 
-                color: ColorsManager.mainBlue,
+                GestureDetector(
+                  onTap: (){
+                    showModalBottomSheet(
+                      context: context, 
+                      builder: (context) => SizedBox()
+                    );
+                  },
+                  child: const Icon(
+                  Icons.edit_square, 
+                  color: ColorsManager.mainBlue,
+                  ),
                 )
               ],
             ),

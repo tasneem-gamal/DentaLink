@@ -3,11 +3,11 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
-import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_post_form_fields.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_tool_post_form_fields.dart';
 import 'package:flutter/material.dart';
 
-class EditPostBottomSheet extends StatelessWidget {
-  const EditPostBottomSheet({
+class EditToolPostBottomSheet extends StatelessWidget {
+  const EditToolPostBottomSheet({
     super.key,
   });
 
@@ -40,7 +40,7 @@ class EditPostBottomSheet extends StatelessWidget {
                   ],
                 ),
                 verticalSpace(16),
-                const EditPostFormFields(),
+                const EditToolPostFormFields(),
                 verticalSpace(16),
                 CustomAppButton(
                   onPressed: (){},

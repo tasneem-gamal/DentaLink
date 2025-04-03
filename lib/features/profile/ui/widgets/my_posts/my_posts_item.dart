@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyPostsItem extends StatelessWidget {
   const MyPostsItem({
-    super.key,
+    super.key, required this.image, required this.text,
   });
+
+  final String image, text;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,10 @@ class MyPostsItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/images/tools_icon.png'),
+          Image.asset(image),
           verticalSpace(8),
           Text(
-            'Tools',
+            text,
             style: CustomTextStyles.font20BlackMedium(context),
           )
         ],

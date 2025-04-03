@@ -8,6 +8,10 @@ class MyPostsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> posts = [
+      {"image": "assets/images/tools_icon.png", "text": "Tools"},
+      {"image": "assets/images/patients_icon.png", "text": "Patients"},
+    ];
     return Expanded(
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -17,7 +21,10 @@ class MyPostsGridView extends StatelessWidget {
             childAspectRatio: 0.7,
           ),
           itemCount: 2,
-          itemBuilder: (context, index) => MyPostsItem()),
+          itemBuilder: (context, index) => MyPostsItem(
+            image: posts[index]["image"]!,
+            text: posts[index]["text"]!,
+          )),
     );
   }
 }

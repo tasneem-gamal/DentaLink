@@ -1,7 +1,6 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_grid_view.dart';
-import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_item.dart';
 import 'package:flutter/material.dart';
 
 class MyPostsViewBody extends StatelessWidget {

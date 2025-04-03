@@ -3,6 +3,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/change_image.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_and_delete_icons.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/tool_text_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,8 +36,9 @@ class MyPostsToolsViewBody extends StatelessWidget {
                 child: Row(
                   children: [
                     const ChangeImage(),
-                    horizontalSpace(15),
-                    const ToolTextInfo()
+                    horizontalSpace(20),
+                    const ToolTextInfo(),
+                    const EditAndDeleteIcons()
                   ],
                 ),
               ),
@@ -47,6 +49,7 @@ class MyPostsToolsViewBody extends StatelessWidget {
     );
   }
 }
+
 
 
 

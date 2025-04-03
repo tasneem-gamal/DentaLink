@@ -14,7 +14,7 @@ class ChangeImage extends StatelessWidget {
       children: [
         Container(
           height: 150.h,
-          width: 90.w,
+          width: 70.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: ColorsManager.moreLightGray)

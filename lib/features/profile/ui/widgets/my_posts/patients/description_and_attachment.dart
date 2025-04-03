@@ -2,6 +2,7 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/delete_alert_dialog.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionAndAttachment extends StatelessWidget {
@@ -38,7 +39,15 @@ class DescriptionAndAttachment extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.delete, color: Colors.red,)
+            GestureDetector(
+              onTap: (){
+                showDialog(
+                  context: context, 
+                  builder: (context) => const DeleteAlertDialog()
+                );
+              },
+              child: const Icon(Icons.delete, color: Colors.red,)
+            )
           ],
         )
       ],

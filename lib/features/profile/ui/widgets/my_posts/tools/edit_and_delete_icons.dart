@@ -1,5 +1,5 @@
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/delete_alert_dialog.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/delete_alert_dialog.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_post_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 

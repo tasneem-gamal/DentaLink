@@ -29,7 +29,9 @@ class ProfileViewBody extends StatelessWidget {
           ProfileOptionItem(
             icon: const Icon(Icons.shopping_bag_outlined, size: 26,),
             title: 'All orders',
-            onTap: (){}
+            onTap: (){
+              context.pushNamed(Routes.allOrdersView);
+            }
           ),
           ProfileOptionItem(
             icon: const Icon(Icons.info_outline, size: 26,),

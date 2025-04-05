@@ -2,8 +2,8 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class EditPostFormFields extends StatelessWidget {
-  const EditPostFormFields({
+class EditToolPostFormFields extends StatelessWidget {
+  const EditToolPostFormFields({
     super.key,
   });
 

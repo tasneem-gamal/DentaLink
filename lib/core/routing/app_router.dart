@@ -35,8 +35,10 @@ import 'package:dentalink/features/on_boarding/widgets/on_boarding_get_started.d
 import 'package:dentalink/features/profile/logic/sign_out_cubit/sign_out_cubit.dart';
 import 'package:dentalink/features/profile/profile_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/about_us/about_us_view.dart';
+import 'package:dentalink/features/profile/ui/widgets/all_orders/all_orders_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/edit_profile/edit_profile_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/my_posts_view.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/patients/my_posts_patients_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/my_posts_tools_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/privacy_policy.dart/privacy_policy_view.dart';
 import 'package:dentalink/features/profile/ui/widgets/terms_and_conditions/terms_and_conditions_view.dart';
@@ -199,6 +201,14 @@ class AppRouter {
       case Routes.myPostsToolsView:
         return MaterialPageRoute(
             builder: (_) => const MyPostsToolsView());
+
+      case Routes.myPostspatientsView:
+        return MaterialPageRoute(
+            builder: (_) => const MyPostsPatientsView());
+
+      case Routes.allOrdersView:
+        return MaterialPageRoute(
+            builder: (_) => const AllOrdersView());
 
       default:
         return null;

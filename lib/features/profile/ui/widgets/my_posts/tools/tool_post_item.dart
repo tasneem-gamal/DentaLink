@@ -1,6 +1,6 @@
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/change_image.dart';
+import 'package:dentalink/features/profile/ui/widgets/my_posts/change_image.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/edit_and_delete_icons.dart';
 import 'package:dentalink/features/profile/ui/widgets/my_posts/tools/tool_text_info.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,9 @@ class ToolPostItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Row(
           children: [
-            const ChangeImage(),
+            const ChangeImage(
+              image: 'assets/images/item.png',
+            ),
             horizontalSpace(20),
             const ToolTextInfo(),
             const EditAndDeleteIcons()

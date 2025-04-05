@@ -43,5 +43,7 @@ class Routes {
   static const editProfileView = '/editProfileView';
   static const myPostsView = '/myPostsView';
   static const myPostsToolsView = '/myPostsToolsView';
+  static const myPostspatientsView = '/myPostspatientsView';
+  static const allOrdersView = '/allOrdersView';
 
 }

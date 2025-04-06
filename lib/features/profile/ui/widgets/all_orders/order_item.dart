@@ -1,6 +1,5 @@
-import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
-import 'package:dentalink/core/widgets/label_text_app.dart';
+import 'package:dentalink/features/profile/ui/widgets/all_orders/order_item_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,17 +20,7 @@ class OrderItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Row(
           children: [
-            Expanded(
-              child: Column(
-                children: [
-                  const LabelTextApp(label: 'Order: ', text: '#3256205'),
-                  verticalSpace(8),
-                  const LabelTextApp(label: 'Order Date: ', text: '25/4/2025'),
-                  verticalSpace(8),
-                  const LabelTextApp(label: 'Total Amount: ', text: '250LE'),
-                ],
-              ),
-            ),
+            const OrderItemInfo(),
             Expanded(
               child: Column(
                 children: [
@@ -61,3 +50,4 @@ class OrderItem extends StatelessWidget {
     );
   }
 }
+

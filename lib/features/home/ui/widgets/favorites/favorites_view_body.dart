@@ -20,8 +20,25 @@ class FavoritesViewBody extends StatelessWidget {
             style: CustomTextStyles.font20BlackMedium(context),
           ),
           verticalSpace(16),
-          FavoriteItem()
+          FavoriteItemListView()
         ],
+      ),
+    );
+  }
+}
+
+class FavoriteItemListView extends StatelessWidget {
+  const FavoriteItemListView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+        itemBuilder: (context, index) => const FavoriteItem(), 
+        separatorBuilder: (context, index) => verticalSpace(16), 
+        itemCount: 3
       ),
     );
   }

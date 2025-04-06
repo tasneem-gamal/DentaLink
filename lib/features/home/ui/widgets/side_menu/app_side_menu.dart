@@ -31,7 +31,9 @@ class AppSideMenu extends StatelessWidget {
             verticalSpace(10),
             SideMenuItem(
               text: 'Favourites',
-              onTap: (){},
+              onTap: (){
+                context.pushNamed(Routes.favoritesView);
+              },
             ),
             verticalSpace(10),
             const SideMenuDarkModeItem(

@@ -21,6 +21,7 @@ import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cu
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/exchange_view.dart';
+import 'package:dentalink/features/home/ui/widgets/favorites/favorites_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/add_patient_view.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/add_tool_view.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_details_view.dart';
@@ -157,6 +158,10 @@ class AppRouter {
 
       case Routes.exchangeView:
         return MaterialPageRoute(builder: (_) => const ExchangeView());
+
+      case Routes.favoritesView:
+        return MaterialPageRoute(
+            builder: (_) => const FavoritesView());
 
       //shop and related
       case Routes.shopView:

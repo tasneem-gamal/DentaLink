@@ -1,5 +1,6 @@
 import 'package:dentalink/core/di/dependency_injection.dart';
 import 'package:dentalink/core/routing/routes.dart';
+import 'package:dentalink/features/AI_scan/ui/widgets/ai_scan_view.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/change_password_cubit/change_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/forgot_password_cubit/fogot_password_cubit.dart';
 import 'package:dentalink/features/auth/forgot_password/logic/resend_otp_cubit/resend_otp_cubit.dart';
@@ -214,6 +215,11 @@ class AppRouter {
       case Routes.allOrdersView:
         return MaterialPageRoute(
             builder: (_) => const AllOrdersView());
+
+      //AI scan
+      case Routes.aiScanView:
+        return MaterialPageRoute(
+            builder: (_) => const AiScanView());
 
       default:
         return null;

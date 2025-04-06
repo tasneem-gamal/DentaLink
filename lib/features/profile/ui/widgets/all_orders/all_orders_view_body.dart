@@ -1,3 +1,6 @@
+import 'package:dentalink/core/helpers/constants.dart';
+import 'package:dentalink/core/helpers/spacing.dart';
+import 'package:dentalink/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class AllOrdersViewBody extends StatelessWidget {
@@ -5,6 +8,20 @@ class AllOrdersViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column();
+    return Padding(
+      padding: Constants.appPadding,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          verticalSpace(20),
+          Text(
+            'All orders (3)',
+            style: CustomTextStyles.font20BlackMedium(context),
+          ),
+          verticalSpace(16),
+          
+        ],
+      ),
+    );
   }
 }

@@ -1,3 +1,5 @@
+import 'package:dentalink/core/helpers/extension.dart';
+import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_dark_mode_item.dart';
 import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_item.dart';
 import 'package:dentalink/features/home/ui/widgets/side_menu/side_menu_top_bar.dart';
@@ -20,28 +22,41 @@ class AppSideMenu extends StatelessWidget {
           children: [
             const SideMenuTopBar(),
             verticalSpace(30),
-            const SideMenuItem(
+            SideMenuItem(
               text: 'My posts',
+              onTap: (){
+                context.pushNamed(Routes.myPostsView);
+              },
             ),
             verticalSpace(10),
-            const SideMenuItem(
+            SideMenuItem(
               text: 'Favourites',
+              onTap: (){},
             ),
             verticalSpace(10),
             const SideMenuDarkModeItem(
               text: 'Dark Mode',
             ),
             verticalSpace(10),
-            const SideMenuItem(
+            SideMenuItem(
               text: 'About us',
+              onTap: (){
+                context.pushNamed(Routes.aboutUsView);
+              },
             ),
             verticalSpace(10),
-            const SideMenuItem(
+            SideMenuItem(
               text: 'Terms & Conditions',
+              onTap: (){
+                context.pushNamed(Routes.termsAndConditionsView);
+              },
             ),
             verticalSpace(10),
-            const SideMenuItem(
+            SideMenuItem(
               text: 'Privacy Policy',
+              onTap: (){
+                context.pushNamed(Routes.privacyPolicyView);
+              },
             ),
           ],
         ),

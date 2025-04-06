@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
+import 'package:dentalink/features/profile/ui/widgets/all_orders/order_item.dart';
 import 'package:flutter/material.dart';
 
 class AllOrdersViewBody extends StatelessWidget {
@@ -19,9 +20,10 @@ class AllOrdersViewBody extends StatelessWidget {
             style: CustomTextStyles.font20BlackMedium(context),
           ),
           verticalSpace(16),
-          
+          OrderItem()
         ],
       ),
     );
   }
 }
+

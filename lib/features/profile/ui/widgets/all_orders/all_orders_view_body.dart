@@ -20,8 +20,25 @@ class AllOrdersViewBody extends StatelessWidget {
             style: CustomTextStyles.font20BlackMedium(context),
           ),
           verticalSpace(16),
-          OrderItem()
+          const OrderItemListView()
         ],
+      ),
+    );
+  }
+}
+
+class OrderItemListView extends StatelessWidget {
+  const OrderItemListView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+        itemBuilder: (context, index) => const OrderItem(), 
+        separatorBuilder: (context, index) => verticalSpace(12), 
+        itemCount: 3
       ),
     );
   }

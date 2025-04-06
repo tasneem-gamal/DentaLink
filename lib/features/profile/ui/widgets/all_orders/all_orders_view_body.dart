@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/features/profile/ui/widgets/all_orders/order_item.dart';
+import 'package:dentalink/features/profile/ui/widgets/all_orders/order_item_list.dart';
 import 'package:flutter/material.dart';
 
 class AllOrdersViewBody extends StatelessWidget {
@@ -27,20 +27,5 @@ class AllOrdersViewBody extends StatelessWidget {
   }
 }
 
-class OrderItemListView extends StatelessWidget {
-  const OrderItemListView({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemBuilder: (context, index) => const OrderItem(), 
-        separatorBuilder: (context, index) => verticalSpace(12), 
-        itemCount: 3
-      ),
-    );
-  }
-}
 

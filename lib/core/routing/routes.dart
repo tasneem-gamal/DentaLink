@@ -47,4 +47,8 @@ class Routes {
   static const myPostspatientsView = '/myPostspatientsView';
   static const allOrdersView = '/allOrdersView';
 
+  //AI scan and related
+  static const aiScanView = '/aiScanView';
+
+
 }

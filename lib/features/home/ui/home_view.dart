@@ -1,3 +1,4 @@
+import 'package:dentalink/features/AI_scan/ui/widgets/ai_scan_view.dart';
 import 'package:dentalink/features/cart/ui/cart_view.dart';
 import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/home_app_bar.dart';
@@ -27,7 +28,7 @@ class _HomeViewState extends State<HomeView> {
   List<Widget> appViews = const [
       HomeViewBody(),
       ShopView(),
-      Center(child: Text('AI')),
+      AiScanView(),
       CartView(),
       ProfileView(),
     ];

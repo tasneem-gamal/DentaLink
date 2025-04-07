@@ -1,5 +1,5 @@
 
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 
 class LatestPatientsResponseModel {
   List<PatientData>? patientData;

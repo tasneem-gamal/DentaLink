@@ -1,5 +1,5 @@
 import 'package:dentalink/core/helpers/spacing.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/latest_case_item.dart';
 import 'package:flutter/material.dart';
 

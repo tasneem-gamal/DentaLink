@@ -1,7 +1,7 @@
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:flutter/material.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/styles.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
 
 class PatientAttachmentsList extends StatelessWidget {
   const PatientAttachmentsList({

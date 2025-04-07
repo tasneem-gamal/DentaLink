@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_divider.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/case_details_section.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/contact_info_patient_details.dart';
 import 'package:dentalink/features/home/ui/widgets/patients/patient_attachments_list.dart';

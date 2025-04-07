@@ -1,7 +1,7 @@
 import 'package:dentalink/core/helpers/extension.dart';
 import 'package:dentalink/core/routing/routes.dart';
 import 'package:dentalink/core/widgets/item_container_patient_tool.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:flutter/material.dart';
 
 class PatientsGridView extends StatelessWidget {

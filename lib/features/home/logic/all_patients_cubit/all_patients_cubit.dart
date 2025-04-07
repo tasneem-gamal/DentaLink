@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/data/repo/all_patients_repo/all_patients_repo.dart';
 
 part 'all_patients_state.dart';

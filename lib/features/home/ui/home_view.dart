@@ -1,5 +1,5 @@
 import 'package:dentalink/features/cart/ui/cart_view.dart';
-import 'package:dentalink/features/home/data/models/all_patients/all_patients_response_body.dart';
+import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/home_app_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/main_home_screen/app_bottom_navigation_bar.dart';
 import 'package:dentalink/features/home/ui/widgets/side_menu/app_side_menu.dart';

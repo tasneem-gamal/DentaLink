@@ -2,11 +2,13 @@ import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/widgets/custom_app_button.dart';
 import 'package:dentalink/core/widgets/title_of_text_field.dart';
-import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_patient/description_form_field.dart';
+import 'package:dentalink/features/home/logic/add_tool_cubit/add_tool_cubit.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/category_drop_down_menu_add_tool.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/name_price_add_tool.dart';
 import 'package:dentalink/features/home/ui/widgets/floating_action_button/add_tool/upload_tool_images.dart';
+import 'package:dentalink/features/home/ui/widgets/floating_action_button/description_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddToolViewBody extends StatefulWidget {
   const AddToolViewBody({super.key});
@@ -24,54 +26,53 @@ class _AddToolViewBodyState extends State<AddToolViewBody> {
     return Padding(
       padding: Constants.appPadding,
       child: SingleChildScrollView(
-        child: Form(
-          key: addToolFormKey,
-          autovalidateMode: autovalidateMode,
-          child: Column(
-            children: [
-              verticalSpace(20),
-              const NamePriceAddTool(),
-              verticalSpace(16),
-              const TitleOfTextField(title: 'Category'),
-              verticalSpace(12),
-              const CategoryDropDownMenuAddTool(),
-              verticalSpace(16),
-              const DescriptionFormField(
-                hintText: 'ex. Reflects light for better visibility during procedures.'
-              ),
-              verticalSpace(16),
-              UploadToolImages(
-                onFileUploaded: setFileUploaded,
-                onFileSelected: (files){},
-              ),
-              verticalSpace(16),
-              CustomAppButton(
-                onPressed: () => validateThenAddTool(context),
-                btnText: 'Add'
-              )
-            ],
-          )
-        )
-      ),
+          child: Form(
+              key: context.read<AddToolCubit>().addToolFormKey,
+              autovalidateMode: autovalidateMode,
+              child: Column(
+                children: [
+                  verticalSpace(20),
+                  const NamePriceAddTool(),
+                  verticalSpace(16),
+                  const TitleOfTextField(title: 'Category'),
+                  verticalSpace(12),
+                  const CategoryDropDownMenuAddTool(),
+                  verticalSpace(16),
+                  DescriptionFormField(
+                    hintText:
+                        'ex. Cavity in the back molar with intermittent pain',
+                    descriptionController:
+                        context.read<AddToolCubit>().descriptionController,
+                  ),
+                  verticalSpace(16),
+                  UploadToolImages(
+                    onFileUploaded: setFileUploaded,
+                    onFileSelected: (files) {},
+                  ),
+                  verticalSpace(16),
+                  CustomAppButton(
+                      onPressed: () => validateThenAddTool(context),
+                      btnText: 'Add')
+                ],
+              ))),
     );
   }
 
-      void setFileUploaded(bool value) {
+  void setFileUploaded(bool value) {
     setState(() {
       isFileUploaded = value;
     });
   }
 
-    void validateThenAddTool(BuildContext context){
-    if(addToolFormKey.currentState!.validate()){
-      
+  void validateThenAddTool(BuildContext context) {
+    if (context.read<AddToolCubit>().addToolFormKey.currentState!.validate()) {
+      context.read<AddToolCubit>().emitAddToolState();
     }
   }
+
   void updateFileUploadStatus(bool uploaded) {
     setState(() {
       isFileUploaded = uploaded;
     });
   }
-
 }
-

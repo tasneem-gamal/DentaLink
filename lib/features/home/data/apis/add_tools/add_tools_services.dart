@@ -6,18 +6,13 @@ import 'package:dentalink/features/home/data/models/add_tools/add_tool_request.d
 import 'package:dentalink/features/home/data/models/add_tools/add_tool_response.dart';
 import 'package:dio/dio.dart';
 
-Map<String, String> headers = {
-  "Accept": "application/json",
-  "Content-Type": "multipart/form-data",
-  "Authorization":
-      "Bearer ${SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)}",
-};
-
 class AddToolsServices {
   late Dio dio;
-  AddPatientApiService(){
+
+  AddToolsServices() {
     dio = DioFactory.getDio();
   }
+
   Future<AddToolResponse> addTools(AddToolRequest addToolRequest) async {
     final formData = await addToolRequest.toFormData();
 

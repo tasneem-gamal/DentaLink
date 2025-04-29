@@ -4,14 +4,15 @@ import 'package:dentalink/features/home/data/apis/all_tools/all_tools_services.d
 import 'package:dentalink/features/home/data/models/all_tools/all_tools_response.dart';
 
 class AllToolsRepo {
-  final AllToolsResponse allToolsResponse;
-  AllToolsRepo(this.allToolsResponse);
+  final AllToolsServices allToolsServices;
+
+  AllToolsRepo(this.allToolsServices);
+
   Future<Either<ServerFailure, AllToolsResponse>> getAllTools() async {
     try {
-      final allToolsServices = AllToolsServices();
       final response = await allToolsServices.allToolsService();
       return right(response);
-    } catch (e){
+    } catch (e) {
       return left(ServerFailure(e.toString()));
     }
   }

@@ -5,20 +5,19 @@ import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:flutter/material.dart';
 
 class ItemContainerPatientTool extends StatelessWidget {
-  const ItemContainerPatientTool({
-    super.key, 
-    this.width, 
-    this.height, 
-    required this.image, 
-    this.imageWidth,
-    required this.itemTitle, 
-    required this.firstLabel, 
-    required this.firstLabelText, 
-    required this.secondLabel, 
-    required this.secondLabelText,
-    this.onTap
-  });
-  
+  const ItemContainerPatientTool(
+      {super.key,
+      this.width,
+      this.height,
+      required this.image,
+      this.imageWidth,
+      required this.itemTitle,
+      required this.firstLabel,
+      required this.firstLabelText,
+      required this.secondLabel,
+      required this.secondLabelText,
+      this.onTap});
+
   final double? width;
   final double? height;
   final String image;
@@ -34,11 +33,10 @@ class ItemContainerPatientTool extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width ?? 154,
-      height: height ?? 230,
+      height: height ?? 240,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ColorsManager.moreLightGray)
-      ),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: ColorsManager.moreLightGray)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -50,17 +48,14 @@ class ItemContainerPatientTool extends StatelessWidget {
               width: imageWidth,
             ),
             verticalSpace(12),
-            Text(
-              itemTitle,
-              style: CustomTextStyles.font12BlackMedium(context)
-            ),
+            Text(itemTitle, style: CustomTextStyles.font12BlackMedium(context)),
             LabelTextApp(
               label: firstLabel,
               text: firstLabelText,
             ),
             LabelTextApp(
-              label: secondLabel, 
-              text: secondLabelText, 
+              label: secondLabel,
+              text: secondLabelText,
               textStyleText: CustomTextStyles.font12MainBlueRegular(context),
             ),
             verticalSpace(8),
@@ -71,7 +66,10 @@ class ItemContainerPatientTool extends StatelessWidget {
                 child: const CircleAvatar(
                   radius: 20,
                   backgroundColor: ColorsManager.mainBlue,
-                  child: Icon(Icons.arrow_forward_ios, color: Colors.white,),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )

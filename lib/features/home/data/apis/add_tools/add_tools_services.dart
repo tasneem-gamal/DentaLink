@@ -26,7 +26,12 @@ class AddToolsServices {
     Response response = await dio.post(
       '${ApiConstants.baseUrl}${ApiConstants.addTools}',
       data: formData,
-      options: Options(headers: headers),
+      options: Options(headers: {
+        "Accept": "application/json",
+        "Content-Type": "multipart/form-data",
+        "Authorization":
+            "Bearer ${await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)}",
+      }),
     );
     return AddToolResponse.fromJson(response.data);
   }

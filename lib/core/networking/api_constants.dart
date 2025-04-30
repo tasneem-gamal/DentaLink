@@ -12,4 +12,5 @@ class ApiConstants {
   static const String signOut = "users/logout";
   static const String addTools = "tools/add";
   static const String allTools = "tools";
+  static const String latestTools = "tools/latest";
 }

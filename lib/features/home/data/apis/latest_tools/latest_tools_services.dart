@@ -21,7 +21,7 @@ class LatestToolsServices {
           },
         ),
       );
-      return LatestToolsResponse.fromjson(response.data);
+      return LatestToolsResponse.fromJson(response.data);
     } catch (e) {
       throw Exception('Failed to fetch latest tools: $e');
     }

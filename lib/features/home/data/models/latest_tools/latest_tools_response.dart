@@ -5,7 +5,7 @@ class LatestToolsResponse {
 
   LatestToolsResponse({this.latestTools});
 
-  factory LatestToolsResponse.fromjson(List<dynamic> json) {
+  factory LatestToolsResponse.fromJson(List<dynamic> json) {
     return LatestToolsResponse(
       latestTools: json.map((e) => Tool.fromJson(e)).toList(),
     );

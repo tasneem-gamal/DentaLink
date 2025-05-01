@@ -146,5 +146,6 @@ void setUpGetIt() {
   getIt.registerSingleton<ToolsSearchServices>(ToolsSearchServices());
   getIt.registerSingleton<ToolsSearchRepo>(
       ToolsSearchRepo(getIt.get<ToolsSearchServices>()));
-  getIt.registerLazySingleton<ToolsSearchCubit>(() => ToolsSearchCubit(getIt()));
+  getIt
+      .registerLazySingleton<ToolsSearchCubit>(() => ToolsSearchCubit(getIt()));
 }

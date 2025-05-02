@@ -36,7 +36,7 @@ class LabelTextApp extends StatelessWidget {
                 text,
                 style: textStyleText ??
                     CustomTextStyles.font12BlackRegular(context),
-                maxLines: 3,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 softWrap: true,
               ),
@@ -52,7 +52,7 @@ class LabelTextApp extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(width: 4),
+              horizontalSpace(4),
               Expanded(
                 child: Text(
                   text,

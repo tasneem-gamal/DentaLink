@@ -1,7 +1,7 @@
 import 'package:dentalink/features/home/data/models/tools_data.dart';
 
 class LatestToolsResponse {
-  final List<Tool>? latestTools;
+  List<Tool>? latestTools;
 
   LatestToolsResponse({this.latestTools});
 

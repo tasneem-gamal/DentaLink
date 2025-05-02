@@ -13,7 +13,7 @@ class ToolDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const GeneralCustomAppBar(title: 'Tool details'),
-      body: const ToolDetailsViewBody(),
+      body: ToolDetailsViewBody(tool: toolsData),
       bottomNavigationBar: Padding(
         padding: Constants.appPadding,
         child: const CustomAppButton(btnText: 'Add to cart'),

@@ -9,25 +9,26 @@ import 'package:flutter/material.dart';
 import '../../../../data/models/tools_data.dart';
 
 class ToolInfo extends StatelessWidget {
-  final Tool? tool;
+  final Tool tool;
   const ToolInfo({
     super.key,
-    this.tool,
+    required this.tool,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              tool?.name ?? 'Unknown Tool',
+              tool.name,
               style: CustomTextStyles.font20BlackMedium(context),
             ),
             Text(
-              '${tool?.price ?? '0.00'}',
+              '${tool.price} LE',
               style: CustomTextStyles.font24BlackSemiBold(context).copyWith(
                 color: ColorsManager.mainBlue,
                 fontWeight: FontWeightHelper.regular,
@@ -37,12 +38,12 @@ class ToolInfo extends StatelessWidget {
         ),
         verticalSpace(12),
         Text(
-          tool?.description ?? 'No description available',
+          tool.description,
           style: CustomTextStyles.font14LightGrayRegular(context),
           maxLines: 3,
         ),
         verticalSpace(8),
-        LabelTextApp(label: 'Category: ', text: tool?.category ?? 'N/A'),
+        LabelTextApp(label: 'Category: ', text: tool.category),
         const PublisherInfoSection()
       ],
     );

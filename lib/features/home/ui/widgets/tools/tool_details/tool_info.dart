@@ -6,24 +6,29 @@ import 'package:dentalink/core/widgets/label_text_app.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/tool_details/publisher/publisher_info_section.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/tools_data.dart';
+
 class ToolInfo extends StatelessWidget {
+  final Tool tool;
   const ToolInfo({
     super.key,
+    required this.tool,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Curette',
+              tool.name,
               style: CustomTextStyles.font20BlackMedium(context),
             ),
             Text(
-              '250 LE',
+              '${tool.price} LE',
               style: CustomTextStyles.font24BlackSemiBold(context).copyWith(
                 color: ColorsManager.mainBlue,
                 fontWeight: FontWeightHelper.regular,
@@ -33,18 +38,14 @@ class ToolInfo extends StatelessWidget {
         ),
         verticalSpace(12),
         Text(
-          'A sharp, hook-like tool used to detect cavities, plaque, or tartar buildup.',
+          tool.description,
           style: CustomTextStyles.font14LightGrayRegular(context),
           maxLines: 3,
         ),
         verticalSpace(8),
-        const LabelTextApp(
-          label: 'Category: ', 
-          text: 'Endodontics'
-        ),
+        LabelTextApp(label: 'Category: ', text: tool.category),
         const PublisherInfoSection()
       ],
     );
   }
 }
-

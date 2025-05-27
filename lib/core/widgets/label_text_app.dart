@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class LabelTextApp extends StatelessWidget {
   const LabelTextApp({
-    super.key, 
-    required this.label, 
-    required this.text, 
-    this.textStyleLable, 
+    super.key,
+    required this.label,
+    required this.text,
+    this.textStyleLable,
     this.textStyleText,
-    this.overflow
+    this.overflow,
   });
 
   final String label;
@@ -28,31 +28,36 @@ class LabelTextApp extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: textStyleLable ?? CustomTextStyles.font12LightGrayRegular(context),
+                style: textStyleLable ??
+                    CustomTextStyles.font12LightGrayRegular(context),
               ),
               verticalSpace(3),
               Text(
                 text,
-                style: textStyleText ?? CustomTextStyles.font12BlackRegular(context),
+                style: textStyleText ??
+                    CustomTextStyles.font12BlackRegular(context),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 softWrap: true,
               ),
             ],
           )
         : Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 label,
-                style: textStyleLable ?? CustomTextStyles.font12LightGrayRegular(context),
+                style: textStyleLable ??
+                    CustomTextStyles.font12LightGrayRegular(context),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                softWrap: true,
               ),
+              horizontalSpace(4),
               Expanded(
                 child: Text(
                   text,
-                  style: textStyleText ?? CustomTextStyles.font12BlackRegular(context),
+                  style: textStyleText ??
+                      CustomTextStyles.font12BlackRegular(context),
                   maxLines: 1,
                   overflow: overflow ?? TextOverflow.ellipsis,
                   softWrap: true,
@@ -62,4 +67,3 @@ class LabelTextApp extends StatelessWidget {
           );
   }
 }
-

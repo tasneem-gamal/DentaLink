@@ -17,9 +17,15 @@ import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_confirm/che
 import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_pay/checkout_pay_view.dart';
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_details_view.dart';
 import 'package:dentalink/features/home/data/models/patient_data.dart';
+import 'package:dentalink/features/home/data/models/tools_data.dart';
+import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
+import 'package:dentalink/features/home/logic/add_tool_cubit/add_tool_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
+import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
+import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/exchange_view.dart';
 import 'package:dentalink/features/home/ui/widgets/favorites/favorites_view.dart';
@@ -109,9 +115,10 @@ class AppRouter {
                         create: (context) =>
                             getIt<LatestPatientsCubit>()..getLatestPatients(),
                       ),
+                      BlocProvider(create: (context) => getIt<SignOutCubit>()),
                       BlocProvider(
                         create: (context) =>
-                            getIt<SignOutCubit>()
+                            getIt<LatestToolsCubit>()..getLatestTools(),
                       ),
                     ],
                     child: HomeView(
@@ -126,7 +133,11 @@ class AppRouter {
                 ));
 
       case Routes.addTool:
-        return MaterialPageRoute(builder: (_) => const AddToolView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<AddToolCubit>(),
+                  child: const AddToolView(),
+                ));
 
       case Routes.patientsView:
         return MaterialPageRoute(
@@ -136,7 +147,11 @@ class AppRouter {
                 ));
 
       case Routes.toolsView:
-        return MaterialPageRoute(builder: (_) => const ToolsView());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<AllToolsCubit>()..getAllTools(),
+                  child: const ToolsView(),
+                ));
 
       case Routes.patientDetails:
         final patientData = settings.arguments as PatientData;
@@ -145,8 +160,22 @@ class AppRouter {
                   patientData: patientData,
                 ));
 
+      // case Routes.toolDetails:
+      //   final toolsData = settings.arguments as Tool;
+      //   return MaterialPageRoute(
+      //       builder: (_) => ToolDetailsView(
+      //             toolsData: toolsData,
+      //           ));
+
       case Routes.toolDetails:
-        return MaterialPageRoute(builder: (_) => const ToolDetailsView());
+        final toolsData = settings.arguments as Tool;
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                create: (_) => RelatedToolsCubit(getIt<RelatedToolsRepo>())
+                  ..getRelatedTools(toolsData.id),
+                child: ToolDetailsView(
+                  toolsData: toolsData,
+                )));
 
       case Routes.reviewsView:
         return MaterialPageRoute(builder: (_) => const ReviewsView());
@@ -161,8 +190,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ExchangeView());
 
       case Routes.favoritesView:
-        return MaterialPageRoute(
-            builder: (_) => const FavoritesView());
+        return MaterialPageRoute(builder: (_) => const FavoritesView());
 
       //shop and related
       case Routes.shopView:
@@ -183,8 +211,7 @@ class AppRouter {
 
       //profile and related
       case Routes.profileView:
-        return MaterialPageRoute(
-            builder: (_) => const ProfileView());
+        return MaterialPageRoute(builder: (_) => const ProfileView());
 
       case Routes.aboutUsView:
         return MaterialPageRoute(builder: (_) => const AboutUsView());
@@ -197,29 +224,23 @@ class AppRouter {
             builder: (_) => const TermsAndConditionsView());
 
       case Routes.editProfileView:
-        return MaterialPageRoute(
-            builder: (_) => const EditProfileView());
+        return MaterialPageRoute(builder: (_) => const EditProfileView());
 
       case Routes.myPostsView:
-        return MaterialPageRoute(
-            builder: (_) => const MyPostsView());
+        return MaterialPageRoute(builder: (_) => const MyPostsView());
 
       case Routes.myPostsToolsView:
-        return MaterialPageRoute(
-            builder: (_) => const MyPostsToolsView());
+        return MaterialPageRoute(builder: (_) => const MyPostsToolsView());
 
       case Routes.myPostspatientsView:
-        return MaterialPageRoute(
-            builder: (_) => const MyPostsPatientsView());
+        return MaterialPageRoute(builder: (_) => const MyPostsPatientsView());
 
       case Routes.allOrdersView:
-        return MaterialPageRoute(
-            builder: (_) => const AllOrdersView());
+        return MaterialPageRoute(builder: (_) => const AllOrdersView());
 
       //AI scan
       case Routes.aiScanView:
-        return MaterialPageRoute(
-            builder: (_) => const AiScanView());
+        return MaterialPageRoute(builder: (_) => const AiScanView());
 
       default:
         return null;

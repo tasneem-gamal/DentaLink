@@ -10,19 +10,18 @@ class AddPatientRepo {
 
   AddPatientRepo(this.addPatientApiService);
 
-Future<Either<Failure, AddPatientResponseBody>> addNewPatient(
-  AddPatientRequestBody addPatientRequestBody
-) async {
-  try {
-    final response = await addPatientApiService.addPatient(addPatientRequestBody);
-    return right(response);
-  } catch (e) {
+  Future<Either<Failure, AddPatientResponseBody>> addNewPatient(
+      AddPatientRequestBody addPatientRequestBody) async {
+    try {
+      final response =
+          await addPatientApiService.addPatient(addPatientRequestBody);
+      return right(response);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
 
-    if (e is DioException) {
-      return left(ServerFailure.fromDioError(e));
+      return left(ServerFailure("Unexpected error: ${e.toString()}"));
     }
-
-    return left(ServerFailure("Unexpected error: ${e.toString()}"));
   }
-}
 }

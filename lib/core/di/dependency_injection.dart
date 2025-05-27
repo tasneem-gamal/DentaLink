@@ -17,14 +17,32 @@ import 'package:dentalink/features/auth/sign_up/data/apis/sign_api_service.dart'
 import 'package:dentalink/features/auth/sign_up/data/repo/sign_repo.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_service.dart';
+import 'package:dentalink/features/home/data/apis/add_tools/add_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/all_patients/all_patient_api_service.dart';
+import 'package:dentalink/features/home/data/apis/all_tools/all_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/latest_patients/latest_patients_api_service.dart';
+import 'package:dentalink/features/home/data/apis/latest_tools/latest_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/related_tools/related_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/tools_by_id/tools_id_services.dart';
+import 'package:dentalink/features/home/data/apis/tools_search/tools_search_services.dart';
 import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
+import 'package:dentalink/features/home/data/repo/add_tool_repo/add_tool_repo.dart';
 import 'package:dentalink/features/home/data/repo/all_patients_repo/all_patients_repo.dart';
+import 'package:dentalink/features/home/data/repo/all_tools/all_tools_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_patients/latest_patients_repo.dart';
+import 'package:dentalink/features/home/data/repo/latest_tools/latest_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/tools_by_id/tools_by_id_repo.dart';
+import 'package:dentalink/features/home/data/repo/tools_search/tools_search_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
+import 'package:dentalink/features/home/logic/add_tool_cubit/add_tool_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
+import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
+import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/tools_by_id_cubit/tools_by_id_cubit.dart';
+import 'package:dentalink/features/home/logic/tools_search_cubit/tools_search_cubit.dart';
 import 'package:dentalink/features/profile/data/sign_out/api/sign_out_api_service.dart';
 import 'package:dentalink/features/profile/data/sign_out/repo/sign_out_repo.dart';
 import 'package:dentalink/features/profile/logic/sign_out_cubit/sign_out_cubit.dart';
@@ -44,52 +62,100 @@ void setUpGetIt() {
 
   //forgot password
   getIt.registerSingleton<ForgotPasswordApiService>(ForgotPasswordApiService());
-  getIt.registerSingleton<ForgotPasswordRepo>(ForgotPasswordRepo(getIt.get<ForgotPasswordApiService>()));
-  getIt.registerLazySingleton<FogotPasswordCubit>(() => FogotPasswordCubit(getIt()));
+  getIt.registerSingleton<ForgotPasswordRepo>(
+      ForgotPasswordRepo(getIt.get<ForgotPasswordApiService>()));
+  getIt.registerLazySingleton<FogotPasswordCubit>(
+      () => FogotPasswordCubit(getIt()));
 
   //verify-otp
   getIt.registerSingleton<VerifyOtpApiService>(VerifyOtpApiService());
-  getIt.registerSingleton<VerifyOtpRepo>(VerifyOtpRepo(getIt.get<VerifyOtpApiService>()));
+  getIt.registerSingleton<VerifyOtpRepo>(
+      VerifyOtpRepo(getIt.get<VerifyOtpApiService>()));
   getIt.registerLazySingleton<VerifyOtpCubit>(() => VerifyOtpCubit(
-      getIt<VerifyOtpRepo>(), 
-      getIt<FogotPasswordCubit>(),
-));
+        getIt<VerifyOtpRepo>(),
+        getIt<FogotPasswordCubit>(),
+      ));
 
   //change-password
   getIt.registerSingleton<ChangePasswordApiService>(ChangePasswordApiService());
-  getIt.registerSingleton<ChangePasswordRepo>(ChangePasswordRepo(getIt.get<ChangePasswordApiService>()));
+  getIt.registerSingleton<ChangePasswordRepo>(
+      ChangePasswordRepo(getIt.get<ChangePasswordApiService>()));
   getIt.registerLazySingleton<ChangePasswordCubit>(() => ChangePasswordCubit(
-    getIt<ChangePasswordRepo>(), 
-    getIt<FogotPasswordCubit>(), 
-    getIt<VerifyOtpCubit>()
-));
+      getIt<ChangePasswordRepo>(),
+      getIt<FogotPasswordCubit>(),
+      getIt<VerifyOtpCubit>()));
 
   //resend otp
   getIt.registerSingleton<ResendOtpApiService>(ResendOtpApiService());
-  getIt.registerSingleton<ResendOtpRepo>(ResendOtpRepo(getIt.get<ResendOtpApiService>()));
+  getIt.registerSingleton<ResendOtpRepo>(
+      ResendOtpRepo(getIt.get<ResendOtpApiService>()));
   getIt.registerLazySingleton<ResendOtpCubit>(() => ResendOtpCubit(
-    getIt<ResendOtpRepo>(), 
-    getIt<FogotPasswordCubit>(),
-  ));
-
+        getIt<ResendOtpRepo>(),
+        getIt<FogotPasswordCubit>(),
+      ));
 
   //add patient
   getIt.registerSingleton<AddPatientApiService>(AddPatientApiService());
-  getIt.registerSingleton<AddPatientRepo>(AddPatientRepo(getIt.get<AddPatientApiService>()));
+  getIt.registerSingleton<AddPatientRepo>(
+      AddPatientRepo(getIt.get<AddPatientApiService>()));
   getIt.registerLazySingleton<AddPatientCubit>(() => AddPatientCubit(getIt()));
 
   //all patients
   getIt.registerSingleton<AllPatientApiService>(AllPatientApiService());
-  getIt.registerSingleton<AllPatientsRepo>(AllPatientsRepo(getIt.get<AllPatientApiService>()));
-  getIt.registerLazySingleton<AllPatientsCubit>(() => AllPatientsCubit(getIt()));
+  getIt.registerSingleton<AllPatientsRepo>(
+      AllPatientsRepo(getIt.get<AllPatientApiService>()));
+  getIt
+      .registerLazySingleton<AllPatientsCubit>(() => AllPatientsCubit(getIt()));
 
   //latest patients
   getIt.registerSingleton<LatestPatientsApiService>(LatestPatientsApiService());
-  getIt.registerSingleton<LatestPatientsRepo>(LatestPatientsRepo(getIt.get<LatestPatientsApiService>()));
-  getIt.registerLazySingleton<LatestPatientsCubit>(() => LatestPatientsCubit(getIt()));
+  getIt.registerSingleton<LatestPatientsRepo>(
+      LatestPatientsRepo(getIt.get<LatestPatientsApiService>()));
+  getIt.registerLazySingleton<LatestPatientsCubit>(
+      () => LatestPatientsCubit(getIt()));
 
   //sign out
   getIt.registerSingleton<SignOutApiService>(SignOutApiService());
-  getIt.registerSingleton<SignOutRepo>(SignOutRepo(getIt.get<SignOutApiService>()));
+  getIt.registerSingleton<SignOutRepo>(
+      SignOutRepo(getIt.get<SignOutApiService>()));
   getIt.registerLazySingleton<SignOutCubit>(() => SignOutCubit(getIt()));
+
+  //add tool
+  getIt.registerSingleton<AddToolsServices>(AddToolsServices());
+  getIt.registerSingleton<AddToolRepo>(
+      AddToolRepo(getIt.get<AddToolsServices>()));
+  getIt.registerLazySingleton<AddToolCubit>(() => AddToolCubit(getIt()));
+
+  //all tools
+  getIt.registerSingleton<AllToolsServices>(AllToolsServices());
+  getIt.registerSingleton<AllToolsRepo>(
+      AllToolsRepo(getIt.get<AllToolsServices>()));
+  getIt.registerLazySingleton<AllToolsCubit>(() => AllToolsCubit(getIt()));
+
+  //fetch tools by id
+  getIt.registerSingleton<ToolsByIdServices>(ToolsByIdServices());
+  getIt.registerSingleton<ToolsByIdRepo>(
+      ToolsByIdRepo(getIt.get<ToolsByIdServices>()));
+  getIt.registerLazySingleton<ToolsByIdCubit>(() => ToolsByIdCubit(getIt()));
+
+  //new in tools
+  getIt.registerSingleton<LatestToolsServices>(LatestToolsServices());
+  getIt.registerSingleton<LatestToolsRepo>(
+      LatestToolsRepo(getIt.get<LatestToolsServices>()));
+  getIt
+      .registerLazySingleton<LatestToolsCubit>(() => LatestToolsCubit(getIt()));
+
+  //search tools
+  getIt.registerSingleton<ToolsSearchServices>(ToolsSearchServices());
+  getIt.registerSingleton<ToolsSearchRepo>(
+      ToolsSearchRepo(getIt.get<ToolsSearchServices>()));
+  getIt
+      .registerLazySingleton<ToolsSearchCubit>(() => ToolsSearchCubit(getIt()));
+
+  //relatedTools
+  getIt.registerSingleton<RelatedToolsServices>(RelatedToolsServices());
+  getIt.registerSingleton<RelatedToolsRepo>(
+      RelatedToolsRepo(getIt.get<RelatedToolsServices>()));
+  getIt.registerLazySingleton<RelatedToolsCubit>(
+      () => RelatedToolsCubit(getIt()));
 }

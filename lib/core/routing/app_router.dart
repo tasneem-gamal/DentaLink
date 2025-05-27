@@ -18,12 +18,14 @@ import 'package:dentalink/features/cart/ui/widgets/checkout/checkout_pay/checkou
 import 'package:dentalink/features/cart/ui/widgets/checkout/order_details/order_details_view.dart';
 import 'package:dentalink/features/home/data/models/patient_data.dart';
 import 'package:dentalink/features/home/data/models/tools_data.dart';
+import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
 import 'package:dentalink/features/home/logic/add_tool_cubit/add_tool_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
 import 'package:dentalink/features/home/ui/home_view.dart';
 import 'package:dentalink/features/home/ui/widgets/exchange/exchange_view.dart';
 import 'package:dentalink/features/home/ui/widgets/favorites/favorites_view.dart';
@@ -158,12 +160,22 @@ class AppRouter {
                   patientData: patientData,
                 ));
 
+      // case Routes.toolDetails:
+      //   final toolsData = settings.arguments as Tool;
+      //   return MaterialPageRoute(
+      //       builder: (_) => ToolDetailsView(
+      //             toolsData: toolsData,
+      //           ));
+
       case Routes.toolDetails:
         final toolsData = settings.arguments as Tool;
         return MaterialPageRoute(
-            builder: (_) => ToolDetailsView(
+            builder: (_) => BlocProvider(
+                create: (_) => RelatedToolsCubit(getIt<RelatedToolsRepo>())
+                  ..getRelatedTools(toolsData.id),
+                child: ToolDetailsView(
                   toolsData: toolsData,
-                ));
+                )));
 
       case Routes.reviewsView:
         return MaterialPageRoute(builder: (_) => const ReviewsView());

@@ -22,6 +22,7 @@ import 'package:dentalink/features/home/data/apis/all_patients/all_patient_api_s
 import 'package:dentalink/features/home/data/apis/all_tools/all_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/latest_patients/latest_patients_api_service.dart';
 import 'package:dentalink/features/home/data/apis/latest_tools/latest_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/related_tools/related_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_by_id/tools_id_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_search/tools_search_services.dart';
 import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
@@ -30,6 +31,7 @@ import 'package:dentalink/features/home/data/repo/all_patients_repo/all_patients
 import 'package:dentalink/features/home/data/repo/all_tools/all_tools_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_patients/latest_patients_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_tools/latest_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_by_id/tools_by_id_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_search/tools_search_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
@@ -38,6 +40,7 @@ import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cu
 import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_by_id_cubit/tools_by_id_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_search_cubit/tools_search_cubit.dart';
 import 'package:dentalink/features/profile/data/sign_out/api/sign_out_api_service.dart';
@@ -148,4 +151,11 @@ void setUpGetIt() {
       ToolsSearchRepo(getIt.get<ToolsSearchServices>()));
   getIt
       .registerLazySingleton<ToolsSearchCubit>(() => ToolsSearchCubit(getIt()));
+
+  //relatedTools
+  getIt.registerSingleton<RelatedToolsServices>(RelatedToolsServices());
+  getIt.registerSingleton<RelatedToolsRepo>(
+      RelatedToolsRepo(getIt.get<RelatedToolsServices>()));
+  getIt.registerLazySingleton<RelatedToolsCubit>(
+      () => RelatedToolsCubit(getIt()));
 }

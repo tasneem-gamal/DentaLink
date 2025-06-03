@@ -21,10 +21,6 @@ class AddToCartBlocListener extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(state.errMessage)),
           );
-          // } else if (state is AddToCartEmpty) {
-          //   ScaffoldMessenger.of(context).showSnackBar(
-          //     SnackBar(content: Text(state.message)),
-          //   );
         }
       },
       child: child,

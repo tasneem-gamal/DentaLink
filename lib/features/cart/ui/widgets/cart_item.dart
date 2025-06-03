@@ -14,7 +14,7 @@ class CartItem extends StatefulWidget {
     required this.cartItem,
   });
 
-  final Function() onDelete;
+  final void Function(String id) onDelete;
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -35,7 +35,7 @@ class _CartItemState extends State<CartItem> {
         quantity--;
       });
     } else {
-      widget.onDelete();
+      widget.onDelete(widget.cartItem.tool.id);
     }
   }
 

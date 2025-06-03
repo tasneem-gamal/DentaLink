@@ -25,6 +25,7 @@ import 'package:dentalink/features/home/data/apis/cart_items/cart_items_services
 import 'package:dentalink/features/home/data/apis/latest_patients/latest_patients_api_service.dart';
 import 'package:dentalink/features/home/data/apis/latest_tools/latest_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/related_tools/related_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/remove_from_cart/remove_from_cart_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_by_id/tools_id_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_search/tools_search_services.dart';
 import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
@@ -36,6 +37,7 @@ import 'package:dentalink/features/home/data/repo/cart_items/cart_items_repo.dar
 import 'package:dentalink/features/home/data/repo/latest_patients/latest_patients_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_tools/latest_tools_repo.dart';
 import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/remove_from_cart/remove_from_cart_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_by_id/tools_by_id_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_search/tools_search_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
@@ -47,6 +49,7 @@ import 'package:dentalink/features/home/logic/cart_items_cubit/cart_items_cubit.
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/remove_from_cart/remove_from_cart_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_by_id_cubit/tools_by_id_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_search_cubit/tools_search_cubit.dart';
 import 'package:dentalink/features/profile/data/sign_out/api/sign_out_api_service.dart';
@@ -176,4 +179,11 @@ void setUpGetIt() {
   getIt.registerSingleton<CartItemsRepo>(
       CartItemsRepo(getIt.get<CartItemsServices>()));
   getIt.registerLazySingleton<CartItemsCubit>(() => CartItemsCubit(getIt()));
+
+  //remove from cart
+  getIt.registerSingleton<RemoveFromCartServices>(RemoveFromCartServices());
+  getIt.registerSingleton<RemoveFromCartRepo>(
+      RemoveFromCartRepo(getIt.get<RemoveFromCartServices>()));
+  getIt.registerLazySingleton<RemoveFromCartCubit>(
+      () => RemoveFromCartCubit(getIt()));
 }

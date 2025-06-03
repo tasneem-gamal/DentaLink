@@ -15,12 +15,13 @@ class AllToolsServices {
     try {
       final response = await dio.get(
         '${ApiConstants.baseUrl}${ApiConstants.allTools}',
-        options: Options(headers: {
-          "Accept": "application/json",
-          "Content-Type": "multipart/form-data",
-          "Authorization":
-              "Bearer ${await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)}",
-        }),
+        options: Options(
+          headers: {
+            'Content-Type': 'application/json',
+            'authorization':
+                'Bearer ${await SharedPreferenceHelper.getSecuredString(SharedPreferencesKeys.userToken)}',
+          },
+        ),
       );
       return AllToolsResponse.fromJson(response.data);
     } catch (e) {

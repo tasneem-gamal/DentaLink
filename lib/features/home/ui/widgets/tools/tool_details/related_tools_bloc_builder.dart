@@ -13,7 +13,8 @@ class RelatedToolsBlocBuilder extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is RelatedToolsLoading ||
           current is RelatedToolsLoaded ||
-          current is RelatedToolsError,
+          current is RelatedToolsError ||
+          current is RelatedToolsEmpty,
       builder: (context, state) {
         if (state is RelatedToolsLoading) {
           return const CustomLoadingIndicator();
@@ -25,6 +26,11 @@ class RelatedToolsBlocBuilder extends StatelessWidget {
           return Center(
               child: SizedBox(
             child: Text(state.errMessage),
+          ));
+        } else if (state is RelatedToolsEmpty) {
+          return Center(
+              child: SizedBox(
+            child: Text(state.message),
           ));
         } else {
           return const SizedBox.shrink();

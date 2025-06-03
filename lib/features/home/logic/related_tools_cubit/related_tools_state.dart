@@ -17,3 +17,9 @@ class RelatedToolsError extends RelatedToolsState {
 
   RelatedToolsError(this.errMessage);
 }
+
+class RelatedToolsEmpty extends RelatedToolsState {
+  final String message;
+
+  RelatedToolsEmpty(this.message);
+}

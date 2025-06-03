@@ -1,12 +1,14 @@
 import 'package:dentalink/core/widgets/custom_loading_indicator.dart';
 import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
-import 'package:dentalink/features/home/ui/widgets/tools/tools_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AllToolsBlocBuilder extends StatelessWidget {
+  final Widget Function(AllToolsLoaded state) builder;
+
   const AllToolsBlocBuilder({
     super.key,
+    required this.builder,
   });
 
   @override
@@ -20,14 +22,11 @@ class AllToolsBlocBuilder extends StatelessWidget {
         if (state is AllToolsLoading) {
           return const CustomLoadingIndicator();
         } else if (state is AllToolsLoaded) {
-          return ToolsGridView(
-            tools: state.tools,
-          );
+          return builder(state);
         } else if (state is AllToolsError) {
           return Center(
-              child: SizedBox(
             child: Text(state.errMessage),
-          ));
+          );
         } else {
           return const SizedBox.shrink();
         }

@@ -16,7 +16,7 @@ class CheckoutConfirmBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             verticalSpace(12),
-            const CartItemList(),
+            const CartItemList(cartItemsList: [],),
             const OrderSummaryContainer()
           ],
         )

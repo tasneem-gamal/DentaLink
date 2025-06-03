@@ -14,5 +14,7 @@ class ApiConstants {
   static const String allTools = "tools";
   static const String latestTools = "tools/latest";
   static const String toolsSearch = "tools/search";
-  static const String relatedTools = "tools/related";
+  static const String relatedTools = "tools/6803bb6885ac352a189e7767/related";
+  static const String addToCart = "cart/add";
+  static const String cartItems = "cart";
 }

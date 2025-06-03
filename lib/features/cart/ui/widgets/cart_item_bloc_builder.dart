@@ -20,12 +20,11 @@ class CartItemBlocBuilder extends StatelessWidget {
         if (state is CartItemsLoading) {
           return const CustomLoadingIndicator();
         } else if (state is CartItemsSuccess) {
-          if (state.cartItemsList.isEmpty) {
-            return const Center(
-              child: Text('Cart is Empty'),
-            );
-          }
           return CartItemList(cartItemsList: state.cartItemsList);
+        } else if (state is CartItemsEmpty) {
+          return const Center(
+            child: Text('Cart is Empty'),
+          );
         } else if (state is CartItemsFailure) {
           return Center(
             child: Text(state.errMessage),

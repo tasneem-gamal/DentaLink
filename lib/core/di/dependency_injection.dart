@@ -17,30 +17,39 @@ import 'package:dentalink/features/auth/sign_up/data/apis/sign_api_service.dart'
 import 'package:dentalink/features/auth/sign_up/data/repo/sign_repo.dart';
 import 'package:dentalink/features/auth/sign_up/logic/sign_cubit/sign_cubit.dart';
 import 'package:dentalink/features/home/data/apis/add_patient_service/add_patient_api_service.dart';
+import 'package:dentalink/features/home/data/apis/add_to_cart/add_to_cart_services.dart';
 import 'package:dentalink/features/home/data/apis/add_tools/add_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/all_patients/all_patient_api_service.dart';
 import 'package:dentalink/features/home/data/apis/all_tools/all_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/cart_items/cart_items_services.dart';
 import 'package:dentalink/features/home/data/apis/latest_patients/latest_patients_api_service.dart';
 import 'package:dentalink/features/home/data/apis/latest_tools/latest_tools_services.dart';
 import 'package:dentalink/features/home/data/apis/related_tools/related_tools_services.dart';
+import 'package:dentalink/features/home/data/apis/remove_from_cart/remove_from_cart_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_by_id/tools_id_services.dart';
 import 'package:dentalink/features/home/data/apis/tools_search/tools_search_services.dart';
 import 'package:dentalink/features/home/data/repo/add_patient_repo/add_patient_repo.dart';
+import 'package:dentalink/features/home/data/repo/add_to_cart/add_to_cart_repo.dart';
 import 'package:dentalink/features/home/data/repo/add_tool_repo/add_tool_repo.dart';
 import 'package:dentalink/features/home/data/repo/all_patients_repo/all_patients_repo.dart';
 import 'package:dentalink/features/home/data/repo/all_tools/all_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/cart_items/cart_items_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_patients/latest_patients_repo.dart';
 import 'package:dentalink/features/home/data/repo/latest_tools/latest_tools_repo.dart';
 import 'package:dentalink/features/home/data/repo/related_tools/related_tools_repo.dart';
+import 'package:dentalink/features/home/data/repo/remove_from_cart/remove_from_cart_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_by_id/tools_by_id_repo.dart';
 import 'package:dentalink/features/home/data/repo/tools_search/tools_search_repo.dart';
 import 'package:dentalink/features/home/logic/add_patient_cubit/add_patient_cubit.dart';
+import 'package:dentalink/features/home/logic/add_to_cart_cubit/add_to_cart_cubit.dart';
 import 'package:dentalink/features/home/logic/add_tool_cubit/add_tool_cubit.dart';
 import 'package:dentalink/features/home/logic/all_patients_cubit/all_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/all_tools_cubit/all_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/cart_items_cubit/cart_items_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_patients_cubit/latest_patients_cubit.dart';
 import 'package:dentalink/features/home/logic/latest_tools_cubit/latest_tools_cubit.dart';
 import 'package:dentalink/features/home/logic/related_tools_cubit/related_tools_cubit.dart';
+import 'package:dentalink/features/home/logic/remove_from_cart/remove_from_cart_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_by_id_cubit/tools_by_id_cubit.dart';
 import 'package:dentalink/features/home/logic/tools_search_cubit/tools_search_cubit.dart';
 import 'package:dentalink/features/profile/data/sign_out/api/sign_out_api_service.dart';
@@ -158,4 +167,23 @@ void setUpGetIt() {
       RelatedToolsRepo(getIt.get<RelatedToolsServices>()));
   getIt.registerLazySingleton<RelatedToolsCubit>(
       () => RelatedToolsCubit(getIt()));
+
+  //add to cart
+  getIt.registerSingleton<AddToCartServices>(AddToCartServices());
+  getIt.registerSingleton<AddToCartRepo>(
+      AddToCartRepo(getIt.get<AddToCartServices>()));
+  getIt.registerLazySingleton<AddToCartCubit>(() => AddToCartCubit(getIt()));
+
+  //cart items
+  getIt.registerSingleton<CartItemsServices>(CartItemsServices());
+  getIt.registerSingleton<CartItemsRepo>(
+      CartItemsRepo(getIt.get<CartItemsServices>()));
+  getIt.registerLazySingleton<CartItemsCubit>(() => CartItemsCubit(getIt()));
+
+  //remove from cart
+  getIt.registerSingleton<RemoveFromCartServices>(RemoveFromCartServices());
+  getIt.registerSingleton<RemoveFromCartRepo>(
+      RemoveFromCartRepo(getIt.get<RemoveFromCartServices>()));
+  getIt.registerLazySingleton<RemoveFromCartCubit>(
+      () => RemoveFromCartCubit(getIt()));
 }

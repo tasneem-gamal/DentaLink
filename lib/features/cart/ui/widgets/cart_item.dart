@@ -2,15 +2,19 @@ import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/core/theming/colors.dart';
 import 'package:dentalink/core/theming/styles.dart';
 import 'package:dentalink/features/cart/ui/widgets/delete_and_add_buttons.dart';
+import 'package:dentalink/features/home/data/models/cart_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartItem extends StatefulWidget {
+  final CartItemModel cartItem;
   const CartItem({
-    super.key, required this.onDelete,
+    super.key,
+    required this.onDelete,
+    required this.cartItem,
   });
 
-  final Function() onDelete;
+  final void Function(String id) onDelete;
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -31,7 +35,7 @@ class _CartItemState extends State<CartItem> {
         quantity--;
       });
     } else {
-      widget.onDelete();
+      widget.onDelete(widget.cartItem.tool.id);
     }
   }
 
@@ -40,9 +44,8 @@ class _CartItemState extends State<CartItem> {
     return Container(
       height: 115.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ColorsManager.moreLightGray)
-      ),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: ColorsManager.moreLightGray)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Row(
@@ -54,12 +57,12 @@ class _CartItemState extends State<CartItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Dental Drill',
+                    widget.cartItem.tool.name,
                     style: CustomTextStyles.font12BlackMedium(context),
                   ),
                   verticalSpace(8),
                   Text(
-                    'Used to remove decay and shape teeth for fillings or crowns',
+                    widget.cartItem.tool.description,
                     style: CustomTextStyles.font12LightGrayRegular(context),
                   ),
                   verticalSpace(8),
@@ -77,4 +80,3 @@ class _CartItemState extends State<CartItem> {
     );
   }
 }
-

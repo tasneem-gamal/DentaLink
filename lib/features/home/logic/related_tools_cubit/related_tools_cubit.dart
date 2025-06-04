@@ -20,5 +20,8 @@ class RelatedToolsCubit extends Cubit<RelatedToolsState> {
         emit(RelatedToolsLoaded(relatedToolsList));
       },
     );
+    if (relatedToolsList.isEmpty) {
+      emit(RelatedToolsEmpty('No related tools found'));
+    }
   }
 }

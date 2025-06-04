@@ -19,7 +19,7 @@ class ToolsGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 12,
         mainAxisSpacing: 12,
-        childAspectRatio: 0.6,
+        childAspectRatio: 0.65,
       ),
       itemCount: tools.length,
       itemBuilder: (context, index) => ItemContainerPatientTool(
@@ -31,9 +31,10 @@ class ToolsGridView extends StatelessWidget {
         secondLabel: 'Description: ',
         secondLabelText: tools[index].description,
         onTap: () {
-          context.pushNamed(Routes.toolDetails, arguments: {
-            'tool': tools[index],
-          });
+          context.pushNamed(
+            Routes.toolDetails,
+            arguments: tools[index],
+          );
         },
       ),
     ));

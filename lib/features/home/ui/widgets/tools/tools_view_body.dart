@@ -1,6 +1,7 @@
 import 'package:dentalink/core/helpers/constants.dart';
 import 'package:dentalink/core/helpers/spacing.dart';
 import 'package:dentalink/features/home/ui/widgets/tools/all_tools_bloc_builder.dart';
+import 'package:dentalink/features/home/ui/widgets/tools/tools_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class ToolsViewBody extends StatelessWidget {
@@ -13,7 +14,9 @@ class ToolsViewBody extends StatelessWidget {
       child: Column(
         children: [
           verticalSpace(20),
-          const AllToolsBlocBuilder(),
+          AllToolsBlocBuilder(
+            builder: (state) => ToolsGridView(tools: state.tools),
+          )
         ],
       ),
     );
